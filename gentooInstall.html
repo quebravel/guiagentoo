@@ -1,0 +1,1616 @@
+<!-- Um exemplo muito comum:
+Ao invés de Canção, ele exibe Can��o ou CanÃ§Ã£o.
+No primeiro caso (Can��o), sua página em ISO-8859-1 está obtendo a palavra Canção armazenada em UTF-8 da origem, seja ela do banco
+ de dados ou de um XML, txt etc.
+Já o segundo caso (CanÃ§Ã£o) é a sua página em UTF-8 exibindo a palavra Canção armazenada em ISO-8859-1 da origem.
+Para que ocorra a exibição correta, deve-se armazenar novamente os dados com a codificação correta (o que é muito trabalhoso
+dependendo da quantidade de dados) ou trocar a codificação de exibição de seu site.
+Para trocar a exibição, o cabeçalho HTML deverá estar como:
+Para ISO-8859-1:
+<html>
+<head>
+<title>Minha pagina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+Para UTF-8:
+<html>
+<head>
+<title>Minha pagina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+Observação sobre a forma de salvar o arquivo: Mesmo que você especifique um dos cabeçalhos acima ou com o charset que deseja,
+o arquivo deve ser salvo na codificação equivalente ao charset especificado. Por exemplo, se você utiliza
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> , o arquivo deve ser salvo na codificação "ISO-8859-1,
+ou Latin1, ou Europeu Ocidental ISO (ou mesmo ANSI caso você use o Bloco de Notas do Windows)", mas se o charset for UTF-8, a
+codificação deverá ser Unicode / UTF-8 também. Lembrando que essa opção está disponível no editor de texto utilizado para editar
+o arquivo (notepad, notepad ++, gedit, textmate, textpad, vi, vim e vários outros). -->
+<!--
+						         -/oyddmdhs+:.
+						     -odNMMMMMMMMNNmhy+-`
+						   -yNMMMMMMMMMMMNNNmmdhy+-
+						 `omMMMMMMMMMMMMNmdmmmmddhhy/`
+						 omMMMMMMMMMMMNhhyyyohmdddhhhdo`
+						.ydMMMMMMMMMMdhs++so/smdddhhhhdm+`
+						 oyhdmNMMMMMMMNdyooydmddddhhhhyhNd.
+						  :oyhhdNNMMMMMMMNNNmmdddhhhhhyymMh
+						    .:+sydNMMMMMNNNmmmdddhhhhhhmMmy
+						       /mMMMMMMNNNmmmdddhhhhhmMNhs:
+						    `oNMMMMMMMNNNmmmddddhhdmMNhs+`
+						  `sNMMMMMMMMNNNmmmdddddmNMmhs/.
+						 /NMMMMMMMMNNNNmmmdddmNMNdso:`
+						+MMMMMMMNNNNNmmmmdmNMNdso/-
+						MNNNNNNNmmmmmNNMmhs+/-`
+						/hMMNNNNNNNNMNdhs++/-`
+						`/ohdmmddhys+++/:.`
+						  `-//////:--.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.redtext {
+   color: red;
+}
+.orangetext {
+   color: blue;
+}
+.greentext {
+   color: green;
+}
+.whitetext {
+   color: white;
+}
+.lawngreen {
+   color: LawnGreen;
+}
+.yellowtext {
+   color: yellow;
+}
+.orangetext {
+   color: orange;
+}
+type="text/css">
+        .myTableStyle
+        {
+          /* position:absolute;
+           top:50%;
+           left:50%;
+*/
+            /*Alternatively you could use: */
+
+              position: fixed;
+               bottom: 50%;
+               right: 50%;
+
+        }
+</style>
+    	<title>
+		Gentoo Instalação
+	</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body  bgcolor= "A901DB"> <!--"ECCEF5"> -->
+
+		<center><font size="13" style="font-family:'Monaco', DejaVu Sans Mono" color="cyan">GUIA RAPIDO</font></center>
+		<center><font size="23" style="font-family:'Monaco', DejaVu Sans Mono" class="orangetext">INSTALAR GENTOO!!</font></center>
+
+
+<center><h2 style="font-family:'Monaco', DejaVu Sans Mono">Mostrar a interface da rede</h2></center>
+<center>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				root # ip -s -c -h a
+			</font>
+		</td>
+	</tr>
+</table>
+    
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Carregar teclado
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				    root # loadkeys br-abnt2
+            </font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Configurar rede
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				root # net-setup nomePlacaRede
+            </font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Se for preciso levante a placa de rede com
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+                root # ifconfig nomePlacaRede up
+            </font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Configurar data MÊS DIA HORA MINUTO ANO com
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				root # date MMDDHHMMAAAA
+            </font><br>
+			<font face="Courier New" color="white" size="4">
+				root # hwclock --systohc<br>
+            </font>
+		</td>
+	</tr>
+</table>
+<br>
+
+
+<font size="5" face="DejaVu Sans Mono" color="black">
+  <strong>
+    Formatar HD com parted
+    </strong>
+</font><br><br>
+	<font size="3" face="Monaco, DejaVu Sans Mono"><strong>BIOS/UEFI boot GPT<br>
+        </strong></font><br><br>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+        <font color="white" size="4" face="Monaco, DejaVu Sans Mono">
+            
+                root # parted -a optimal /dev/sda ↵<br>
+                (parted) mklabel gpt ↵<br>
+                (parted) rm 2 ↵<br>
+                (parted) unit mib ↵<br>
+                (parted) mkpart primary 1 50 ↵<br>
+                (parted) name 1 grub ↵<br>
+                (parted) set 1 bios_grub on ↵<br>
+                (parted) print ↵<br>
+                (parted) mkpart primary 51 550 ↵<br>
+                (parted) name 2 boot ↵<br>
+                (parted) mkpart primary 551 4550 ↵<br>
+                (parted) name 3 swap ↵ <br>
+                (parted) mkpart primary 4551 -1 ↵<br>
+                (parted) name 4 rootfs ↵<br>
+                (parted) quit ↵ <br><br>
+                Set com a flag o boot com o comando abaixo se o computador usar UEFI:<br>
+                (parted) set 2 boot on ↵<br>
+		      
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Formatando partições
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <font color="white" color="white" size="4" face="Monaco, DejaVu Sans Mono">
+                
+                Não é preciso formatar /dev/sda1<br>
+                root # mkfs.ext2 /dev/sda2 <font color="#808080">ext2 para BIOS</font><br>
+                <font color="#00afaf">root # mkfs.vfat /dev/sda2</font> <font color="#808080">vfat para UEFI</font> <br><br>
+
+                root # mkfs.ext4 /dev/sda4 <br><br>
+                Swap<br>
+                root # mkswap /dev/sda3<br>
+                root # swapon /dev/sda3
+                
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Comando para verificar o espaço de memória livre <br>do swap e das memórias,
+  assim verificando se o swap esta ligado</h2>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <font face="Courier New" color="white" size="4">
+                    root # free
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Criando e montando pastas para instação "não coloque a / no final"
+</h2>
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <font face="Courier New" color="white" size="4">
+                root # mkdir /mnt/gentoo<br>
+                root # mount /dev/sda4 /mnt/gentoo<br>
+                root # cd /mnt/gentoo<br>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Verifique se a internet esta funcionado
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <font face="Courier New" color="white" size="4">
+                ping  -c3 gentoo.org
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Baixando arquivo tar.bz2 para instalação, use o comando<br> links para
+  navegar e achar o aquivo "stage3-amd64-*.tar.bz2"
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <font face="Courier New" color="white" size="4">
+                links https://www.gentoo.org/downloads/mirrors/#BR <br><br>
+		        releases/ ↵<br>
+                amd64/ ↵<br>
+                autobuilds/ ↵<br>
+                current-stage3-amd64/ ↵<br>
+                    <font color="red">
+                      stage3-amd64-*.tar.bz2
+                    </font>
+            </font>
+        </td>
+    </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Descompactar, use o nome completo
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				tar xvjpf stage3-amd64-*.tar.bz2 --xattrs --numeric-owner
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Edite o make.conf para o seu processador.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				grep -c processor /proc/cpuinfo <br>
+				grep -m1 -A3 "vendor_id" /proc/cpuinfo <br><br>
+				root # nano -w /mnt/gentoo/etc/portage/make.conf <br>
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Montando pastas de instalação e configuração "não coloque / <br>no final.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				mount --types proc /proc /mnt/gentoo/proc  <br>
+				mount --rbind /sys /mnt/gentoo/sys <br>
+				mount --rbind /dev /mnt/gentoo/dev <br>
+			</font>
+		</td>
+  </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Copie as informações de DNS
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				cp -L /etc/resolv.conf /mnt/gentoo/etc/
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entrando no novo ambiente</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				root # chroot /mnt/gentoo /bin/bash <br>
+				root # source /etc/profile <br>
+				root # export PS1="chroot -] $PS1" <br>
+				chroot -]&emsp;<p1 class="redtext">
+				livecd <p1 class="orangetext">~ #&emsp;</p1></p1>
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Verifique, 21 pastas e arquivos
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      		<font face="Courier New" color="white" size="4">
+        		ls
+      		</font>
+    	</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Boot partição.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      		<font face="Courier New" color="white" size="4">
+		      root # mkdir /boot<br>
+		      root # mount /dev/sda2 /boot
+      		</font>
+    	</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Instalando um instantâneo do repositório ebuild da web
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      		<font face="Courier New" color="red" size="4">
+		      emerge-webrsync<br>
+		      emerge --sync --quiet<br>
+		      emerge --update --deep --newuse @world
+      		</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Escolhendo o perfil correto/de sua escolha
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				eselect profile list
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Escolha o perfil com o comando... "substitua o X pelo número <br>de sua escolha.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				eselect profile set "X"
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Use eselect para verificar
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				eselect profile list
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+	Fuso horário/ verifique as permissções "-rw-r--r--"
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				cd /usr/share/zoneinfo/America <br>
+				ls -la Belem
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+	Fuso horário
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+					echo "America/Belem" > /etc/timezone <br>
+					<p1 class="yellowtext">
+					emerge --config sys-libs/timezone-data <br>
+					</p1>
+					cd /
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+	Instalando Vim
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font color="yellow" size="4" face="Monaco, DejaVu Sans Mono">
+				emerge -a app-editors/vim
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Configurando locais
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+						vim /etc/locale.gen <br>
+						<p1 class="lawngreen">pt_BR.UTF-8 UTF-8
+						</p1><br>
+						<p1 class="lawngreen">pt_BR ISO-8859-1
+						</p1><br><br>
+				        locale-gen <br>
+				        locale -a <br>
+				        eselect locale list <br>
+				        eselect locale set X <br>
+						<p2 class="orangetext">
+						Sendo X a linha que contenha pt_BR.utf8 <br>
+						<p1 class="redtext">
+						Muito importante escolher UTF-8 para evitar erros de caracteres no terminal.
+						</p1>
+						</p2><br>
+						env-update && source /etc/profile && export PS1="chroot -] $PS1"
+			</font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Editar flag's no "make.conf".
+</h2>
+
+    <font size="3" face="Monaco, DejaVu Sans Mono"><strong>Dica para configurar o processador corretamente na linha CFLAGS.</strong></font><br>
+    <font size="3" face="Monaco, DejaVu Sans Mono"><strong>(Skylake, Haswell, Ivy Bridge, Sandy Bridge, Nehalem, Westmere, Intel Core e AMD).</strong></font><br>
+<font size="3" face="Monaco, DejaVu Sans Mono"><strong>Consulte a pagina https://wiki.gentoo.org/wiki/Safe_CFLAGS para localizar o <br>
+    número do modelo correto. Use os comandos abaixo para obter o númeo do modelo e o <br>número de núcleos.,</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      <font face="Monaco, Dejavu Sans Mono" size="3" color="white">
+				grep -c processor /proc/cpuinfo <br>
+				grep -m1 -A3 "vendor_id" /proc/cpuinfo
+      </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<font size="3" face="Monaco, DejaVu Sans Mono"><strong>Então adicione ao make.conf.</strong></font><br><br>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+           <font face="Courier New" color="white">
+             vim /etc/portage/make.conf <br><br>
+		           <p1 class="yellowtext">CFLAGS="-march=core2 -O2 -pipe"</p1><br>
+		           <p1 class="lawngreen">USE="<p1 class="redtext">-qt4 -qt5 -plasma -kde -handbook
+               </p1> networkmanager intel X alsa cdr dbus
+                    mp3 mp4 mpeg mmx sse sse2 openal opengl python sound usb udev wifi zsh-completion bash-completion bindist"
+               </p1><br>
+		            VIDEO_CARDS="vesa <font color="gray">intel amdgpu nvidia virtualbox</font>" <br>
+		            LINGUAS="pt_BR.UTF-8 pt_BR.ISO-8859-1 pt_BR pt-BR" <br>
+		            MAKEOPTS="-j4" <br>
+		            ACCEPT_LICENSE="*" <br>
+		            L10N="pt-BR"
+            </font>
+          </td>
+	      </tr>
+</table>
+
+<table border="0" bgcolor="darkgray" width="70%">
+<br>
+  <font face="Dejavu Sans Mono" size="3">
+    <strong>
+      Editar make.conf para funcionar com UEFI.<br>Adicione a linha:
+    </strong>
+  </font><br><br>
+	     <tr>
+				<td>
+					<font face="Courier New" color="black" size="5">
+						<strong>
+							GRUB_PLATFORMS="efi-64"
+						</strong>	
+					</font>	
+				</td>
+	     </tr>
+</table><br>
+
+<font face="Dejavu Sans Mono" size="3" color="black">
+  <strong>
+    Observação: Para ter os pacotes mais atuais no gentoo adicione a linha:<br><br>
+    </strong>
+<table border="0" bgcolor="black" width="70%">
+  <tr>
+    <td>
+      <font color="cyan">
+          ACCEPT_KEYWORDS="~amd64"
+      </font>
+    </td>
+  </tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Instalando o kernel.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="yellow" size="4">
+				emerge --ask sys-kernel/gentoo-sources
+			</font>
+		</td>
+	</tr>
+</table>
+
+<font face="Monaco, DejaVu Sans Mono" color="black" size="5">
+  <br>Configurar e construir o kernel<br>
+    automaticamente.<br><br>
+</font>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+            <p1 class="yellowtext">
+            emerge --ask sys-kernel/genkernel
+            </p1><br>
+			genkernel all
+            </font>
+    </td>
+	</tr>
+</table><br>
+
+<font color="cyan" face="Monaco, Dejavu Sans Mono" size="5">
+      Configurando o fstab.
+</font>
+<h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color=white size="4">
+				vim /etc/fstab
+			</font>
+		</td>
+	</tr>
+</table>
+<br>
+<table border="0" bgcolor="black" width="70%">
+
+   <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda3</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">none</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">swap</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">sw</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/mnt/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">auto</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noauto,ro</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
+</table>
+<!--
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Módulos do kernel <br>
+	Configurando os módulos
+<h3>
+  Liste os módulos que precisam ser carregados automaticamente em<br> /etc/conf.d/modules. Opções extras podem ser adicionadas
+  aos módulos se necessário.<br>
+  Para visualizar todos os módulos disponíveis, execute o seguinte<br> comando o "find". Não se esqueça de substituir "kernel version"<br>
+  pela versão do kernel recém compilada:</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      <font face="Courier New" color="white" size="4">
+        find /lib/modules/<
+        kernel version>/ -type f -iname
+        '*.o' -or -iname '*.ko' | less
+      </font>
+    </td>
+	</tr>
+</table>
+
+<h3 style="font-family:DejaVu Sans Mono">
+  Por exemplo, para carregar automaticamente o módulo 3c59x.ko<br> (que é o driver para uma placa
+  de rede especifica da família 3Com),<br> edite o arquivo /etc/conf.d/modules e digite o nome do módulo nele.
+</h3>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      <h3 style="font-family:'Courier New'" class="whitetext">
+        vim /etc/conf.d/modules <br>
+				modules="3c59x"
+      </h3>
+    </td>
+	</tr>
+</table>
+-->
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Instalando firmware</h2>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+		<td>
+            <font face="Courier New" color="yellow">
+                emerge --ask sys-kernel/linux-firmware
+            </font>    
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Informação de host e domínio</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/conf.d/hostname<br>
+				<p1 class="lawngreen">hostname="nomeDaRede"
+                </p1>
+            </font>    
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Configurando a rede<br>
+	Primeiro instale o pacote net-misc/netifrc</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="yellow" size="4">
+                emerge --ask --noreplace net-misc/netifrc
+            </font>    
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Iniciando automaticamente a rede durante o boot
+</h2><h3>Se o sistema tem várias interfaces de rede, então os arquivos net.* <br> precisam ser criados assim como fizemos com o
+net.eth0.<br>
+
+Se após a inicialização do sistema descobrirmos que o nome que <br>usamos para a interface de rede <br>(que está atualmente documentada
+como eth0)<br> está errado, então execute os seguintes passos para corrigir isso:<br>
+
+1.Corrija o arquivo /etc/conf.d/net com o nome correto da interface de rede<br> (tal como enp0s3 em vez de eth0).<br>
+2.Crie um novo link simbólico (como /etc/init.d/net.enp0s3).<br>
+3.Remova o link simbólico antigo (rm /etc/init.d/net.eth0).<br>
+4.Adicione o novo ao runlevel default.<br>
+5.Remova o antigo usando rc-update del net.eth0 default.</h3>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                cd /etc/init.d<br>
+				ln -s net.lo net.eth0<br>
+				<p1 class="greentext">ou</p1><br>
+				<p1 class="greentext">ln -s net.lo net.enp0s3</p1><br>
+				rc-update add net.eth0 default <br>
+				cd /
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">O arquivo hosts</h2>
+<h3>Adicione um nome após localhost</h3><br>
+<table border="0" bgcolor="black" width="70%">
+
+    <tr>
+	   <td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/hosts<br>
+                <p1 class="lawngreen">127.0.0.1	localhost <p1 class="redtext">gentoo</p1></p1>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Instalando dhcp</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+			     <p1 class="yellowtext">emerge --ask net-misc/dhcpcd</p1><br>
+				    rc-update add dhcpcd default
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Configuração de início e boot</h2>
+
+<table border="0" bgcolor="black" width="70%">
+<h3>Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra
+/etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.<br></h3>
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+		      vim /etc/rc.conf<br>
+		      vim /etc/conf.d/keymaps<br>
+		      <p1 class="yellowtext">keymap="<p1 class="redtext">br-abnt2</p1>"</p1><br>
+		      vim /etc/conf.d/hwclock
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Sistema de log</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+				<p1 class="yellowtext">emerge --ask app-admin/syslog-ng<br>
+				emerge --ask virtual/ssh<br>
+				emerge --ask sys-process/cronie<br>
+				emerge --ask sys-apps/mlocate</p1><br>
+				rc-update add syslog-ng default<br>
+				rc-update add sshd default<br>
+				rc-update add cronie default
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Adicionando senha para o root</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                passwd
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Adicionando um usuário e senha</h2>
+
+<table border="0" bgcolor="black" width="100%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="3">
+                useradd -m -G users,wheel,audio,lp,cdrom,portage,cron,usb,video -s /bin/bash nomeUsuario<br><br>
+				passwd nomeUsuario
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Selecionando/Instalando um gerenciador de boot: GRUB2.</h2>
+<h3> Obs: Cuidado no "grub.cfg" pois ao aperta tab ele altomaticamente coloca "grub.conf".<br>
+<br>
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+				<p1 class="yellowtext">Modo BIOS</p1><br>emerge --ask sys-boot/grub<br>
+				grub-install /dev/sda<br>
+				grub-mkconfig -o /boot/grub/grub.cfg<br><br>
+				<p1 class="yellowtext">Modo UEFI</p1><br>
+				echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf<br>
+				emerge --ask sys-boot/grub<br>
+				emerge --ask --update --newuse --verbose sys-boot/grub<br>
+				grub-install --target=x86_64-efi --efi-directory=/boot
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Saindo do sistema</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				exit<br>
+				cd<br>
+				cdimage ~# umount -l /mnt/gentoo/dev{/shm,/pts,} <br>
+				cdimage ~# umount -R /mnt/gentoo <br>
+				cdimage ~# shutdown -r now <br>
+			</font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Log como root, e instale o pacote essencial.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="yellow" size="4">
+			     emerge --ask sudo<br>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo sudoers e descomente a linha ou...<br>
+<p2 class="orangetext"><p2 class="redtext">#</p2> %wheel ALL=(ALL) ALL</p2><br>
+<font color="highblue">ou logo abaixo de root ALL=(ALL) ALL<br></font>
+<p1 class="orangetext">nomeUsuário ALL=(ALL) ALL</p1>
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/sudoers
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/issue
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Colocando uma bandeira no processador.</h2>
+	<h3>Veja o número de processadores que sua maquina tem com o comando cat,<br> depois entre em make.conf e acrescente a
+lina MAKEOPTS=-jX com o número de <br>processadores. Sendo X o número de processadores.</h3><br>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/portage/make.conf<br>
+                <p2 class="orangetext">MAKEOPTS=-jX</p2>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Atualizando.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="yellow" size="4">
+                emerge -uvDNa @world
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Instalando o X + CPUFlags.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                <p1 class="yellowtext">
+					emerge -aq x11-base/xorg-drivers<br>
+					emerge -aq x11-base/xorg-x11<br>
+					<font color="cyan">emerge -aq x11-drivers/xf86-video-intel</font><br>
+					<font color="red">emerge -aq x11-drivers/xf86-video-amdgpu</font><br>
+					<font color="green">x11-drivers/nvidia-drivers</font><br><br>
+					
+					emerge app-portage/cpuid2cpuflags</p1><br>
+					cpuinfo2cpuflags-x86<br>
+					cpuinfo2cpuflags-x86 >> /etc/portage/make.conf<br>
+					<font color="gray">Apague o primero CPU_FLAGS_X86 da linha do make.conf</font><br>
+					cat /etc/portage/make.conf<br><br>
+                    <i>
+                        env-update && source /etc/profile</i>
+                    <br>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Apague o primeiro CPUFlags padrão que esta no arquivo.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+                vim /etc/portage/make.conf
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Aplicativos úteis</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				<p1 class="yellowtext">
+ 					emerge --ask --quiet x11-terms/xterm<br>
+ 					app-editors/mousepad<br>
+ 					x11-terms/xfce4-terminal<br>
+ 					www-client/firefox<br>
+ 					dev-vcs/git<br>
+ 					net-misc/wget<br>
+                </p1>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Controladores de som.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+ 				emerge --ask --quiet media-sound/pulseaudio<br>
+ 				media-sound/alsa-utils<br>
+ 				<!-- media-plugins/gst-plugins-alsa<br> -->
+ 				media-plugins/alsa-plugins<br>
+ 				<!-- media-libs/alsa-lib<br> -->
+            </font>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Setando e adicionando ao boot</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+ 				/etc/init.d/dbus status<br>
+ 				/etc/init.d/dbus start<br>
+ 				rc-update add dbus default<br><br>
+ 				/etc/init.d/consolekit status<br>
+ 				/etc/init.d/consolekit start<br>
+ 				rc-update add consolekit default<br><br>
+ 				<p1 class="redtext">(Usar quando usar um gerenciador de login)
+                </p1><br>
+ 					rc-update add xdm default<br>
+ 					/etc/init.d/xdm status<br><br>
+ 					env-update && source /etc/profile<br>
+				<p1 class="greentext">/etc/init.d/xdm start
+                </p1><br>
+				<br>
+				<p1 class="yellowtext"><p1 class="greentext">ou</p1> echo "exec startxfce4" > ~/.xinitrc
+                </p1><br>
+				<br>
+ 				/etc/init.d/alsasound status<br>
+ 				/etc/init.d/alsasound start<br>
+ 				rc-update add alsasound boot<br>
+ 				alsamixe<br>
+ 				<!-- speak-test -t wav -c 2<br>
+ 				vim /etc/portage/make.conf<br>
+				<p2 class="orangetext">adicionar em USE</p2><br>
+				<p2 class="greentext">alsa pulseaudio networkmanager</p2><br>
+ 				speak-test -t wav -c 2<br>
+				<p2 class="orangetext">fazer teste só como usuário</p2><br>
+ 				env-update && source /etc/profile<br> -->
+				<h4 class="orangetext">Abra o terminal, digite alsamixer, dê play em algum som e tente aumentar a amplitude do som com
+as setas direcionais.
+                </h4>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+    Instalando internet.<br>
+	Veja se contem no USE no make.conf a palavra networkmanager,<br> se não conter adicione-a
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="yellow" size="4">
+                emerge --ask --quiet net-misc/networkmanager
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Iniciando a rede no boot. <br>Adicione o widger.<br>
+	levante e adicione o genrenciador com:</h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				rc-service NetworkManager status<br>
+				rc-service NetworkManager start<br>
+				rc-update add NetworkManager default<br><br>
+                <i>env-update && source /etc/profile</i><br><br>
+				<font color="gray">sudo emerge --ask gnome-extra/nm-applet</font>
+            </font>
+        </td>
+	</tr>
+</table>
+
+<h1><font color="#00ff00">DICAS EXTRAS</font></h1>
+<!-- novas linas -->
+<!-- configurando teclado -->
+<center><h2 style="font-family:Dejavu sans mono, verdana">Configurando teclado Xorg.</h2></center>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+      	<td>
+		    <h3 style="font-family:Dejavu sans mono" class="whitetext">
+                # nano /etc/X11/xorg.conf.d/30-keyboard.conf<br><br>
+			<font color="ffff00">Section "InputClass"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "keyboard-all"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Driver</font><font color="cc66ff"> "evdev"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "XkbLayout" "br"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "XkbVariant" ",abnt2"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "XkbOptions" "grp:shift_toggle,grp_led:scroll"</font><br>
+			<font color="ffff00">EndSection</font>
+            </h3>
+        </td>
+    </tr>
+</table>
+
+<!-- tearing -->
+ <center><h2 style="font-family:Dejavu sans mono, verdana">Removendo Tearing da placa de video.</h2></center>
+
+<table border="0" bgcolor="black" width="70%">
+        <tr>
+		<td>
+			<h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="#00ffff">Intel</font><br># nano /etc/X11/xorg.conf.d/20-intel.conf<br><br>
+			<font color="ffff00">Section "Device"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Intel Graphics"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "intel"<br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "AccelMethod" "sna"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
+			<font color="ffff00">EndSection</font>
+            </h3>
+        </td>
+    </tr>
+</table>
+    <br>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+		<td>
+			<h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="red">Radeon</font><br># nano  /usr/share/X11/xorg.conf.d/50-device.conf<br><br>
+			<font color="ffff00">Section "Device"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Default"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "amdgpu"<br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "True"</font><br>
+			<font color="ffff00">EndSection</font>
+            </h3>
+        </td>
+    </tr>
+</table>
+
+<center><h2 style="font-family:Dejavu sans mono, verdana">Configurando Touchpad.</h2></center>
+
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+		<td>
+			<h3 style="font-family:Dejavu sans mono" class="whitetext"> # nano /etc/X11/xorg.conf.d/70-synaptics.conf<br><br>
+			<font color="ffff00">Section "InputClass"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "touchpad"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Driver</font><font color="cc66ff"> "synaptics"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;MatchIsTouchpad "on"<br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "TapButton1" "1"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "TapButton2" "3"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "TapButton3" "2"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "VertEdgeScroll" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "VertTwoFingerScroll" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "HorizEdgeScroll" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "HorizTwoFingerScroll" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "CircularScrolling" "on"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "CircScrollTrigger" "2"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "EmulateTwoFingerMinZ" "40"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "EmulateTwoFingerMinW" "8"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "CoastingSpeed" "0"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "FingerLow" "30"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "FingerHigh" "50"</font><br>
+			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Option</font><font color="cc66ff"> "MaxTapTime" "125"</font><br>
+			<font color="ffff00">EndSection</font><br>
+            </h3>
+        </td>
+    </tr>
+</table>
+
+<!-- fim novas linas -->
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Quando instalar o google chrome e ele fica pedindo<br> senha para entrar no navegador,
+ instale coloque uma senha e<br> depois remova usando o aplicativo</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="yellowtext">sudo emerge --ask app-crypt/seahorse
+            </h3>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Caso der erro de mask em uma instalação.</h2>
+	<h3>Durante a instalação de um pacote, o portage reclama que o pacote só poder ser<br> instalado ser for feita uma
+alteração de palavra-chave.<br>
+	<p2 class="orangetext">the following keyword changes are necessary to proceed:</p2><br>
+	<h3>required by *** argument<br>
+	use o comando:</h3>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">$ sudo emerge --ask pacote --autounmask-write<br/>
+			<p2 class="orangetext">em seguida </p2><br>
+			$ sudo dispatch-conf<br>
+			<p2 class="orangetext">aperte "u" para aceitar as alterações</p2><br>
+			$ sudo emerge --ask --quiet pacote
+            </h3>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Erro de depedência</h2>
+<table border="0" bgcolor="black" width="90%">
+
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			After a emerge --sync mjpegtools needed an update. Mjpegtools has unmet requirements<br>
+			<br>
+			# emerge -u --deep --newuse world <br>
+			Calculating dependencies / <br>
+			<br>
+			!!! Problem resolving dependencies for media-video/mjpegtools from @selected <br>
+			... done! <br>
+			<br>
+			!!! The ebuild selected to satisfy "media-video/mjpegtools" has unmet requirements. <br>
+			- media-video/mjpegtools-2.0.0-r1 USE="X gtk png v4l -dga -dv -mmx -quicktime -sdl -sdlgfx -static-libs" <br>
+			<br>
+			The following REQUIRED_USE flag constraints are unsatisfied: <br>
+			X? ( <font color="red">sdl</font> ) <br>
+			<br>
+			The above constraints are a subset of the following complete expression: <br>
+			!X? ( !gtk !sdl ) X? ( sdl ) sdlgfx? ( sdl ) <br>
+			<br>
+			(dependency required by "@selected" [set]) <br>
+			(dependency required by "@world" [argument])<br>
+			</h3>
+		</td>
+	</tr>
+</table>
+<br>
+<table border="0" bgcolor="black" width="90%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			Adicione a flag marcada em vemelho: <font color="blue">USE=</font><font color="red">sdl</font> e adicione ao comando emerge + pacote<br>
+			<br>$ sudo USE=sdl emerge media-video/pacote<br><br>
+			Isso é temporário, para deixar em defenitivo adicione ao arquivo <font color="yellow">/etc/portage/profile/package.use</font>
+			<br><br>$ sudo media-video/pacote <font color="red">sdl</font>
+            </h3>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Erro sartifazer depedência.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			emerge: there are no ebuilds built with USE flags to satisfy "dev-libs/openssl:0[bindist=]".<br>
+			!!! One of the following packages is required to complete your request: <br>
+			- dev-libs/openssl-1.0.2g-r2::gentoo (Change USE: -bindist) <br>
+			- dev-qt/qtnetwork-5.5.1::gentoo (Change USE: +bindist) <br>
+			(dependency required by "dev-qt/qtnetwork-5.5.1::gentoo" [ebuild]) <br>
+			(dependency required by "dev-qt/qtwebkit-5.5.1-r1::gentoo" [installed]) <br>
+			(dependency required by "@selected" [set]) <br>
+			(dependency required by "@world" [argument]) <br>
+            </h3>
+        </td>
+	</tr>
+</table>
+<br>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			Você precisa desabilitar o "bindist" use a flag no openssl para sartisfazer "dev-qt/qtnetwork" e "dev-qt/qtwebkit" em:<br><br>
+			<font color="yellow">/etc/portage/make.conf</font><br>
+			USE="-bindist"<br><br>
+
+			# emerge -uD --changed-use --ask @world
+            </h3>
+		</td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Erros de multiplas depedências</h2>
+
+<table border="0" bgcolor="black" width="70%">
+
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			$ sudo emerge -uvDNa @world<br>
+			<br>
+			These are the packages that would be merged, in order:<br>
+			<br>
+			Calculating dependencies... done!<br>
+			<br>
+			!!! Multiple package instances within a single package slot have been pulled<br>
+			!!! into the dependency graph, resulting in a slot conflict:<br>
+			<br>
+			dev-libs/libpcre:3<br>
+			<br>
+  			(dev-libs/libpcre-8.41:3/3::gentoo, ebuild scheduled for merge) pulled in by<br>
+    			(no parents that aren't satisfied by other packages in this slot)<br>
+			<br>
+  			(dev-libs/libpcre-8.41:3/3::gentoo, installed) pulled in by<br>
+    			>=dev-libs/libpcre-8.38[<font color="red">pcre16</font>,unicode] required by (dev-qt/qtcore-5.7.1-r3:5/5.7::gentoo, ebuild scheduled for merge)<br>
+            </h3>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Desligar o computador sem sudo</h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			Para conceder permissão para que usuários comuns possam desligar o computador:<br>
+			<br>
+			# chmod 4755 /sbin/shutdown<br>
+			<br>
+			Esse comando acima muda a permissão para desligar, em seguida crie um atalho:<br>
+			<br>
+			# ln -s /sbin/shutdown /bin/<br>
+			<br>
+			Pronto! Agora você pode desligar e reiniciar o seu computador usando comandos sem precisar logar como root.<br>
+            </h3>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Configuração de fontes.</h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+			# emerge -aq media-libs/fontconfig-infinality<br>
+			<br>
+			# eselect fontconfig list<br>
+			<br>
+			Available fontconfig .conf files (* is enabled):<br>
+  			[1]   10-autohint.conf<br>
+  			[2]   10-hinting-full.conf<br>
+  			[3]   10-hinting-medium.conf<br>
+  			[4]   10-hinting-none.conf<br>
+  			<font color="yellow">[5]   10-hinting-slight.conf *</font><br>
+  			[6]   10-no-sub-pixel.conf<br>
+  			<font color="yellow">[7]   10-powerline-symbols.conf *</font><br>
+  <font color="yellow">[8]   10-scale-bitmap-fonts.conf *</font><br>
+  [9]   10-sub-pixel-bgr.conf<br>
+  [10]  10-sub-pixel-rgb.conf<br>
+  [11]  10-sub-pixel-vbgr.conf<br>
+  [12]  10-sub-pixel-vrgb.conf<br>
+  [13]  10-unhinted.conf<br>
+  <font color="yellow">[14]  11-lcdfilter-default.conf *</font><br>
+  [15]  11-lcdfilter-legacy.conf<br>
+  [16]  11-lcdfilter-light.conf<br>
+  [17]  20-unhint-small-dejavu-sans-mono.conf<br>
+  [18]  20-unhint-small-dejavu-sans.conf<br>
+  [19]  20-unhint-small-dejavu-serif.conf<br>
+  <font color="yellow">[20]  20-unhint-small-vera.conf *</font><br>
+  [21]  25-unhint-nonlatin.conf<br>
+  <font color="yellow">[22]  30-metric-aliases.conf *</font><br>
+  <font color="yellow">[23]  30-urw-aliases.conf *</font><br>
+  <font color="yellow">[24]  40-nonlatin.conf *</font><br>
+  <font color="yellow">[25]  42-luxi-mono.conf *</font><br>
+  <font color="yellow">[26]  45-latin.conf *</font><br>
+  <font color="yellow">[27]  49-sansserif.conf *</font><br>
+  <font color="yellow">[28]  50-user.conf *</font><br>
+  <font color="yellow">[29]  51-local.conf *</font><br>
+  [30]  52-infinality.conf<br>
+  [31]  57-dejavu-sans-mono.conf<br>
+  [32]  57-dejavu-sans.conf<br>
+  [33]  57-dejavu-serif.conf<br>
+  <font color="yellow">[34]  60-latin.conf *</font><br>
+  [35]  60-liberation.conf<br>
+  [36]  62-croscore-arimo.conf<br>
+  [37]  62-croscore-cousine.conf<br>
+  [38]  62-croscore-symbolneu.conf<br>
+  [39]  62-croscore-tinos.conf<br>
+  <font color="yellow">[40]  65-fonts-persian.conf *</font><br>
+  [41]  65-khmer.conf<br>
+  <font color="yellow">[42]  65-nonlatin.conf *</font><br>
+  <font color="yellow">[43]  69-unifont.conf *</font><br>
+  [44]  70-no-bitmaps.conf<br>
+  [45]  70-yes-bitmaps.conf<br>
+  <font color="yellow">[46]  75-yes-terminus.conf *</font><br>
+  <font color="yellow">[47]  80-delicious.conf *</font><br>
+  <font color="yellow">[48]  90-synthetic.conf *</font><br>
+  [49]  99pdftoopvp.conf<br>
+<br>
+# eselect fontconfig enable X<br>
+<br>
+
+# eselect infinality list<br>
+<br>
+Available styles:<br>
+  [1]   debug<br>
+  <font color="yellow">[2]   infinality *</font><br>
+  [3]   linux<br>
+  [4]   nyx<br>
+  [5]   osx<br>
+  [6]   osx2<br>
+  [7]   win7<br>
+  [8]   win98<br>
+  [9]   winxp<br>
+<br>
+# eselect infinality set X<br>
+<br>
+eselect lcdfilter list<br>
+<br>
+
+Available styles:<br>
+  [1]   custom<br>
+  <font color="yellow">[2]   default *</font><br>
+  [3]   infinality<br>
+  [4]   infinality-classic<br>
+  [5]   infinality-nudge<br>
+  [6]   infinality-push<br>
+  [7]   infinality-sharpened<br>
+  [8]   infinality-shove<br>
+  [9]   linux<br>
+  [10]  nyx<br>
+  [11]  osx<br>
+  [12]  ubuntu<br>
+  [13]  vanilla<br>
+  [14]  windows-7<br>
+  [15]  windows-7-light<br>
+  [16]  windows-xp<br>
+  [17]  windows-xp-light<br>
+<br>
+eselect lcdfilter set X<br>
+            </h3>
+        </td>
+</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Arrumando fontes java.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+
+<tr>
+<td>
+<h3 style="font-family:'Courier New'" class="whitetext">
+Adicione ao arquivo:<br>
+<p1>
+# vim /etc/environment<br>
+<br>
+
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=<font color="red">lcd_hrgb</font>'<br>
+    </p1>
+    </h3>
+    </td>
+</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Detectar GPU para acrescentar em VIDEO_CARDS="".</h2>
+<table border="0" bgcolor="black" width="70%">
+<tr>
+<td>
+<h3 style="font-family:'Courier New'" class="whitetext">
+
+# lspci | grep -i VGA<br><br>
+
+00:02.0 VGA compatible controller: Intel Corporation <font color="yellow">3rd Gen</font> Core processor Graphics Controller (rev 09)<br><br>
+O resultado foi uma GPU de 3rd geração. Consulte a tabela no site do gentoo em intel e verifique qual é o drive adequado.<br>
+Consultado o site do gentoo o indicado para o resultado acima será:<br><br>
+<font color="yellow">Gen 3</font>	915G/GM, 945G/GM, G/Q33, Q35, Atom D4xx/D5xx/N4xx/N5xx	 1.4	 No	 No	 No	 No	<font color="red">intel i915</font>
+
+    </h3>
+</td>
+</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Montar Pendrive sem root.</h2>
+<table border="0" bgcolor="black" width="70%">
+    <tr>
+        <td>
+            <h3 style="font-family:'Courier New'" class="whitetext">
+
+                Crie uma pasta em:<br><br>
+
+                $ mkdir /media/pen-usb<br><br>
+
+
+
+                $ sudo vim /etc/fstab<br><br>
+
+                Se adicione ao grupo:<br><br>
+
+                gpasswd -a nomeUsuário plugdev<br><br>
+
+                Edite o fstab:
+
+            </h3>
+        </td>
+    </tr>
+    
+</table>
+
+<table border="0" bgcolor="black" width="70%">
+<tr>
+	<td>
+        <font color="yellow" face="DejaVu Sans Mono" size="4"><strong>/dev/sdb1</strong>
+        <td><font color="yellow" face="DejaVu Sans Mono" size="4"><strong>/media/usb-drive</strong></font> <td><font color="yellow" face="DejaVu Sans Mono" size="4"><strong>vfat</strong></font> <td><font color="yellow" face="DejaVu Sans Mono" size="4"><strong>noauto,user,umask=000</strong></font> <td><font color="yellow" face="DejaVu Sans Mono" size="4"><strong>0 0</strong>
+        </font>
+        </td>
+        </font>
+    </td>
+</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+Auto inicio do Desktop/WM
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<h3 style="font-family:'Courier New'" class="whitetext">
+				sudo emerge x11-misc/lightdm <br><br>
+				sudo vim /etc/conf.d/xdm <br>
+				DISPLAYMANAGER="<font color="#ff0000">lightdm</font>" <br><br>
+				sudo vim /etc/lightdm/lightdm.conf <br>
+				autologin-session=<font color="#ff0000">xmonad</font> <br>
+				autologin-user=<font color="#00afaf">Usuário</font> <br>
+				user-session=<font color="#ff0000">xmonad</font> <br><br>
+				sudo groupadd -r <font color="#ff0000">autologin</font> <br>
+				sudo gpasswd -a <font color="#00afaf">Usuário</font> autologin <br><br>
+				sudo rc-update add xdm default <br>
+				sudo /etc/init.d/xdm start <br><br>
+				<font color="#d75f00">Adicionar ao xmonad.hs:</font> <br><br>
+
+				<font color="#808080">, startupHook = setWMName "LG3D"</font> <font color="#00afaf">
+                + startup <br><br>
+
+				<font color="#808080">Adicione depois de todas as configurações:</font> <br><br>
+
+				<font color="#00afaf">startup :: X() <br>
+				startup = do <br>
+				spawn "numlockx" <br>
+				spawn "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" <br>
+				spawn "xbacklight -set 40" <br>
+				spawn "stalonetray" <br>
+				spawn "feh --bg-scale ~/Imagens/adwaita-night.jpg" <br>
+				spawn "xsetroot -cursor_name left_ptr" <br>
+				</font>
+                </font>
+            </h3>
+		</td>
+	</tr>
+</table>
+
+
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Make.conf de um notebook.</h2>
+
+<table border="0" bgcolor="black" width="70%">
+
+	<tr>
+		<td><h3 style="font-family:'Courier New'" class="whitetext">vim /etc/portage/make.conf<br><br>
+		<font color="blue">CFLAGS</font><font color="white">=</font><font color="cyan">"-march=westmere -O2 -pipe"</font><br>
+		<font color="blue">CXXFLAGS</font><font color="white">=</font><font color="orange">"${CFLAGS}"</font><br>
+		<font color="blue">CHOST</font><font color="white">=</font><font color="cyan">"x86_64-pc-linux-gnu"</font><br>
+            <font color="blue">USE</font><font color="white">=</font><font color="red">"xft gtk gtk3 mozilla networkmanager <font color="pink">-modemmanager</font> intel X alsa cdr db us mp3 mp4 mpeg mmx sse sse2 openal opengl python so    und usb udev wifi bash-completion bindist"</font><br>
+		<font color="blue">VIDEO_CARDS</font><font color="white">=</font><font color="cyan">"intel i965"</font><br>
+		<font color="blue">LINGUAS</font><font color="white">=</font><font color="cyan">"pt_BR.UTF-8 pt_BR.ISO-8859-1 pt_BR pt-BR"</font><br>
+		<font color="blue">MAKEOPTS</font><font color="white">=</font><font color="cyan">"-j4"</font><br>
+		<font color="blue">ACCEPT_LICENSE</font><font color="white">=</font><font color="#336600">"*"</font><br>
+		<font color="#336600">L10N</font><font color="white">=</font><font color="cyan">"pt-BR"</font><br>
+		<font color="blue">PORTDIR</font><font color="white">=</font><font color="cyan">"/usr/portage"</font><br>
+		<font color="blue">DISTDIR</font><font color="white">=</font><font color="orange">"${PORTDIR}/distfiles"</font><br>
+		<font color="blue">PKGDIR</font><font color="white">=</font><font color="orange">"${PORTDIR}/packages"</font><br>
+		<font color="#336600">CPU_FLAGS_X86</font><font color="white">=</font><font color="cyan">"mmx mmxext popcnt sse sse2 sse3 sse4_1 sse4_2 ssse3"</font><br>
+		<font color="blue">INPUT_DEVICES</font><font color="white">=</font><font color="cyan">"synaptics evdev keyboard libinput mouse"</font><br>
+		<font color="gray">#ACCEPT_KEYWORDS</font><font color="gray">=</font><font color="gray">"~amd64"</font><br>
+		<font color="blue">EMERGE_DEFAULT_OPTS</font><font color="white">=</font><font color="cyan">"--autounmask-write y"</font>
+		</h3>
+	</tr>
+</table>
+
+<!--
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font color="white" size="4" face="Monaco, DejaVu Sans Mono">
+			</font>
+		</td>
+	</tr>
+</table>
+ -->
+    </h3>
+      </h3>
+    
+    </font>
+    
+    </center>
+</body>
+</html>
