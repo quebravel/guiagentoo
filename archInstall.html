@@ -191,7 +191,7 @@ Do you want to proceed? (Y/N): Y ↵<br>
     	<tr>
     		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># rm /etc/localtime<br>
                                                                     # ln -s /usr/share/zoneinfo/America/Belem /etc/localtime<br>
-                                                                    # hwclock --systohc --utc<br>
+                                                                    # hwclock --systohc<br>
                                                                     # date</td>
     	</tr>
     </table>
@@ -212,6 +212,16 @@ Do you want to proceed? (Y/N): Y ↵<br>
     	<tr>
     		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># genfstab -U -p /mnt >> /mnt/etc/fstab<br>
                                                                     # cat /mnt/etc/fstab
+                                                                    </td>
+    	</tr>
+    </table>
+<!-- 9.1 -->        
+    <center><h2 style="font-family:Dejavu sans mono, verdana">9.1. Edite o fstab.</h2></center>
+
+    <table border="0" bgcolor="black" width="70%">
+
+    	<tr>
+    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano -w /mnt/etc/fstab
                                                                     </td>
     	</tr>
     </table>
@@ -319,8 +329,12 @@ Server = http://repo.archlinux.fr/$arch</p1>
     <table border="0" bgcolor="black" width="70%">
 
     	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S grub<br>
-                                                                    # grub-install /dev/sda<br>
+    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                                                    # mkdir /mnt/boot<br>
+                                                                    # mount /dev/sda1 /mnt/boot<br>
+                                                                    # pacman -S grub<br>
+                                                                    
+                                                                    # grub-install --target=i386-pc --boot-directory=/mnt/boot /dev/sda<br>
                                                                     # grub-mkconfig -o /boot/grub/grub.cfg</td>
     	</tr>
     </table>

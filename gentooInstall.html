@@ -305,22 +305,6 @@ type="text/css">
 </table>
 
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
-  Edite o make.conf para o seu processador.
-</h2>
-
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-			<font face="Courier New" color="white" size="4">
-				grep -c processor /proc/cpuinfo <br>
-				grep -m1 -A3 "vendor_id" /proc/cpuinfo <br><br>
-				root # nano -w /mnt/gentoo/etc/portage/make.conf <br>
-			</font>
-		</td>
-	</tr>
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">
   Montando pastas de instalação e configuração "não coloque / <br>no final.
 </h2>
 
@@ -358,8 +342,8 @@ type="text/css">
 			<font face="Courier New" color="white" size="4">
 				root # chroot /mnt/gentoo /bin/bash <br>
 				root # source /etc/profile <br>
-				root # export PS1="chroot -] $PS1" <br>
-				chroot -]&emsp;<p1 class="redtext">
+				root # export PS1="(chroot) $PS1" <br>
+				(chroot)&emsp;<p1 class="redtext">
 				livecd <p1 class="orangetext">~ #&emsp;</p1></p1>
 			</font>
 		</td>
@@ -480,12 +464,25 @@ type="text/css">
 					<p1 class="yellowtext">
 					emerge --config sys-libs/timezone-data <br>
 					</p1>
-					cd /
+				    cd / <br>
+                    env-update<br>
+                    source /etc/profile<br>
+                    export PS1="(chroot) $PS1"
 			</font>
 		</td>
 	</tr>
 </table>
-
+<br>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+      		<font face="Courier New" color="cyan" size="4">
+		      emerge -uDN @world
+      		</font>
+		</td>
+	</tr>
+</table>    
+    
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
 	Instalando Vim
 </h2>
@@ -523,12 +520,83 @@ type="text/css">
 						Muito importante escolher UTF-8 para evitar erros de caracteres no terminal.
 						</p1>
 						</p2><br>
-						env-update && source /etc/profile && export PS1="chroot -] $PS1"
+						env-update && source /etc/profile && export PS1="(chroot) $PS1"<br>
+                        emerge -auDN @world
 			</font>
 		</td>
 	</tr>
 </table>
 
+<font color="cyan" face="Monaco, Dejavu Sans Mono" size="5">
+      <br>Configurando o fstab.
+</font>
+<h2>
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Dejavu Sans Mono" color=white size="4">
+				vim /etc/fstab
+			</font>
+		</td>
+	</tr>
+</table>
+<br>
+<table border="0" bgcolor="black" width="70%">
+
+   <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda3</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">none</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">swap</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">sw</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/mnt/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">auto</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noauto,ro</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
+</table>    
+    
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Instalando o kernel.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="yellow" size="4">
+				emerge --ask sys-kernel/gentoo-sources
+			</font>
+		</td>
+	</tr>
+</table>
+
+<font face="Monaco, DejaVu Sans Mono" color="black" size="5">
+  <br>Configurar e construir o kernel<br>
+    automaticamente.<br><br>
+</font>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+            <p1 class="yellowtext">
+            emerge --ask sys-kernel/genkernel
+            </p1><br>
+			genkernel all
+            </font>
+    </td>
+	</tr>
+</table><br>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Edite o make.conf para o seu processador.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="white" size="4">
+				grep -c processor /proc/cpuinfo <br>
+				grep -m1 -A3 "vendor_id" /proc/cpuinfo <br><br>
+				root # nano -w /mnt/gentoo/etc/portage/make.conf <br>
+			</font>
+		</td>
+	</tr>
+</table>    
+    
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
   Editar flag's no "make.conf".
 </h2>
@@ -593,6 +661,7 @@ type="text/css">
   <strong>
     Observação: Para ter os pacotes mais atuais no gentoo adicione a linha:<br><br>
     </strong>
+    </font>    
 <table border="0" bgcolor="black" width="70%">
   <tr>
     <td>
@@ -601,60 +670,6 @@ type="text/css">
       </font>
     </td>
   </tr>
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">
-  Instalando o kernel.
-</h2>
-
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-			<font face="Courier New" color="yellow" size="4">
-				emerge --ask sys-kernel/gentoo-sources
-			</font>
-		</td>
-	</tr>
-</table>
-
-<font face="Monaco, DejaVu Sans Mono" color="black" size="5">
-  <br>Configurar e construir o kernel<br>
-    automaticamente.<br><br>
-</font>
-
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-            <font face="Courier New" color="white" size="4">
-            <p1 class="yellowtext">
-            emerge --ask sys-kernel/genkernel
-            </p1><br>
-			genkernel all
-            </font>
-    </td>
-	</tr>
-</table><br>
-
-<font color="cyan" face="Monaco, Dejavu Sans Mono" size="5">
-      Configurando o fstab.
-</font>
-<h2>
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-			<font face="Courier New" color=white size="4">
-				vim /etc/fstab
-			</font>
-		</td>
-	</tr>
-</table>
-<br>
-<table border="0" bgcolor="black" width="70%">
-
-   <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
-   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
-   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda3</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">none</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">swap</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">sw</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
-   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/mnt/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">auto</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noauto,ro</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
 </table>
 <!--
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
