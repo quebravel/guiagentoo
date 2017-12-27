@@ -142,8 +142,8 @@ type="text/css">
 	<tr>
 		<td>
 			<font face="Courier New" color="white" size="4">
-                root # ifconfig nomePlacaRede up
-            </font>
+                  	 root # ifconfig nomePlacaRede up
+                        </font>
 		</td>
 	</tr>
 </table>
@@ -157,10 +157,10 @@ type="text/css">
 		<td>
 			<font face="Courier New" color="white" size="4">
 				root # date MMDDHHMMAAAA
-            </font><br>
+                        </font><br>
 			<font face="Courier New" color="white" size="4">
 				root # hwclock --systohc<br>
-            </font>
+                        </font>
 		</td>
 	</tr>
 </table>
@@ -506,11 +506,20 @@ type="text/css">
 		<td>
 			<font face="Courier New" color="white" size="4">
 						vim /etc/locale.gen <br>
-						<p1 class="lawngreen">pt_BR.UTF-8 UTF-8
-						</p1><br>
-						<p1 class="lawngreen">pt_BR ISO-8859-1
-						</p1><br><br>
-				        locale-gen <br>
+<table border="0" bgcolor="white" width="100%">
+	<tr>
+		<td>
+			<font face="Courier New" size="4">
+						<font color="green">pt_BR.UTF-8 UTF-8
+						</font><br>
+						<font color="green">pt_BR ISO-8859-1
+						</font><br>
+</font>
+		</td>
+	</tr>
+</table>
+<br>
+						locale-gen <br>
 				        locale -a <br>
 				        eselect locale list <br>
 				        eselect locale set X <br>
@@ -541,45 +550,13 @@ type="text/css">
 	</tr>
 </table>
 <br>
-<table border="0" bgcolor="black" width="70%">
+<table border="0" bgcolor="#262626" width="70%">
 
    <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
    <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
    <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda3</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">none</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">swap</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">sw</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
    <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/mnt/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">auto</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noauto,ro</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
 </table>    
-    
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">
-  Instalando o kernel.
-</h2>
-
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-			<font face="Courier New" color="yellow" size="4">
-				emerge --ask sys-kernel/gentoo-sources
-			</font>
-		</td>
-	</tr>
-</table>
-
-<font face="Monaco, DejaVu Sans Mono" color="black" size="5">
-  <br>Configurar e construir o kernel<br>
-    automaticamente.<br><br>
-</font>
-
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-            <font face="Courier New" color="white" size="4">
-            <p1 class="yellowtext">
-            emerge --ask sys-kernel/genkernel
-            </p1><br>
-			genkernel all
-            </font>
-    </td>
-	</tr>
-</table><br>
 
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
   Edite o make.conf para o seu processador.
@@ -619,20 +596,23 @@ type="text/css">
 <br>
 
 <font size="3" face="Monaco, DejaVu Sans Mono"><strong>Então adicione ao make.conf.</strong></font><br><br>
-<table border="0" bgcolor="black" width="70%">
+<table border="0" bgcolor="#002b36" width="70%">
 	<tr>
 		<td>
            <font face="Courier New" color="white">
              vim /etc/portage/make.conf <br><br>
-		           <p1 class="yellowtext">CFLAGS="-march=core2 -O2 -pipe"</p1><br>
-		           <p1 class="lawngreen">USE="<p1 class="redtext">-qt4 -qt5 -plasma -kde -handbook
-               </p1> networkmanager intel X alsa cdr dbus
-                    mp3 mp4 mpeg mmx sse sse2 openal opengl python sound usb udev wifi zsh-completion bash-completion bindist"
+		           <p1 class="yellowtext">CHOST="x86_64-pc-linux-gnu"</p1><br>
+	     		   <p1 class="yellowtext">CFLAGS="-march=native -O2 -pipe"</p1><br>
+		           <p1 class="yellowtext">CCXFLAGS="${CFLAGS}"</p1><br>
+			   <p1 class="lawngreen">USE="<p1 class="redtext">-modemmanager
+               </p1>
+                    gtk gtk2 bindist"
                </p1><br>
 		            VIDEO_CARDS="vesa <font color="gray">intel amdgpu nvidia virtualbox</font>" <br>
 		            LINGUAS="pt_BR.UTF-8 pt_BR.ISO-8859-1 pt_BR pt-BR" <br>
 		            MAKEOPTS="-j4" <br>
-		            ACCEPT_LICENSE="*" <br>
+			    EMERGE_DEFAULT_OPTS="<font color="#d70000">--autounmask-write=y --with-bdeps=y</font>"<br>
+			    ACCEPT_LICENSE="*" <br>
 		            L10N="pt-BR"
             </font>
           </td>
@@ -671,6 +651,63 @@ type="text/css">
     </td>
   </tr>
 </table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  CPU flags.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="yellow" size="4">
+
+					emerge app-portage/cpuid2cpuflags</p1><br>
+					cpuinfo2cpuflags-x86<br>
+					cpuinfo2cpuflags-x86 >> /etc/portage/make.conf<br>
+					<font color="gray">Apague o primero CPU_FLAGS_X86 da linha do make.conf</font><br>
+					cat /etc/portage/make.conf<br><br>
+                    			<i>
+                        			env-update && source /etc/profile
+					</i><br>
+			</font>
+		</td>
+	</tr>
+</table>
+
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">
+  Instalando o kernel.
+</h2>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+			<font face="Courier New" color="yellow" size="4">
+				emerge --ask sys-kernel/gentoo-sources
+			</font>
+		</td>
+	</tr>
+</table>
+
+<font face="Monaco, DejaVu Sans Mono" color="black" size="5">
+  <br>Configurar e construir o kernel<br>
+    automaticamente.<br><br>
+</font>
+
+<table border="0" bgcolor="black" width="70%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+            <p1 class="yellowtext">
+            emerge --ask sys-kernel/genkernel
+            </p1><br>
+			genkernel all
+            </font>
+    </td>
+	</tr>
+</table><br>
+
+
 <!--
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
   Módulos do kernel <br>
@@ -728,8 +765,16 @@ type="text/css">
 		<td>
             <font face="Courier New" color="white" size="4">
                 vim /etc/conf.d/hostname<br>
-				<p1 class="lawngreen">hostname="nomeDaRede"
-                </p1>
+<table border="0" bgcolor="white" width="100%">
+	<tr>
+		<td>
+            <font face="Courier New" color="white" size="4">
+		<font color="green">hostname="nomeDaRede"
+ 	   </font>    
+        	</td>
+	</tr>
+</table>              
+		</p1>
             </font>    
         </td>
 	</tr>
@@ -784,8 +829,14 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 	   <td>
             <font face="Courier New" color="white" size="4">
                 vim /etc/hosts<br>
-                <p1 class="lawngreen">127.0.0.1	localhost <p1 class="redtext">gentoo</p1></p1>
-            </font>
+		<table border="0" bgcolor="white" width="100%">
+			<tr>
+				<td>
+					<font color="green">127.0.0.1	localhost <p1 class="redtext">gentoo</p1></font>
+            			<td>
+			<tr>	
+		</table>
+	    </font>
         </td>
 	</tr>
 </table>
@@ -813,7 +864,14 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
             <font face="Courier New" color="white" size="4">
 		      vim /etc/rc.conf<br>
 		      vim /etc/conf.d/keymaps<br>
-		      <p1 class="yellowtext">keymap="<p1 class="redtext">br-abnt2</p1>"</p1><br>
+<table border="0" bgcolor="white" width="100%">
+	<tr>
+		<td>
+            		<font face="Courier New" color="green" size="4">
+		      		<font color"green">keymap="<font color="red">br-abnt2</font>"</font><br>
+		</td>
+	</tr>
+</table>      
 		      vim /etc/conf.d/hwclock
             </font>
         </td>
@@ -976,32 +1034,15 @@ lina MAKEOPTS=-jX com o número de <br>processadores. Sendo X o número de proce
 					emerge -aq x11-base/xorg-x11<br>
 					<font color="cyan">emerge -aq x11-drivers/xf86-video-intel</font><br>
 					<font color="red">emerge -aq x11-drivers/xf86-video-amdgpu</font><br>
-					<font color="green">x11-drivers/nvidia-drivers</font><br><br>
+					<font color="green">x11-drivers/nvidia-drivers</font><br>
 					
-					emerge app-portage/cpuid2cpuflags</p1><br>
-					cpuinfo2cpuflags-x86<br>
-					cpuinfo2cpuflags-x86 >> /etc/portage/make.conf<br>
-					<font color="gray">Apague o primero CPU_FLAGS_X86 da linha do make.conf</font><br>
-					cat /etc/portage/make.conf<br><br>
-                    <i>
-                        env-update && source /etc/profile</i>
-                    <br>
+					
             </font>
         </td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Apague o primeiro CPUFlags padrão que esta no arquivo.</h2>
 
-<table border="0" bgcolor="black" width="70%">
-	<tr>
-		<td>
-            <font face="Courier New" color="white" size="4">
-                vim /etc/portage/make.conf
-            </font>
-        </td>
-	</tr>
-</table>
 
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">Aplicativos úteis</h2>
 
