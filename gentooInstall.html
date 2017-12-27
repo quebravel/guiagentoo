@@ -769,7 +769,7 @@ type="text/css">
 	<tr>
 		<td>
             <font face="Courier New" color="white" size="4">
-		<font color="green">hostname="nomeDaRede"
+		    <font color="green">hostname="<font color="red">nomeDaRede</font>"
  	   </font>    
         	</td>
 	</tr>
@@ -793,8 +793,9 @@ type="text/css">
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Iniciando automaticamente a rede durante o boot
-</h2><h3>Se o sistema tem várias interfaces de rede, então os arquivos net.* <br> precisam ser criados assim como fizemos com o
+<font face="Monaco, DejaVu Sans Mono" color="#262626" size="5"><br>Iniciando automaticamente a rede durante o boot
+</font><br>
+<font color="#262626" size="4">Se o sistema tem várias interfaces de rede, então os arquivos net.* <br> precisam ser criados assim como fizemos com o
 net.eth0.<br>
 
 Se após a inicialização do sistema descobrirmos que o nome que <br>usamos para a interface de rede <br>(que está atualmente documentada
@@ -804,12 +805,12 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 2.Crie um novo link simbólico (como /etc/init.d/net.enp0s3).<br>
 3.Remova o link simbólico antigo (rm /etc/init.d/net.eth0).<br>
 4.Adicione o novo ao runlevel default.<br>
-5.Remova o antigo usando rc-update del net.eth0 default.</h3>
-
+5.Remova o antigo usando rc-update del net.eth0 default.
+</font>
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
-            <font face="Courier New" color="white" size="4">
+            <font face="Courier New" color="gray" size="4">
                 cd /etc/init.d<br>
 				ln -s net.lo net.eth0<br>
 				<p1 class="greentext">ou</p1><br>
@@ -969,12 +970,6 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo sudoers e descomente a linha ou...<br>
-<p2 class="orangetext"><p2 class="redtext">#</p2> %wheel ALL=(ALL) ALL</p2><br>
-<font color="highblue">ou logo abaixo de root ALL=(ALL) ALL<br></font>
-<p1 class="orangetext">nomeUsuário ALL=(ALL) ALL</p1>
-</h2>
-
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
@@ -985,7 +980,23 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></h2>
+<table border="0" bgcolor="white" width="70%">
+	<tr>
+		<td>
+			<center> <font face="Courier New" color="black" size="4">
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo sudoers e descomente a linha ou...<br>
+<p2 class="orangetext"><p2 class="redtext">#</p2> %wheel ALL=(ALL) ALL</p2><br>
+<font color="highblue">ou logo abaixo de root ALL=(ALL) ALL<br></font>
+<p1 class="orangetext">nomeUsuário ALL=(ALL) ALL</p1>
+</h2>
+
+				</font></center>
+        </td>
+	</tr>
+</table>
+
+<h2 style="font-family:'Monaco', DejaVu Sans Mono">Entre no arquivo issue e apage os digitos <font color="white"><strong>.\0</strong></font></h2>
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
