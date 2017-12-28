@@ -102,11 +102,72 @@ type="text/css">
     		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># ls /sys/firmware/efi/efivars</td>
     	</tr>
     </table>
-	<h3 style="font-family:Dejavu sans mono, verdana" class="orangetext">Se o diretório não existir, o sistema<br> 
-	pode ser inicializado no modo BIOS.</h3>
-<!-- 3 -->	
-	<center><h2 style="font-family:Dejavu sans mono, verdana">3. Parcionando disco.</h2></center>
+	
+<br>
+	<font color="white" size="5">Se o diretório não existir, o sistema<br> 
+	pode ser inicializado no modo BIOS.</font>
 
+<h2 style="font-family:'Monaco', DejaVu Sans Mono"><br>6. Formatar HD.<br></h2>
+	<h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a BIOS.</font></h3>
+<table border="0" bgcolor="black" width="70%">
+
+<tr>
+<td><h3 style="font-family:'Courier New'" class="whitetext"><font color="red">Old School</font><br><br>
+
+# fdisk /dev/sda<br><br>
+
+<font color="yellow">Partição 1 (boot)</font><br>
+Command (m for help):<font color="orange"> o ↵</font><br> 
+Command (m for help):<font color="orange"> n ↵ </font><br>
+Partition type (default p):<font color="orange"> ↵ </font><br>
+Partition number (1-4, default 1):<font color="orange"> ↵ </font><br>
+First sector:<font color="orange"> ↵ </font><br>
+Last sector:<font color="orange"> +128M ↵ </font><br><br>
+
+<font color="yellow">Partição 2 (swap)</font><br>
+Command (m for help):<font color="orange"> n ↵</font><br>
+Partition type (default p):<font color="orange"> ↵</font><br>
+Partition number (2-4, default 2):<font color="orange"> ↵</font><br>
+First sector:<font color="orange"> ↵</font><br>
+Last sector:<font color="orange"> +2G ↵</font><br>
+Command (m for help):<font color="orange"> t ↵ </font><br>
+Partition number (1,2, default 2):<font color="orange">  ↵</font><br>
+Hex code (type L to list all codes):<font color="orange"> 82 ↵</font><br><br>
+
+<font color="yellow">Root partition</font><br>
+Command (m for help):<font color="orange"> n ↵</font><br>
+Partition type (default p):<font color="orange"> ↵</font><br>
+Partition number (3,4, default 3):<font color="orange"> ↵</font><br>
+First sector:<font color="orange"> ↵</font><br>
+Last sector:<font color="orange"> ↵</font><br><br>
+
+<font color="yellow">Verificando</font><br>
+Command (m for help):<font color="orange"> p</font><br><br>
+
+Disk /dev/sda: 298.1 GiB, 320072933376 bytes, 625142448 sectors<br>
+Units: sectors of 1 * 512 = 512 bytes<br>
+Sector size (logical/physical): 512 bytes / 512 bytes<br>
+I/O size (minimum/optimal): 512 bytes / 512 bytes<br>
+Disklabel type: dos</font><br>
+Disk identifier: 0x82abc9a6<br><br>
+
+Device    Boot     Start       End    Blocks  Id System<br>
+/dev/sda1           2048    264191    131072  83 Linux<br>
+/dev/sda2         264192   4458495   2097152  82 Linux swap / Solaris<br>
+/dev/sda3        4458496 625142447 310341976  83 Linux<br><br>
+
+<font color="yellow">Gravando</font><br>
+
+Command (m for help):<font color="orange"> w ↵</font><br>
+
+
+</td>
+</tr>
+</table>
+
+<!-- 3 -->	
+	<center><h2 style="font-family:Dejavu sans mono, verdana">Parcionando disco GPT e UEFI.</h2></center>
+	<h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a UEFI.</font></h3>
 	<center><table border="0" bgcolor="black" width="70%"></center>
 
     	<tr>
@@ -121,7 +182,7 @@ Command: n ↵<br>
 Partition Number: 1 ↵<br>
 First sector: ↵<br>
 Last sector: +500M ↵<br>
-Hex Code: ef00 ↵ <font color="yellow">(para UEFI)</font><p1 class="yellowtext"> <font color="red">ou</font></p1> ef02 ↵ <p1 class="yellowtext">(para bios)</p1><br><br>
+Hex Code: ef00 ↵ <font color="yellow">(para UEFI)</font><br><br>
 <p1 class="yellowtext">Criar Partição 2 (swap):</p1><br>
 Command: n ↵<br>
 Partition Number: 2 ↵<br>
@@ -145,6 +206,7 @@ Do you want to proceed? (Y/N): Y ↵<br>
 
     	</tr>
     </table>
+
 	<!-- 4 -->	
     <center><h2 style="font-family:Dejavu sans mono, verdana">4. formatando disco.</h2></center>
 
