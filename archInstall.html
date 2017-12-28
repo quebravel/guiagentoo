@@ -388,16 +388,34 @@ Server = http://repo.archlinux.fr/$arch</p1>
 <!-- 19 -->
     <center><h2 style="font-family:Dejavu sans mono, verdana">19. Instalando o grub <p1 class="redtext">(modo BIOS)</p1>.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+<table border="0" bgcolor="black" width="70%">
 
     	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+    		<td>
+                <h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                                                    # pacman -S grub<br>
+                                                                    
+                    # grub-install <font color="gray">--target=i386-pc --boot-directory=/boot</font> /dev/sda<br>
+                                                                    # grub-mkconfig -o /boot/grub/grub.cfg
+                  </h3>
+                </td>
+    	</tr>
+    </table>        
+        <br>
+        <font color="pink" face="Dejavu sans mono" size="4">Caso o grub apresente erro faça esta segunda opção:</font><br><br>
+        
+    <table border="0" bgcolor="#1c1c1c" width="70%">
+
+    	<tr>
+    		<td><font color="#767676" face="Dejavu sans mono" size="3">
                                                                     # mkdir /mnt/boot<br>
                                                                     # mount /dev/sda1 /mnt/boot<br>
                                                                     # pacman -S grub<br>
                                                                     
                                                                     # grub-install --target=i386-pc --boot-directory=/mnt/boot /dev/sda<br>
-                                                                    # grub-mkconfig -o /boot/grub/grub.cfg</td>
+                                                                    # grub-mkconfig -o /boot/grub/grub.cfg
+                </font>
+                </td>
     	</tr>
     </table>
 <!-- 20 -->
@@ -407,9 +425,9 @@ Server = http://repo.archlinux.fr/$arch</p1>
 
     	<tr>
     		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S grub-efi-x86_64 efibootmgr<br>
-        	# mkdir /mnt/boot<br>
-		# mount /dev/sda1 /mnt/boot<br>
-		# grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=BOOT --recheck<br>
+        	<font color="#767676"># mkdir /mnt/boot<br>
+                # mount /dev/sda1 /mnt/boot</font><br>
+                # grub-install --target=x86_64-efi --efi-directory=<font color="#767676">/mnt</font>/boot --bootloader-id=BOOT --recheck<br>
 		# grub-mkconfig -o /boot/grub/grub.cfg</td>
     	</tr>
     </table>
