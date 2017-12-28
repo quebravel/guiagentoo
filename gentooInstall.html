@@ -575,7 +575,7 @@ type="text/css">
 </table>    
     
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
-  Editar flag's no "make.conf".
+  Editar flag's no "make.conf" antes de compilar o kernel.
 </h2>
 
     <font size="3" face="Monaco, DejaVu Sans Mono"><strong>Dica para configurar o processador corretamente na linha CFLAGS.</strong></font><br>
@@ -608,10 +608,11 @@ type="text/css">
                </p1>
                     gtk gtk2 bindist"
                </p1><br>
-		            VIDEO_CARDS="vesa <font color="gray">intel amdgpu nvidia virtualbox</font>" <br>
-		            LINGUAS="pt_BR.UTF-8 pt_BR.ISO-8859-1 pt_BR pt-BR" <br>
+	                    INPUT_DEVICES="<font color="yellow">evdev keyboard synaptics mouse</font>"<br>
+	                    VIDEO_CARDS="vesa <font color="gray">intel amdgpu nvidia virtualbox</font>" <br>
+			    LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="yellow">pt_BR.ISO-8859-1</font> <font color="orange">pt_BR</font> <font color="cyan">pt-BR</font>" <br>
 		            MAKEOPTS="-j4" <br>
-			    EMERGE_DEFAULT_OPTS="<font color="#d70000">--autounmask-write=y --with-bdeps=y</font>"<br>
+			    EMERGE_DEFAULT_OPTS="<font color="hotpink">--autounmask-write=y --with-bdeps=y</font>"<br>
 			    ACCEPT_LICENSE="*" <br>
 		            L10N="pt-BR"
             </font>
