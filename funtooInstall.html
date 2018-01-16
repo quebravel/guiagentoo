@@ -219,7 +219,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">Modo BIOS </font># <font color="#00ff00"><strong>mkfs.ext2</strong></font> /dev/sda1<br>
-													<font color="blue">Modo UEFI </font># <font color="#3399ff"><strong>mkfs.fat</strong></font> -F 32 /dev/sda2</td>
+													<font color="blue">Modo UEFI </font># <font color="#3399ff"><strong>mkfs.fat</strong></font> -F 32 /dev/sda1</td>
 </tr>
 </table>
 
@@ -250,9 +250,9 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Dejavu Sans Mono size="4" color="#ffffff">
-# <font color="#00ff00"><strong>mkdir</strong></font> /mnt/funtoo<br>
+# <font color="#3399ff"><strong>mkdir</strong></font> /mnt/funtoo<br>
 # <font color="#00ff00"><strong>mount</strong></font> /dev/sda3 /mnt/funtoo<br>
-# <font color="#00ff00"><strong>mkdir</strong></font> /mnt/funtoo/boot<br>
+# <font color="#3399ff"><strong>mkdir</strong></font> /mnt/funtoo/boot<br>
 # <font color="#00ff00"><strong>mount</strong></font> /dev/sda1 /mnt/funtoo/boot<br>
 </td>
 </tr>
@@ -281,8 +281,8 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 # <font color="#00ff00"><strong>cd</strong></font> <font color="#3399ff"><strong>/mnt/funtoo</strong></font><br>
 <font color="gray">procure o stage3 de acordo com o seu processador</font><br>
 # <font color="#00ff00"><strong>elinks</strong></font> https://www.funtoo.org/Subarches<br>
-<font color="gray">ou por wget</font><br>
-# <font color="#00ff00"><strong>wget</strong></font> http://build.funtoo.org/funtoo-current/x86-64bit/<font color="red">generic_64</font>/stage3-latest.tar.xz
+<font color="gray">ou por procure no site abaixo caso não esteja disponivel:</font><br>
+# <font color="#00ff00"><strong>elinks</strong></font> http://build.funtoo.org/funtoo-current/x86-64bit/
 </td>
 </tr>
 </table>
@@ -344,10 +344,63 @@ testar<br>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano</strong></font> -w /etc/fstab</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/fstab</td>
 	</tr>
 </table>
 
+<br>
+<font face="Dejavu Sans Mono" size="4" color="#ffffff">Editar flag's no "make.conf".</strong></font><br><br>
+<font face="DejaVu Sans Mono" size="4" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+	<tr>
+		<td>
+			<font face="DejaVu Sans Mono" size="4" color="white">
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
+		</td>
+	</tr>
+</table><br>
+
+<table border="0" bgcolor="black" width="80%">
+	<tr>
+        <td><font face="Dejavu sans mono" size="4" color="black"><font color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.confi</font><br>
+                <br>
+                <table bgcolor="white">
+                    <tr>
+                        <td>
+		VIDEO_CARDS="<font color="gray">vesa</font>/<font color="blue">intel i915</font>/<font color="red">radeon</font>/<font color="green">nvidia</font>/<font color="orange">virtualbox</font>"<br>
+		USE="<font color="green">nls bindist infinality introspection lua clipboard imlib jemalloc luajit nvimpager tui X opengl acpi alsa 
+            dbus ffmpeg gif git java jpeg jpeg2k mms mozilla mp3 mp4 mpeg mplayer networkmanager <font color="#ff0066">-modemmanager</font> pdf png
+		pulseaudio python raw ruby samba sound tiff truetype udev udisks upower usb wifi xft ncurses bzip2 haskell"<br>
+            </font>
+            LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="purple">pt_BR.ISO-8859-1</font> <font color="blue">pt_BR pt-BR</font>"<br>
+		L10N="<font color="orange">pt-BR</font>"<br>
+		EMERGE_DEFAULT_OPTS="<font color="orange">--autounmask-write=y --with-bdeps=y</font>"<br>
+        MAKEOPTS="<font color="red">-j4"</font> <br>
+        ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
+                            </td>
+                        </tr>
+              </table>
+        </td>
+	</tr>
+</table>
+
+<br><font face="Dejavu Sans Mono" size="5"><strong>26. Sicronizando e atualizando.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td>
+			<font face="Dejavu Sans Mono" color="white">
+				
+					
+<font color="red">(chroot)</font> # <font color="00ff00"><strong>ego</font></strong> sync<br>
+<font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
+					
+				
+			</font>
+		</td>
+	</tr>
 </table>
 
 <br><font face="Dejavu Sans Mono" size="5"><strong>20. Hora local.</strong></font><br><br>
@@ -376,7 +429,7 @@ testar<br>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/locale.gen<br><br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/locale.gen<br><br>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
@@ -388,61 +441,26 @@ testar<br>
                 <br>
 				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>locale-gen</strong></font><br>
 				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>locale</strong></font> -a<br>
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> locale list<br>
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> locale set X<br><br>
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> <font color="gray">eselect</font> locale list<br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> <font color="gray">eselect</font> locale set X<br><br>
 				<p2 class="orangetext">Sendo X a coluna que contenha pt_BR.utf8 <p1 class="redtext">Muito 
 importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br>
 
 	</tr>
 </table>
-<br>
-<font face="Dejavu Sans Mono" size="4" color="#ffffff">Editar flag's no "make.conf".</strong></font><br><br>
-<font face="DejaVu Sans Mono" size="4" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
 
-<table border="0" bgcolor="black" width="80%">
-	<tr>
-		<td>
-			<font face="DejaVu Sans Mono" size="4" color="white">
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
-		</td>
-	</tr>
-</table><br>
-
-<table border="0" bgcolor="black" width="80%">
-	<tr>
-        <td><font face="Dejavu sans mono" size="4" color="black"><font color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/portage/make.confi</font><br>
-                <br>
-                <table bgcolor="white">
-                    <tr>
-                        <td>
-		VIDEO_CARDS="<font color="gray">vesa</font>/<font color="blue">intel i915</font>/<font color="red">radeon</font>/<font color="green">nvidia</font>/<font color="orange">virtualbox</font>"<br>
-		USE="<font color="green">nls bindist infinality introspection lua clipboard imlib jemalloc luajit nvimpager tui X opengl acpi alsa 
-            dbus ffmpeg gif git java jpeg jpeg2k mms mozilla mp3 mp4 mpeg mplayer networkmanager <font color="#ff0066">-modemmanager</font> pdf png
-		pulseaudio python raw ruby samba sound tiff truetype udev udisks upower usb webkit wifi xft"<br>
-            </font>
-            LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="purple">pt_BR.ISO-8859-1</font> <font color="blue">pt_BR pt-BR</font>"<br>
-		L10N="<font color="orange">pt-BR</font>"<br>
-		EMERGE_DEFAULT_OPTS="<font color="orange">--autounmask-write=y --with-bdeps=y</font>"<br>
-        MAKEOPTS="<font color="red">-j4"</font> <br>
-        ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
-                            </td>
-                        </tr>
-              </table>
-        </td>
-	</tr>
-</table>
 
 <br><font face="Dejavu Sans Mono" size="5"><strong>23. Configuração boot/keymaps.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
-</font><font size="3" face="DejaVu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra 
-/etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.</font><br></h3>
+</font><font size="3" face="DejaVu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra
+/etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.</font><br></font>
 	<tr>
         <td>
             <font face="DejaVu Sans Mono" color="white" size="4">
-                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/hwclock <br>
-                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/rc.conf <br>
-                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/keymaps
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hwclock <br>
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/rc.conf <br>
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/keymaps
             </font><br><br>
                     <table bgcolor="white" width="100%">
                         <tr>
@@ -522,19 +540,14 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 
-<br><font face="Dejavu Sans Mono" size="5"><strong>26. Sicronizando e atualizando.</strong></font><br><br>
+<br><font face="Dejavu Sans Mono" size="5"><strong>26. Atualizando mudanças.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
 		<td>
 			<font face="Dejavu Sans Mono" color="white">
-				
-					
-<font color="red">(chroot)</font> # <font color="00ff00"><strong>ego</font></strong> sync<br>
 <font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
-					
-				
 			</font>
 		</td>
 	</tr>
@@ -553,7 +566,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <font face="DejaVu Sans Mono" size="3" color="white">Adicione: genkernel depois de: default "Funtoo Linux <font color="red">########</font>"</font><br><br>
 	<tr>
 		<td>
-			<font face="DejaVu Sans Mono" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/boot.conf</font><br><br>
+			<font face="DejaVu Sans Mono" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/boot.conf</font><br><br>
 <table bgcolor="white" width="100%">
     <tr>
         <td>
@@ -622,7 +635,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 		<font color="red">(chroot)</font> # rc-update add wicd default<br>
 		<font color="red">(chroot)</font> # rc-update del net.eth0<br>
 		<font color="red">(chroot)</font> # service wicd start<br>
-		<font color="red">(chroot)</font> # vim /etc/rc.conf<br><br>
+		<font color="red">(chroot)</font> # nano -w /etc/rc.conf<br><br>
 		<font color="gray">Adicione a linha</font><br>
 		rc_hotplug="font color="red">!net.eth0</font>"<br>
 		<font color="gray">Alguns comandos:<br>
@@ -664,7 +677,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-        <td><font color="white" face="Dejavu sans mono"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/hostname</font><br><br>
+        <td><font color="white" face="Dejavu sans mono"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hostname</font><br><br>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
@@ -699,7 +712,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-        <td><font face="Dejavu sans mono" color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/hosts<br><br></font>
+        <td><font face="Dejavu sans mono" color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/hosts<br><br></font>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
@@ -756,7 +769,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 		<td>
 			<font face="Dejavu sans mono" color="white">
                 <font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
-			<font color="yellow"><font color="00ff00"><strong>vim</strong></font> /etc/sudoers</font>
+			<font color="yellow"><font color="00ff00"><strong>nano -w</strong></font> /etc/sudoers</font>
             <font color="gray">Entre no arquivo sudoers e descomente a linha</font><br><br>
             <table bgcolor="white" width="100%">
                 <tr>
@@ -779,7 +792,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="#00ff00"><strong>vim</strong></font> /etc/issue</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="#00ff00"><strong>nano -w</strong></font> /etc/issue</td>
 	</tr>
 </table>
 
@@ -813,7 +826,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Dejavu Sans Mono size="4" color="#ffffff">
-  <font color="#00ff00"><strong>vim</strong></font> /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
+  <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
  
  <font color="yellow">emerge -aq media-sound/pulseaudio<br>
  media-sound/alsa-utils</font><br>
