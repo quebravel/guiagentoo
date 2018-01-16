@@ -1,14 +1,14 @@
 <!--
-					     _______               ____                     
-					    /MMMMMMM/             /MMMM| _____  _____       
-					 __/M.MMM.M/_____________|M.MMM|/MMMMM\/MMMMM\      
-					|MMMMMM'MMMMMMMMMMMMMMMMMMMMMMMMM.MMMM..MMMM.MM\    
-					|MMMMMMMMM/mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM|   
-					|MMMMMMMMMMMMMMMMMMMMMMMM\MMMMMMMMMMMMMMMMMMMMMM|   
-					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'MMMM''MMMM'MM/    
-					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMMM\MMMMM/\MMMMM/      
-					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMM'M|                  
-					  |MMMMMMMMMMMMMMMMMMMMMMMM MM'M/                   
+					     _______               ____
+					    /MMMMMMM/             /MMMM| _____  _____
+					 __/M.MMM.M/_____________|M.MMM|/MMMMM\/MMMMM\ 
+					|MMMMMM'MMMMMMMMMMMMMMMMMMMMMMMMM.MMMM..MMMM.MM\ 
+					|MMMMMMMMM/mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM|
+					|MMMMMMMMMMMMMMMMMMMMMMMM\MMMMMMMMMMMMMMMMMMMMMM|
+					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM'MMMM''MMMM'MM/
+					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMMM\MMMMM/\MMMMM/
+					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMM'M|
+					  |MMMMMMMMMMMMMMMMMMMMMMMM MM'M/
 					  |MMMMMMMMMMMMMMMMMMMMMMMMMMMM/
 -->
 <!DOCTYPE html>
@@ -41,88 +41,92 @@ type="text/css">
         {
           /* position:absolute;
            top:50%;
-           left:50%; 
+           left:50%;
 */
             /*Alternatively you could use: */
-           
+
               position: fixed;
                bottom: 50%;
                right: 50%;
-           
+
         }
 </style>
     	<title>
-		Funtoo Instalação		
+		Funtoo Instalação
 	</title>
 <!--	<link rel="icon" href="https://www.funtoo.org/images/thumb/f/ff/Fwiki.png/120px-Fwiki.png" type="image/x-icon" /> -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body  bgcolor= 6600ff>
 <!-- "A901DB"> "ECCEF5"> -->
-
-		<center><font size="13" style="font-family:'Monaco', DejaVu Sans Mono" class="greentext">GUIA RAPIDO</font></center>
-		<center><font size="23" style="font-family:'Monaco', DejaVu Sans Mono" class="orangetext">INSTALAR FUNTOO!</font></center>
-
-<center><font face="Dejavu sans mono" size="5"><strong>0. Baixando instalador SYSTEM RESCUE CD.</strong></font><br><br>
+<table border="0" bgcolor="#ff66ff" width="100%">
+<tr>
+    <td>
+		<center><font size="13" face="DejaVu Sans Mono" color="#ff0066">GUIA RAPIDO</font></center>
+		<center><font size="23" face="DejaVu Sans Mono" color="#ff0066">INSTALAR FUNTOO!</font></center>
+	</td>
+</tr>
+</table>
+<center><br><font face="Dejavu Sans Mono" size="5"><strong>0. Baixando instalador SYSTEM RESCUE CD.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
     <td><font face="DejaVu Sans Mono" color="white" size="4">http://www.system-rescue-cd.org/Download/</font></td>
 </tr>
 </table></center>
 
-<center><h2 style="font-family:'Monaco', DejaVu Sans Mono">1. Mostrar a interface da rede.</h2></center>
+<center><br><font face="Dejavu Sans Mono" size="5"><strong>1. Mostrar a interface da rede.</strong></font><br><br></center>
 <center><table border="0" bgcolor="black" width="80%"></center>
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"><p1 class="redtext">livecd </p1><p1 class="orangetext">
-~ #&emsp;</p1>ip -s -c -h a<br>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+# <font color="#00ff00"><strong>ip</strong></font> -s -c -h a<br>
 </h3></td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">2. Carregar teclado.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>2. Carregar teclado.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># loadkeys br-abnt2</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>loadkeys</strong></font> br-abnt2</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">3. Configurar rede</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>3. Configurar rede</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># net-setup nomePlacaRede</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>net-setup</strong></font> nomePlacaRede</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">4. Se for preciso levante a placa de rede com:</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>4. Se for preciso levante a placa de rede com:</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># ifconfig nomePlacaRede up</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>ifconfig</strong></font> nomePlacaRede up</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">5. Configurar data MÊS DIA HORA MINUTO ANO com:</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>5. Configurar data MÊS DIA HORA MINUTO ANO com:</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># date MMDDHHMMAAAA<br>
-# hwclock --systohc</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>date</strong></font> MMDDHHMMAAAA<br>
+# <font color="#00ff00"><strong>hwclock</strong></font> --systohc</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">6. Formatar HD.<br></h2>
-	<h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a BIOS. Então, siga a forma old-school e use o boot por BIOS</font></h3>
+<br><font face="Dejavu Sans Mono" size="5"><strong>6. Formatar HD.<br></strong></font><br><br>
+	</font><font size="3" face="DejaVu Sans Mono" color="orange">Usando a BIOS. Então, siga a forma old-school e use o boot por BIOS</font><br>
 <table border="0" bgcolor="black" width="80%">
-<h3><font size="3" face="DejaVu Sans Mono">Qual é a Grande Diferença entre Old School e New School?: É o seguinte. Se você fizer particionamento old-school MBR, <br>
+</font><font size="3" face="DejaVu Sans Mono">Qual é a Grande Diferença entre Old School e New School?: É o seguinte. Se você fizer particionamento old-school MBR, <br>
 sua partição /boot vai ser um sistema de arquivos ext2, e você vai usar fdisk para criar suas partições MBR. Se você seguir<br>
  o particionamento new-school GPT e boot por UEFI, sua partição /boot vai ter o sistema de arquivos vfat, pois isto é o que<br>
  o UEFI consegue ler, e você vai usar gdisk para criar suas partições GPT. E você vai instalar o GRUB de uma forma um pouco<br>
  diferente. São basicamente essas as diferenças, caso você estivesse curioso</font></h3>
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"><font color="red">Old School</font><br><br>
-# sgdisk --zap-all /dev/sda<br>
-# fdisk /dev/sda<br><br>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">Old School</font><br><br>
+# <font color="#00ff00"><strong>sgdisk --zap-all</strong></font> /dev/sda<br>
+# <font color="#00ff00"><strong>fdisk</strong></font> /dev/sda<br><br>
 
 <font color="yellow">Partição 1 (boot)</font><br>
-Command (m for help):<font color="orange"> o ↵</font><br> 
+Command (m for help):<font color="orange"> o ↵</font><br>
 Command (m for help):<font color="orange"> n ↵ </font><br>
 Partition type (default p):<font color="orange"> ↵ </font><br>
 Partition number (1-4, default 1):<font color="orange"> ↵ </font><br>
@@ -153,7 +157,7 @@ Disk /dev/sda: 298.1 GiB, 320072933376 bytes, 625142448 sectors<br>
 Units: sectors of 1 * 512 = 512 bytes<br>
 Sector size (logical/physical): 512 bytes / 512 bytes<br>
 I/O size (minimum/optimal): 512 bytes / 512 bytes<br>
-Disklabel type: dos</font><br>
+Disklabel type: dos<br>
 Disk identifier: 0x82abc9a6<br><br>
 
 Device    Boot     Start       End    Blocks  Id System<br>
@@ -165,7 +169,7 @@ Device    Boot     Start       End    Blocks  Id System<br>
 
 Command (m for help):<font color="orange"> w ↵</font><br>
 
-
+</font>
 </td>
 </tr>
 </table>
@@ -173,10 +177,10 @@ Command (m for help):<font color="orange"> w ↵</font><br>
 <br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
 <font color="blue">New School</font><br><br>
 
-# gdisk /dev/sda<br><br>
+# <font color="#00ff00"><strong>gdisk</strong></font> /dev/sda<br><br>
 <font color="yellow">Criar uma nova tabela de partição vazia</font><br>
 Command:<font color="orange"> o ↵</font><br>
 This option deletes all partitions and creates a new protective MBR.<br>
@@ -211,112 +215,122 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">7. Formantando partição 1 do boot em formato ext2</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>7. Formantando partição 1 do boot em formato ext2</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"><p1 class="yellowtext">Modo BIOS </p1># mkfs.ext2 /dev/sda1<br>
-															<p1 class="yellowtext">Modo UEFI </p1># mkfs.fat -F 32 /dev/sda2</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">Modo BIOS </font># <font color="#00ff00"><strong>mkfs.ext2</strong></font> /dev/sda1<br>
+													<font color="blue">Modo UEFI </font># <font color="#3399ff"><strong>mkfs.fat</strong></font> -F 32 /dev/sda2</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">8. Formantando partição 3 do root em formato ext4 ou xfs</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>8. Formantando partição 3 do root em formato ext4 ou xfs</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># mkfs.ext4 /dev/sda3<br>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>mkfs.ext4</strong></font> /dev/sda3<br>
 	<font color="gray"># mkfs.xfs /dev/sda3</font>
 </td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">9. Formantando partição 2 do swap em formato swap</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>9. Formantando partição 2 do swap em formato swap</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># mkswap /dev/sda2</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>mkswap</strong></font> /dev/sda2</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">10. Ligando swap</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>10. Ligando swap</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># swapon /dev/sda2</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>swapon</strong></font> /dev/sda2</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">11. Montando sistemas de arquivos</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>11. Montando sistemas de arquivos</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-# mkdir /mnt/funtoo<br>
-# mount /dev/sda3 /mnt/funtoo<br>
-# mkdir /mnt/funtoo/boot<br>
-# mount /dev/sda1 /mnt/funtoo/boot<br>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+# <font color="#00ff00"><strong>mkdir</strong></font> /mnt/funtoo<br>
+# <font color="#00ff00"><strong>mount</strong></font> /dev/sda3 /mnt/funtoo<br>
+# <font color="#00ff00"><strong>mkdir</strong></font> /mnt/funtoo/boot<br>
+# <font color="#00ff00"><strong>mount</strong></font> /dev/sda1 /mnt/funtoo/boot<br>
 </td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">12. Instalando Stage 3.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>12. Identificando tipo de processador.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<h3><font size="3" face="DejaVu Sans Mono">Identificando tipo de processador</font></h3>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># gcc -march=native -Q --help=target | grep march</td>
+
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>gcc</strong></font> -march=native -Q --help=target | grep march</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">13. Verifique se a internet esta funcionado.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>13. Verifique se a internet esta funcionado.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># ping  -c3 gentoo.org <br>
-# elinks https://www.funtoo.org/Subarches</td>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>ping</strong></font>  -c3 gentoo.org
+</td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">14. Baixando arquivo tar.xz para instalação.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>14. Baixando stage3.tar.xz para instalação.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+# <font color="#00ff00"><strong>cd</strong></font> <font color="#3399ff"><strong>/mnt/funtoo</strong></font><br>
+<font color="gray">procure o stage3 de acordo com o seu processador</font><br>
+# <font color="#00ff00"><strong>elinks</strong></font> https://www.funtoo.org/Subarches<br>
+<font color="gray">ou por wget</font><br>
+# <font color="#00ff00"><strong>wget</strong></font> http://build.funtoo.org/funtoo-current/x86-64bit/<font color="red">generic_64</font>/stage3-latest.tar.xz
+</td>
+</tr>
+</table>
+
+<br><font face="Dejavu Sans Mono" size="5"><strong>15. Descompactar, use o nome completo.</strong></font><br><br>
+<table border="0" bgcolor="black" width="80%">
+<tr>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff"># <font color="#00ff00"><strong>tar xpf</strong></font> stage3-latest.tar.xz</td>
+</tr>
+</table>
+
+<br><font face="Dejavu Sans Mono" size="5"><strong>16. Copiando DNS.</strong></font><br><br>
+<table border="0" bgcolor="black" width="80%">
+<tr>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+# <font color="#00ff00"><strong>cp -L</strong></font> /etc/resolv.conf /mnt/funtoo/etc/
+</td>
+</tr>
+</table>
+
+<br><font face="Dejavu Sans Mono" size="5"><strong>17. Montando pastas de instalação e configuração "não coloque / <br>no final.</strong></font><br><br>
+<table border="0" bgcolor="black" width="80%">
+<tr>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+testar<br>
+<font color="gray">
 # cd /mnt/funtoo<br>
-# wget http://build.funtoo.org/funtoo-current/x86-64bit/<font color="red">generic_64</font>/stage3-latest.tar.xz
-</td>
-</tr>
-</table>
+# mount -t proc none proc<br>
+# mount --rbind /sys sys<br>
+# mount --rbind /dev dev<br><br>
+</font>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">15. Descompactar, use o nome completo.</h2>
-<table border="0" bgcolor="black" width="80%">
-<tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"># tar xpf stage3-latest.tar.xz</td>
-</tr>
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">16. Copiando DNS.</h2>
-<table border="0" bgcolor="black" width="80%">
-<tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-# cp -L /etc/resolv.conf /mnt/funtoo/etc/
-</td>
-</tr>
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">17. Montando pastas de instalação e configuração "não coloque / <br>no final.</h2>
-<table border="0" bgcolor="black" width="80%">
-<tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-
- # mount -t proc /proc /mnt/funtoo/proc<br>
- # mount --rbind /sys /mnt/funtoo/sys<br>
- # mount --rbind /dev /mnt/funtoo/dev<br>
+ # <font color="#00ff00"><strong>mount</strong></font> -t proc /proc /mnt/funtoo/proc<br>
+ # <font color="#00ff00"><strong>mount</strong></font> --rbind /sys /mnt/funtoo/sys<br>
+ # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev /mnt/funtoo/dev<br>
 
     </td>
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">18. Entrando no novo ambiente.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>18. Entrando no novo ambiente.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
- # chroot /mnt/funtoo /bin/bash<br>
- # export PS1="(chroot) $PS1"<br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+ # <font color="#00ff00"><strong>chroot</strong></font> /mnt/funtoo /bin/bash<br>
+ # <font color="#00ff00"><strong>export</strong></font> PS1="<font color="red">(chroot)</font> $PS1"<br>
 				</td>
 
 	</tr>
@@ -325,91 +339,92 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 </table>
 
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">19. fstab.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>19. fstab.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">(chroot) # nano -w /etc/fstab</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano</strong></font> -w /etc/fstab</td>
 	</tr>
 </table>
 
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">20. Hora local.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>20. Hora local.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">(chroot) # ln -sf /usr/share/zoneinfo/America/Belem /etc/localtime</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>ln -sf</strong></font> /usr/share/zoneinfo/America/Belem /etc/localtime</td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">21. Verificando se o kernel foi instalado.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>21. Verificando se o kernel foi instalado.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-		(chroot) # emerge -s debian-sources</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>emerge</strong></font> -s debian-sources</td>
 	</tr>
 </table>
 
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">22. Configurando locais</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>22. Configurando locais</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">(chroot) # vim /etc/locale.gen<br><br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/locale.gen<br><br>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
-                            <font color="green">pt_BR.UTF-8 UTF-8</font><br>
-				            <font color="green">pt_BR ISO-8859-1</font><br>
+                            <font color="#000000">pt_BR.UTF-8 UTF-8</font><br>
+				            <font color="#000000">pt_BR ISO-8859-1</font><br>
                         </td>
                     </tr>
                 </table>
                 <br>
-				(chroot) # locale-gen<br>
-				(chroot) # locale -a<br>
-				(chroot) # eselect locale list<br>
-				(chroot) # eselect locale set X<br><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>locale-gen</strong></font><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>locale</strong></font> -a<br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> locale list<br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>epro</strong></font> locale set X<br><br>
 				<p2 class="orangetext">Sendo X a coluna que contenha pt_BR.utf8 <p1 class="redtext">Muito 
-importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br><br>
+importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br>
 
 	</tr>
 </table>
-
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono" class="redtext">Editar flag's no "make.conf".</h2>
+<br>
+<font face="Dejavu Sans Mono" size="4" color="#ffffff">Editar flag's no "make.conf".</strong></font><br><br>
 <font face="DejaVu Sans Mono" size="4" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
 
-<table border="0" bgcolor="black" width="80%"><tr><td><font face="DejaVu Sans Mono" size="4" color="white"><strong>
-(chroot) # lspci | grep -i VGA</strong></font></td></tr></table><br>
+<table border="0" bgcolor="black" width="80%">
+	<tr>
+		<td>
+			<font face="DejaVu Sans Mono" size="4" color="white">
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
+		</td>
+	</tr>
+</table><br>
 
 <table border="0" bgcolor="black" width="80%">
-
-
-
 	<tr>
-        <td><font face="Dejavu sans mono" size="4" color="black"><font color="white">(chroot) # vim /etc/portage/make.confi</font><br>
+        <td><font face="Dejavu sans mono" size="4" color="black"><font color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/portage/make.confi</font><br>
                 <br>
                 <table bgcolor="white">
                     <tr>
                         <td>
 		VIDEO_CARDS="<font color="gray">vesa</font>/<font color="blue">intel i915</font>/<font color="red">radeon</font>/<font color="green">nvidia</font>/<font color="orange">virtualbox</font>"<br>
-		USE=<font color="green">"nls bindist infinality introspection lua clipboard imlib jemalloc luajit nvimpager tui X opengl acpi alsa 
+		USE="<font color="green">nls bindist infinality introspection lua clipboard imlib jemalloc luajit nvimpager tui X opengl acpi alsa 
             dbus ffmpeg gif git java jpeg jpeg2k mms mozilla mp3 mp4 mpeg mplayer networkmanager <font color="#ff0066">-modemmanager</font> pdf png
 		pulseaudio python raw ruby samba sound tiff truetype udev udisks upower usb webkit wifi xft"<br>
             </font>
-            LINGUAS="<font color="orange">pt_BR.UTF-8 <font color="purple">pt_BR.ISO-8859-1</font> pt_BR pt-BR</font>"<br>
+            LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="purple">pt_BR.ISO-8859-1</font> <font color="blue">pt_BR pt-BR</font>"<br>
 		L10N="<font color="orange">pt-BR</font>"<br>
 		EMERGE_DEFAULT_OPTS="<font color="orange">--autounmask-write=y --with-bdeps=y</font>"<br>
-        MAKEOPTS="-j4" <br>
-        ACCEPT_LICENSE="*" <br>    
+        MAKEOPTS="<font color="red">-j4"</font> <br>
+        ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
                             </td>
                         </tr>
               </table>
@@ -417,75 +432,128 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">23. Configuração boot/keymaps.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>23. Configuração boot/keymaps.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
-<h3><font size="3" face="DejaVu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra 
+</font><font size="3" face="DejaVu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra 
 /etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.</font><br></h3>
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-		(chroot) # vim /etc/rc.conf<br>
-		(chroot) # vim /etc/conf.d/keymaps<br><br>
-        <table bgcolor="white" width="100%">
-            <tr>
-                <td>
-        <font color="blue">keymap="<p1 class="redtext">br-abnt2</p1>"</font><br>
-        </td>
+        <td>
+            <font face="DejaVu Sans Mono" color="white" size="4">
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/hwclock <br>
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/rc.conf <br>
+                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/keymaps
+            </font><br><br>
+                    <table bgcolor="white" width="100%">
+                        <tr>
+                            <td>
+                                <font>keymap="<font color="red">br-abnt2</font>"
+                                </font><br>
+                            </td>
+                        </tr>
+                    </table>
+       </td>
     </tr>
-    </table>
-    </br>
-        (chroot) # vim /etc/conf.d/hwclock</td>
-	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">24. Instalando CPUFlags.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>24. Instalando CPUFlags.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+		    <td><font face="DejaVu Sans Mono" color="white" size=4>
 
-                <p1 class="yellowtext">emerge -aq gentoolkit<br>
-				<!--emerge --ask --quiet x11-base/xorg-server<br>
-				env-update && source /etc/profile<br> -->
-				emerge cpuid2cpuflags</p1><br>
-				cpuinfo2cpuflags<br>
-				cpuinfo2cpuflags >> /etc/portage/make.conf<br>
-				cat /etc/portage/make.conf</td>
+                    <font color="red">(chroot)</font><font size="4" color="yellow"> emerge -aq app-portage/{<font color="#00ff00"><strong>gentoolkit</strong></font>,<font color="#3399ff"><strong>cpuid2cpuflags</strong></font>}<br>
+				    </font><br>
+		        <font color="red">(chroot)</font> <font color="#00ff00"><strong>cpuid2cpuflags</strong></font><br>
+		        <font color="red">(chroot)</font> <font color="#3399ff"><strong>cpuid2cpuflags</strong></font> >> <font color="#00ff00">/etc/portage/make.conf</font><br>
+                	<font color="red">(chroot)</font> <font color="#00ff00"><strong>cat</strong></font> /etc/portage/make.conf</td>
+                </font>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">25. Sicronizando e atualizando.</h2>
-
+<br><font face="Dejavu Sans Mono" size="5"><strong>25. Configurando com epro.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
-
 	<tr>
 		<td>
-			<font face="Courier New" color="red" size="4">
-				<strong>
-					<br>
-						(chroot) # ego sync<br>
-						(chroot) # emerge -auqDN @world<br>
-					<br>
-				</strong>
+			<font face="Dejavu Sans Mono" color="#ffffff">
+			# <font color="#00ff00"><strong>epro</strong></font> list<br>
+			# <font color="#00ff00"><strong>epro</strong></font> flavor <font color="#9933ff"><strong>workstation</strong></font><br>
+			# <font color="#00ff00"><strong>epro</strong></font> mix-ins<br><br>
+			
+				<table border="0" bgcolor"#c1c1c1" width="100%">
+					<tr>
+						<td>
+=== Enabled Profiles: ===<br>
+<br>
+        arch:  x86-64bit<br>
+       build:  current<br>
+     subarch:  intel64-haswell<br>
+      flavor:  desktop<br>
+     mix-ins:  gnome<br>
+<br>
+<br>
+=== All inherited flavors from desktop flavor: ===<br>
+<br>
+                     workstation (from desktop flavor)<br>
+                            core (from workstation flavor)<br>
+                         minimal (from core flavor)<br>
+<br>
+=== All inherited mix-ins from desktop flavor: ===<br>
+<br>
+                               X (from workstation flavor)<br>
+                           audio (from workstation flavor)<br>
+                             dvd (from workstation flavor)<br>
+                           media (from workstation flavor)<br>
+      mediadevice-audio-consumer (from media mix-in)<br>
+                mediadevice-base (from mediadevice-audio-consumer mix-in)<br>
+      mediadevice-video-consumer (from media mix-in)<br>
+                mediadevice-base (from mediadevice-video-consumer mix-in)<br>
+        mediaformat-audio-common (from media mix-in)<br>
+          mediaformat-gfx-common (from media mix-in)<br>
+        mediaformat-video-common (from media mix-in)<br>
+                  console-extras (from workstation flavor)<br>
+                           print (from desktop flavor)<br>
+						</td>
+					</tr>
+				</table>
 			</font>
 		</td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">26. Bootloader.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>26. Sicronizando e atualizando.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="yellowtext">(chroot) # emerge boot-update</td>
+		<td>
+			<font face="Dejavu Sans Mono" color="white">
+				
+					
+<font color="red">(chroot)</font> # <font color="00ff00"><strong>ego</font></strong> sync<br>
+<font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
+					
+				
+			</font>
+		</td>
+	</tr>
+</table>
+
+<br><font face="Dejavu Sans Mono" size="5"><strong>27. Bootloader.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td><font face="Dejavu Sans Mono" size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>emerge</strong></font> boot-update</font></td>
 	</tr>
 </table>
 <br>
-<table border="0" bgcolor="gray" width="80%">
-<h3><font face="DejaVu Sans Mono" size="3" color="white">Adicione: genkernel depois de: default "Funtoo Linux ____________"</font></h3>
+<table border="0" bgcolor="black" width="80%">
+<font face="DejaVu Sans Mono" size="3" color="white">Adicione: genkernel depois de: default "Funtoo Linux <font color="red">########</font>"</font><br><br>
 	<tr>
-		<td><font face="DejaVu Sans Mono" color="black">(chroot) # vim /etc/boot.conf<br><br>
+		<td>
+			<font face="DejaVu Sans Mono" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/boot.conf</font><br><br>
 <table bgcolor="white" width="100%">
     <tr>
         <td>
@@ -518,45 +586,45 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">27. Grub</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>28. Grub</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
 		<font color="red">Old School (BIOS) MBR</font><br><br>
-		(chroot) # grub-install --target=i386-pc --no-floppy /dev/sda<br>
-<br><font face="DejaVu Sans Mono" size="4" color="white"><strong>(chroot) # boot-update</strong></font></td>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=i386-pc --no-floppy /dev/sda<br>
+<br><font face="DejaVu Sans Mono" size="4" color="white"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br></td>
 	</tr>
 </table>
 <br>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
 		<font color="blue">New School (UEFI) Boot</font><br><br>
-		(chroot) # grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Funtoo Linux [GRUB]" --recheck<br>
-<br><font face="DejaVu Sans Mono" size="4" color="white"><strong>(chroot) # boot-update</strong></font>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=x86_64-efi --efi-directory=/boot --bootloader-id="Funtoo Linux [GRUB]" --recheck<br>
+<br><font face="DejaVu Sans Mono" size="4" color="white"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br>
 		</td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">28. Configurando Internet.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>29. Configurando Internet.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
 		<td>
-		<h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+		<font face="Dejavu Sans Mono size="4" color="#ffffff">
 		<!--
-		(chroot) # emerge -aq linux-firmware<br>
-		(chroot) # emerge -aq net-misc/wicd<br>
-		(chroot) # rc-update add wicd default<br>
-		(chroot) # rc-update del net.eth0<br>
-		(chroot) # service wicd start<br>
-		(chroot) # vim /etc/rc.conf<br><br>
+		<font color="red">(chroot)</font> # emerge -aq linux-firmware<br>
+		<font color="red">(chroot)</font> # emerge -aq net-misc/wicd<br>
+		<font color="red">(chroot)</font> # rc-update add wicd default<br>
+		<font color="red">(chroot)</font> # rc-update del net.eth0<br>
+		<font color="red">(chroot)</font> # service wicd start<br>
+		<font color="red">(chroot)</font> # vim /etc/rc.conf<br><br>
 		<font color="gray">Adicione a linha</font><br>
-		rc_hotplug="<font color="red">!net.eth0</font>"<br>
+		rc_hotplug="font color="red">!net.eth0</font>"<br>
 		<font color="gray">Alguns comandos:<br>
 		wicd-cli -S "Procurar por redes wifi"<br>
 		wicd-cli -y "Interface wifi"<br>
@@ -564,25 +632,24 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 		wicd-cli -c "Conectar a rede selecionada (com rede/sem rede)"</font><br><br>
 		wicd-curces (gerenciador wifi com janela via terminal)
 		
-		(chroot) # rc-update add dhcpcd default
+		<font color="red">(chroot)</font> # rc-update add dhcpcd default
 		-->
 		<font color="yellow">
-		(chroot) # emerge -an net-misc/netifrc<br>
-		(chroot) # emerge -aq app-laptop/laptop-mode-tools<br>
-		(chroot) # emerge -aq sys-kernel/linux-firmware<br><br>
+		<font color="red">(chroot)</font> # emerge -an net-misc/netifrc<br>
+		<font color="red">(chroot)</font> # emerge -aq app-laptop/laptop-mode-tools<br>
+		<font color="red">(chroot)</font> # emerge -aq sys-kernel/linux-firmware<br><br>
 		</font>
-		(chroot) # vim /etc/portage/make.conf (USE="<font color="blue">networkmanager wifi</font> <font color="red">-modemmanager</font>")<br>
 		<font color="yellow">
-		(chroot) # emerge -aq net-misc/networkmanager<br>
+		<font color="red">(chroot)</font> # emerge -aq net-misc/networkmanager<br>
 		</font>
-		(chroot) # dispatch-conf<br>
-		(chroot) # rc-update add NetworkManager default<br>
-		(chroot) # service NetworkManager start<br><br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>dispatch-conf</strong></font><br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add NetworkManager default<br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>service</strong></font> NetworkManager start<br><br>
 		<font color="yellow">
-		(chroot) # emerge -aqn net-misc/dhcpcd<br>
+		<font color="red">(chroot)</font> # emerge -aqn net-misc/dhcpcd<br>
 		</font>
-		(chroot) # rc-update add dhcpcd default<br>
-		(chroot) # nmtui
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add dhcpcd default<br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>nmtui</strong></font>
 		
 		</h3>
 		</td>
@@ -592,12 +659,12 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 <table border="0" bgcolor="darkgray" width="80%">
 
 <br>
-<font color="black" size="5" face="Dejavu sans mono"><strong>29. Informação de host e domínio.</strong></font><br><br>
+<font color="black" size="5" face="Dejavu sans mono"><strong>30. Informação de host e domínio.</strong></font><br><br><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-        <td><font color="white" face="Dejavu sans mono">(chroot) # vim /etc/conf.d/hostname</font><br><br>
+        <td><font color="white" face="Dejavu sans mono"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/conf.d/hostname</font><br><br>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
@@ -610,92 +677,92 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">32. Pacote logs boot.
+<br><font face="Dejavu Sans Mono" size="5"><strong>31. Pacote logs boot.
 	
-	</h2>
+	</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="yellowtext">
+		<td><font face="DejaVu Sans Mono" color="#ffffff">
 		
-		(chroot) # emerge -a app-admin/sysklogd<br>
-		(chroot) # rc-update add sysklogd default<br>
+		<font color="red">(chroot)</font> # <font color="yellow">emerge -a app-admin/sysklogd</font><br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add sysklogd default<br>
+		</font>		
 		</td>
 	</tr>
 </table>
 
-</table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">30. O arquivo hosts.</h2>
-<h3><font size="3" face="DejaVu Sans Mono">Adicione um nome após localhost</font></h3><br>
+<br><font face="Dejavu Sans Mono" size="5"><strong>32. O arquivo hosts.</strong></font><br><br>
+</font>
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-        <td><font face="Dejavu sans mono" color="white">(chroot) # vim /etc/hosts<br><br></font>
+        <td><font face="Dejavu sans mono" color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>vim</strong></font> /etc/hosts<br><br></font>
                 <table bgcolor="white" width="100%">
                     <tr>
                         <td>
-				<font color="black">127.0.0.1	localhost <p1 class="redtext">funtoo</p1></font></td>
+				<font color="black">127.0.0.1	localhost <font color="red">funtoo</font></font></td>
             </td>
             </tr>
             </table>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">31. Adicionando senha para o root.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>33. Adicionando senha para o root.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">(chroot) # passwd</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font></td>
 	</tr>
 </table>
 
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">32. Adicionando um usuário e senha.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>34. Adicionando um usuário e senha.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">(chroot) # useradd -m -G users,wheel,audio,lp,cdrom,portage,usb,video -s /bin/bash nomeUsuario<br>
-				(chroot) # passwd nomeUsuario</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>useradd</strong></font> -m -G <font color="#00ff00"><strong>users</strong></font>,<font color="#ffff00"><strong>wheel</strong></font>,<font color="#00ff00"><strong>audio</strong></font>,<font color="#ffff00"><strong>lp</strong></font>,<font color="#00ff00"><strong>cdrom</strong></font>,<font color="#00ffff"><strong>portage</strong></font>,<font color="#00ff00"><strong>usb</strong></font>,<font color="#ffff00"><strong>video</strong></font> -s /bin/bash <font color="#ff9900"><strong>nomeUsuario</strong></font><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font> nomeUsuario</td>
 
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">33. Saindo do sistema.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>35. Saindo do sistema.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-(chroot) # exit<br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+<font color="red">(chroot)</font> # exit<br>
 # cd<br>
-# umount -R /mnt/funtoo<br>
+# <font color="#00ff00"><strong>umount</strong></font> -R /mnt/funtoo<br>
 # reboot<br>
 				</td>
 	</tr>
 </table>
 
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">34.Instalar sudo<br>
-</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>36.Instalar sudo<br>
+</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
 		<td>
 			<font face="Dejavu sans mono" color="white">
-                emerge -aq app-admin/sudo<br><br>
-			<font color="yellow">vim /etc/sudoers</font>
-            <font color="gray">Entre no arquivo sudoers e descomente a linha</font><br>
+                <font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
+			<font color="yellow"><font color="00ff00"><strong>vim</strong></font> /etc/sudoers</font>
+            <font color="gray">Entre no arquivo sudoers e descomente a linha</font><br><br>
             <table bgcolor="white" width="100%">
                 <tr>
                     <td>
                         <p2 class="redtext">#</p2> <font color="black">%wheel ALL=(ALL) ALL</font><br>
-            <font color="gray">ou logo abaixo de <font color="black">"root ALL=(ALL) ALL"</font>adicione;</font><br></p1>
+            <font color="gray">ou logo abaixo de <font color="black">"root ALL=(ALL) ALL"</font> adicione;</font><br></p1>
 <font color="black">nomeUsuário ALL=(ALL) ALL</font></table>
 </td>
 </tr>
@@ -707,34 +774,33 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">35. Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>37. Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">vim /etc/issue</td>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><font color="#00ff00"><strong>vim</strong></font> /etc/issue</td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">36. Atualizando.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>38. Atualizando.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="yellowtext">emerge -auDN @world</td>
+		<td><font face="DejaVu Sans Mono" color="yellow">emerge -auDN @world</font></td>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">37. Aplicativos úteis.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>39. Aplicativos úteis.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext"><p1 class="yellowtext">
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"><p1 class="yellowtext">
  emerge -aqn
- x11-terms/rxvt-unicode<br>
+ x11-terms/{rxvt-unicode,xfce4-terminal}<br>
  app-editors/mousepad<br>
- x11-terms/xfce4-terminal<br>
  www-client/google-chrome<br>
  dev-vcs/git<br>
  net-misc/wget<br>
@@ -743,11 +809,11 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 </table>
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">38. Controladores de som.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>40. Controladores de som.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
-  vim /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
+  <font color="#00ff00"><strong>vim</strong></font> /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
  
  <font color="yellow">emerge -aq media-sound/pulseaudio<br>
  media-sound/alsa-utils</font><br>
@@ -756,39 +822,39 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
  <!-- media-libs/alsa-lib<br> -->
  /etc/init.d/alsasound status<br>
  /etc/init.d/alsasound start<br>
- rc-update add alsasound boot<br><br>
- alsamixe <font color="gray">Com o alsamixer aberto ative o som tirando-o do Mute com a tecla "M"</font><br> 
+ <font color="#00ff00"><strong>rc-update</strong></font> add alsasound boot<br><br>
+ <font color="#00ff00"><strong>alsamixe</strong></font> <font color="gray">Com o alsamixer aberto ative o som tirando-o do Mute com a tecla "M"</font><br> 
 
  </td> 
 </tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">39. Setando e adicionando ao boot.</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>41. Setando e adicionando ao boot.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
-<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">
+<td><font face="Dejavu Sans Mono size="4" color="#ffffff">
  /etc/init.d/dbus status<br>
  /etc/init.d/dbus start<br>
- rc-update add dbus default<br><br>
+ <font color="#00ff00"><strong>rc-update</strong></font> add dbus default<br><br>
  
  /etc/init.d/consolekit status<br>
  /etc/init.d/consolekit start<br>
- rc-update add consolekit default<br><br>
- shutdown -r now
+ <font color="#00ff00"><strong>rc-update</strong></font> add consolekit default<br><br>
+ <font color="#00ff00"><strong>shutdown</strong></font> -r now
 </td>
 
 </tr>
 </table>
-
-<h1><font color="#00ff00">DICAS EXTRAS</font></h1>
+<br><br>
+<font color="#00ff00" size="6">DICAS EXTRAS</font>
 <!-- novas linas -->
 <!-- configurando teclado -->
-<center><h2 style="font-family:Dejavu sans mono, verdana">Configurando teclado Xorg.</h2></center>
+<center><h2 style="font-family:Dejavu sans mono, verdana">Configurando teclado Xorg.</strong></font><br><br></center>
 
     <table border="0" bgcolor="black" width="80%">
 
         <tr>
-            <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/X11/xorg.conf.d/30-keyboard.conf<br><br>
+            <td><font face="Dejavu Sans Mono size="4" color="#ffffff"># nano /etc/X11/xorg.conf.d/30-keyboard.conf<br><br>
 <font color="ffff00">Section "InputClass"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "keyboard-all"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Driver</font><font color="cc66ff"> "evdev"</font><br>
@@ -799,12 +865,12 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
         </tr>
     </table>
 <!-- tearing -->
- <center><h2 style="font-family:Dejavu sans mono, verdana">Removendo Tearing da placa de video.</h2></center>
+ <center><h2 style="font-family:Dejavu sans mono, verdana">Removendo Tearing da placa de video.</strong></font><br><br></center>
 
     <table border="0" bgcolor="black" width="80%">
 
         <tr>
-		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="#00ffff">Intel</font><br># nano /usr/share/X11/xorg.conf.d/20-intel.conf<br><br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"> <font color="#00ffff">Intel</font><br># nano /usr/share/X11/xorg.conf.d/20-intel.conf<br><br>
 <font color="ffff00">Section "Device"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Intel Graphics"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "intel"<br>
@@ -818,7 +884,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
   <table border="0" bgcolor="black" width="80%">
 
         <tr>
-		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="red">Radeon</font><br># nano  /usr/share/X11/xorg.conf.d/50-device.conf<br><br>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff"> <font color="red">Radeon</font><br># nano  /usr/share/X11/xorg.conf.d/50-device.conf<br><br>
 <font color="ffff00">Section "Device"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Default"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "amdgpu"<br>
@@ -828,11 +894,11 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
         </tr>
     </table>
 
- <center><h2 style="font-family:Dejavu sans mono, verdana">Configurando Touchpad.</h2></center>
+ <center><h2 style="font-family:Dejavu sans mono, verdana">Configurando Touchpad.</strong></font><br><br></center>
 
     <table border="0" bgcolor="black" width="80%">
 
-        <tr><td><h3 style="font-family:Dejavu sans mono" class="whitetext"> # nano /etc/X11/xorg.conf.d/70-synaptics.conf<br><br>
+        <tr><td><font face="Dejavu Sans Mono size="4" color="#ffffff"> # nano /etc/X11/xorg.conf.d/70-synaptics.conf<br><br>
 <font color="ffff00">Section "InputClass"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "touchpad"</font><br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Driver</font><font color="cc66ff"> "synaptics"</font><br>
@@ -859,27 +925,17 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
     
 <!-- fim novas linas -->
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Quando instalar o google chrome e ele fica pedindo<br> senha para entrar no navegador,
- instale coloque uma senha e<br> depois remova usando o aplicativo</h2>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="yellowtext">sudo emerge --ask app-crypt/seahorse</td>
-	</tr>
-</table>
-
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Caso der erro de mask em uma instalação.</h2>
-	<h3> <font size="3" face="DejaVu Sans Mono">Durante a instalação de um pacote, o portage reclama que o pacote só poder ser<br> instalado ser for feita uma 
+<br><font face="Dejavu Sans Mono" size="5"><strong>Caso der erro de mask em uma instalação.</strong></font><br><br>
+	</font> <font size="3" face="DejaVu Sans Mono">Durante a instalação de um pacote, o portage reclama que o pacote só poder ser<br> instalado ser for feita uma 
 alteração de palavra-chave.</font><br>
 	<p2 class="orangetext">the following keyword changes are necessary to proceed:</p2><br>
-	<h3><font size="3" face="DejaVu Sans Mono">required by *** argument<br>
+	</font><font size="3" face="DejaVu Sans Mono">required by *** argument<br>
 	use o comando:</font></h3>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="whitetext">emerge --ask --autounmask-write pacote<br/>
+		<td><font face="Dejavu Sans Mono size="4" color="#ffffff">emerge --ask --autounmask-write pacote<br/>
 
 				<p2 class="orangetext">em seguida </p2><br>
 				dispatch-conf<br>
@@ -888,12 +944,12 @@ alteração de palavra-chave.</font><br>
 	</tr>
 </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">Caminho dos arquivos *.tar.bz2</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>Caminho dos arquivos *.tar.bz2</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="redtext">/var/cache/portage/distfiles</td>
+		<td><font face="DejaVu Sans Mono" color="red">/var/cache/portage/distfiles</font></td>
 	</tr>
 </table>
 
@@ -904,21 +960,22 @@ alteração de palavra-chave.</font><br>
 
 	<tr>
 		<td>
-			<font face="Courier New" size="4" color="white"><strong>(chroot) # cd /etc/init.d<br>
-				(chroot) # ln -s net.lo <font color="red">net.eth0</font><br>
-				<p1 class="greentext">ou</p1><br>
-				<p1 class="greentext">ln -s net.lo net.enp0s3</p1><br>
-				(chroot) # rc-update add <font color="red">net.eth0</font> default
+			<font face="Dejavu Sans Mono" color="white"><font color="red">(chroot)</font> # cd /etc/init.d<br>
+				<font color="red">(chroot)</font> # ln -s net.lo <font color="red">net.eth0</font><br>
+				<font color="gray">ou</font><br>
+				<font color="gray">ln -s net.lo net.enp0s3</font><br>
+				<font color="red">(chroot)</font> # rc-update add <font color="red">net.eth0</font> default
 			</font>
 		</td>
 	</tr>
 </table>
 
 <!--
-<h2 style="font-family:'Monaco', DejaVu Sans Mono">---</h2>
+<br><font face="Dejavu Sans Mono" size="5"><strong>---</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
-		<td><h3 style="font-family:DejaVu Sans Mono" class="yellowtext">---</td>
+			<font face="Dejavu Sans Mono" color="#ffffff">
+			</font>
 	</tr>
 </table>
 -->		
