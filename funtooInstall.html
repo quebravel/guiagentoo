@@ -296,8 +296,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
 # <font color="#3399ff"><b>mkdir</b></font> /mnt/funtoo<br><br>
 # <font color="#00ff00"><b>mount</b></font> /dev/sda3 /mnt/funtoo<br><br>
-# <font color="#3399ff"><b>mkdir</b></font> /mnt/funtoo/boot<br><br>
-# <font color="#00ff00"><b>mount</b></font> /dev/sda1 /mnt/funtoo/boot<br>
+
 </td>
 </tr>
 </table>
@@ -353,14 +352,15 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
 
 # <font color="#00ff00"><strong>cd</strong></font> /mnt/funtoo<br><br>
+<!--
 # <font color="#00ff00"><strong>mount</strong></font> -t proc none proc<br><br>
 # <font color="#3399ff"><strong>mount</strong></font> --rbind /sys sys<br><br>
 # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev dev<br>
-<!--
- # <font color="#00ff00"><strong>mount</strong></font> -t proc /proc /mnt/funtoo/proc<br>
- # <font color="#00ff00"><strong>mount</strong></font> --rbind /sys /mnt/funtoo/sys<br>
- # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev /mnt/funtoo/dev<br>
- -->
+-->
+# <font color="#00ff00"><strong>mount</strong></font> -t proc /proc /mnt/funtoo/proc<br><br>
+# <font color="#00ff00"><strong>mount</strong></font> --rbind /sys /mnt/funtoo/sys<br><br>
+ # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev /mnt/funtoo/dev
+
     </td>
 </tr>
 </table>
@@ -370,20 +370,26 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
+
+ # <font color="#00ff00">env</font> -i HOME=/root TERM=$TERM /bin/chroot . bash -l <br>	
  # <font color="#00ff00"><strong>chroot</strong></font> /mnt/funtoo /bin/bash<br>
  # <font color="#00ff00"><strong>export</strong></font> PS1="<font color="red">(chroot)</font> $PS1"<br>
-				</td>
+ <font color="red">(chroot)</font> # <font color="#00ff00">source</font> /etc/profile <br> 			
+		</td>
 
 	</tr>
 </table>
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">19.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>fstab.</strong></font><br><br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>fstab e montado boot.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/fstab</td>
+		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/fstab<br><br> 
+ <font color="red">(chroot)</font> # <font color="#3399ff"><b>mkdir</b></font> /mnt/funtoo/boot<br><br>
+ <font color="red">(chroot)</font> # <font color="#00ff00"><b>mount</b></font> /dev/sda1 /mnt/funtoo/boot<br>
+ 		</td>
 	</tr>
 </table>
 
@@ -421,28 +427,10 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	</tr>
 </table>
 
+
+
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">21.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Sicronizando e atualizando.</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td>
-			<font face="Lucida Console, Dejavu Sans Mono" color="white">
-				
-					
-<font color="red">(chroot)</font> # <font color="00ff00"><strong>ego</font></strong> sync<br>
-<font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
-					
-				
-			</font>
-		</td>
-	</tr>
-</table>
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">22.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Hora local.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -452,7 +440,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	</tr>
 </table>
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">23.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">22.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Verificando se o kernel foi instalado.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
@@ -461,7 +449,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	</tr>
 </table>
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">24.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">23.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando locais</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -486,7 +474,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">25.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">24.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configuração boot/keymaps.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 </font><font size="3" face="Lucida Console, Dejavu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra
@@ -511,6 +499,24 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">25.</font>
+<font color="black" size="5" face="Lucida Console, Dejavu Sans Mono"><strong>Informação de host e domínio.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+        <td><font color="white" face="Lucida Console, Dejavu Sans Mono"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hostname</font><br><br>
+                <table bgcolor="white" width="100%">
+                    <tr>
+                        <td>
+                            <font face="Lucida Console, Dejavu Sans Mono" color="black">hostname="<font face="Lucida Console, Dejavu Sans Mono" color="red"><i>nomeDaRede</i></font>"</font></td>
+                        </td>
+                    </tr>
+                </table>
+	</tr>
+</table>
+
+<br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">26.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Instalando CPUFlags.</strong></font><br><br>
 
@@ -519,7 +525,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	<tr>
 		    <td><font face="Lucida Console, Dejavu Sans Mono" color="white" size="3">
 
-                    <font color="red">(chroot)</font><font size="3" color="yellow"> emerge -aq app-portage/{<font color="#00ff00"><strong>gentoolkit</strong></font>,<font color="#3399ff"><strong>cpuid2cpuflags</strong></font>}<br>
+                    <font color="red">(chroot)</font><font size="3" color="yellow"> emerge -aq app-portage/<font color="#3399ff"><strong>cpuid2cpuflags</strong></font><br>
 				    </font><br>
 		        <font color="red">(chroot)</font> <font color="#00ff00"><strong>cpuid2cpuflags</strong></font><br>
 		        <font color="red">(chroot)</font> <font color="#3399ff"><strong>cpuid2cpuflags</strong></font> >> <font color="#00ff00">/etc/portage/make.conf</font><br>
@@ -530,51 +536,19 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">27.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando com epro.</strong></font><br><br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Sicronizando e atualizando.</strong></font><br><br>
+
 <table border="0" bgcolor="black" width="80%">
+
 	<tr>
 		<td>
-			<font face="Lucida Console, Dejavu Sans Mono" color="#ffffff">
-			# <font color="#00ff00"><strong>epro</strong></font> list<br>
-			# <font color="#00ff00"><strong>epro</strong></font> flavor <font color="#9933ff"><strong>workstation</strong></font><br>
-			# <font color="#00ff00"><strong>epro</strong></font> mix-ins<br><br>
-			
-				<table border="0" bgcolor"#c1c1c1" width="100%">
-					<tr>
-						<td>
-=== Enabled Profiles: ===<br>
-<br>
-        arch:  x86-64bit<br>
-       build:  current<br>
-     subarch:  intel64-haswell<br>
-      flavor:  desktop<br>
-     mix-ins:  gnome<br>
-<br>
-<br>
-=== All inherited flavors from desktop flavor: ===<br>
-<br>
-                     workstation (from desktop flavor)<br>
-                            core (from workstation flavor)<br>
-                         minimal (from core flavor)<br>
-<br>
-=== All inherited mix-ins from desktop flavor: ===<br>
-<br>
-                               X (from workstation flavor)<br>
-                           audio (from workstation flavor)<br>
-                             dvd (from workstation flavor)<br>
-                           media (from workstation flavor)<br>
-      mediadevice-audio-consumer (from media mix-in)<br>
-                mediadevice-base (from mediadevice-audio-consumer mix-in)<br>
-      mediadevice-video-consumer (from media mix-in)<br>
-                mediadevice-base (from mediadevice-video-consumer mix-in)<br>
-        mediaformat-audio-common (from media mix-in)<br>
-          mediaformat-gfx-common (from media mix-in)<br>
-        mediaformat-video-common (from media mix-in)<br>
-                  console-extras (from workstation flavor)<br>
-                           print (from desktop flavor)<br>
-						</td>
-					</tr>
-				</table>
+			<font face="Lucida Console, Dejavu Sans Mono" color="white">
+				
+					
+<font color="red">(chroot)</font> # <font color="00ff00"><strong>ego</font></strong> sync<br>
+<font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
+					
+				
 			</font>
 		</td>
 	</tr>
@@ -653,23 +627,85 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
 		<font color="red">Old School (BIOS) MBR</font><br><br>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=i386-pc --no-floppy /dev/sda<br>
-<br><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br></td>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=i386-pc --no-floppy <font color="#00ff00"><strong>/dev/sda</strong></font><br>
+<br>
+		<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br>
+		</td>
 	</tr>
 </table>
 <br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
-		<font color="blue">New School (UEFI) Boot</font><br><br>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=x86_64-efi --efi-directory=/boot --bootloader-id="Funtoo Linux [GRUB]" --recheck<br>
-<br><font face="Lucida Console, Dejavu Sans Mono" size="3" color="white"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br>
+		<td>
+			<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
+			<font color="blue">New School (UEFI) Boot</font><br><br>
+			<font color="red">(chroot)</font> # <font color="#00ff00"><strong>grub-install</strong></font> --target=x86_64-efi --efi-directory=/boot --bootloader-id="Funtoo Linux [GRUB]" --recheck<br>
+<br>
+			<font face="Lucida Console, Dejavu Sans Mono" size="3" color="white"><strong><font color="red">(chroot)</font> # boot-update</strong></font><br><br>
+		</td>
+	</tr>
+</table>
+
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">31.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Pacote logs boot.
+	
+													</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td>
+			<font face="Lucida Console, Dejavu Sans Mono" color="#ffffff">
+				<font color="red">(chroot)</font> # <font color="yellow">emerge -a app-admin/sysklogd</font><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add sysklogd default<br>
+			</font>		
 		</td>
 	</tr>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">31.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">32.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Adicionando senha para o root.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font></td>
+	</tr>
+</table>
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">33.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Adicionando um usuário e senha.</strong></font><br><br>
+<table border="0" bgcolor="black" width="80%">
+	<tr>
+		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>useradd</strong></font> -m -G <font color="#00ff00"><strong>users</strong></font>,<font color="#ffff00"><strong>wheel</strong></font>,<font color="#00ff00"><strong>audio</strong></font>,<font color="#ffff00"><strong>lp</strong></font>,<font color="#00ff00"><strong>cdrom</strong></font>,<font color="#00ffff"><strong>portage</strong></font>,<font color="#00ff00"><strong>usb</strong></font>,<font color="#ffff00"><strong>video</strong></font> -s /bin/bash <font color="#ff9900"><strong>nomeUsuario</strong></font><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font> nomeUsuario</td>
+
+	</tr>
+</table>
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">34.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Saindo do sistema.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
+<font color="red">(chroot)</font> # exit<br>
+# cd<br>
+# <font color="#00ff00"><strong>umount</strong></font> -R /mnt/funtoo<br>
+# reboot<br>
+				</td>
+	</tr>
+</table>
+<br>
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">35.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando Internet.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -716,133 +752,33 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 		</td>
 	</tr>
 </table>
-
-<table border="0" bgcolor="darkgray" width="80%">
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">32.</font>
-<font color="black" size="5" face="Lucida Console, Dejavu Sans Mono"><strong>Informação de host e domínio.</strong></font><br><br><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-        <td><font color="white" face="Lucida Console, Dejavu Sans Mono"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hostname</font><br><br>
-                <table bgcolor="white" width="100%">
-                    <tr>
-                        <td>
-                            <font face="Lucida Console, Dejavu Sans Mono" color="black">hostname="<font face="Lucida Console, Dejavu Sans Mono" color="red"><i>nomeDaRede</i></font>"</font></td>
-                        </td>
-                    </tr>
-                </table>
-	</tr>
-</table>
-
-</table>
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">33.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Pacote logs boot.
-	
-													</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td>
-			<font face="Lucida Console, Dejavu Sans Mono" color="#ffffff">
-				<font color="red">(chroot)</font> # <font color="yellow">emerge -a app-admin/sysklogd</font><br>
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add sysklogd default<br>
-			</font>		
-		</td>
-	</tr>
-</table>
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">34.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>O arquivo hosts.</strong></font><br><br>
-</font>
-<table border="0" bgcolor="black" width="80%">
-	<tr>
-        <td>
-			<font face="Lucida Console, Dejavu Sans Mono" color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/hosts<br><br>
-			</font>
-                <table bgcolor="white" width="100%">
-                    <tr>
-                        <td>
-							<font color="black" face="Lucida Console, Dejavu Sans Mono" >127.0.0.1 localhost <font face="Lucida Console, Dejavu Sans Mono" color="red"><i>funtoo</i></font>
-							</font>
-						</td>
-		
-					</tr>
-				</table>
-		</td>
-	</tr>
-</table>
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">35.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Adicionando senha para o root.</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font></td>
-	</tr>
-</table>
-
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5">36.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Adicionando um usuário e senha.</strong></font><br><br>
-<table border="0" bgcolor="black" width="80%">
-	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>useradd</strong></font> -m -G <font color="#00ff00"><strong>users</strong></font>,<font color="#ffff00"><strong>wheel</strong></font>,<font color="#00ff00"><strong>audio</strong></font>,<font color="#ffff00"><strong>lp</strong></font>,<font color="#00ff00"><strong>cdrom</strong></font>,<font color="#00ffff"><strong>portage</strong></font>,<font color="#00ff00"><strong>usb</strong></font>,<font color="#ffff00"><strong>video</strong></font> -s /bin/bash <font color="#ff9900"><strong>nomeUsuario</strong></font><br>
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>passwd</strong></font> nomeUsuario</td>
-
-	</tr>
-</table>
-
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">37.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Saindo do sistema.</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
-<font color="red">(chroot)</font> # exit<br>
-# cd<br>
-# <font color="#00ff00"><strong>umount</strong></font> -R /mnt/funtoo<br>
-# reboot<br>
-				</td>
-	</tr>
-</table>
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">38.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Instalar sudo<br>
 </strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
 		<td>
 			<font face="Lucida Console, Dejavu Sans Mono" color="white">
-                <font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
+                	<font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
 			<font color="yellow"><font color="00ff00"><strong>nano -w</strong></font> /etc/sudoers</font>
-            <font color="gray">Entre no arquivo sudoers e descomente a linha</font><br><br>
-            <table bgcolor="white" width="100%">
-                <tr>
-                    <td>
-                        <p2 class="redtext">#</p2> <font color="black">%wheel ALL=(ALL) ALL</font><br>
-            <font color="gray">ou logo abaixo de <font color="black">"root ALL=(ALL) ALL"</font> adicione;</font><br></p1>
-<font color="black"><i><font color="red">nomeUsuário</font></i> ALL=(ALL) ALL</font></table>
-</td>
-</tr>
-</table>
-			</h3>
+            		<font color="gray">Entre no arquivo sudoers e descomente a linha</font><br><br>
+            		<table bgcolor="white" width="100%">
+                		<tr>
+                    			<td>
+                        			<p2 class="redtext">#</p2> <font color="black">%wheel ALL=(ALL) ALL</font><br>
+            					<font color="gray">ou logo abaixo de <font color="black">"root ALL=(ALL) ALL"</font> adicione;</font><br></p1>
+						<font color="black"><i><font color="red">nomeUsuário</font></i> ALL=(ALL) ALL</font></table>
+					</td>
+				</tr>
+			</table>
+			
 		</td>
 	</tr>
 </table>
-</table>
+
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">39.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">37.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
@@ -851,7 +787,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff">40.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff">38.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff"><ins>Editar flag's no "make.conf"<ins>.</strong></font><br><br>
 <font face="Lucida Console, Dejavu Sans Mono" size="3" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
@@ -885,7 +821,59 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">41.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">39.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando com epro.</strong></font><br><br>
+<table border="0" bgcolor="black" width="80%">
+	<tr>
+		<td>
+			<font face="Lucida Console, Dejavu Sans Mono" color="#ffffff">
+			# <font color="#00ff00"><strong>epro</strong></font> list<br>
+			# <font color="#00ff00"><strong>epro</strong></font> flavor <font color="#9933ff"><strong>workstation</strong></font><br>
+			# <font color="#00ff00"><strong>epro</strong></font> mix-ins<br><br>
+			
+				<table border="0" bgcolor"#c1c1c1" width="100%">
+					<tr>
+						<td>
+=== Enabled Profiles: ===<br>
+<br>
+        arch:  x86-64bit<br>
+       build:  current<br>
+     subarch:  intel64-haswell<br>
+      flavor:  desktop<br>
+     mix-ins:  gnome<br>
+<br>
+<br>
+=== All inherited flavors from desktop flavor: ===<br>
+<br>
+                     workstation (from desktop flavor)<br>
+                            core (from workstation flavor)<br>
+                         minimal (from core flavor)<br>
+<br>
+=== All inherited mix-ins from desktop flavor: ===<br>
+<br>
+                               X (from workstation flavor)<br>
+                           audio (from workstation flavor)<br>
+                             dvd (from workstation flavor)<br>
+                           media (from workstation flavor)<br>
+      mediadevice-audio-consumer (from media mix-in)<br>
+                mediadevice-base (from mediadevice-audio-consumer mix-in)<br>
+      mediadevice-video-consumer (from media mix-in)<br>
+                mediadevice-base (from mediadevice-video-consumer mix-in)<br>
+        mediaformat-audio-common (from media mix-in)<br>
+          mediaformat-gfx-common (from media mix-in)<br>
+        mediaformat-video-common (from media mix-in)<br>
+                  console-extras (from workstation flavor)<br>
+                           print (from desktop flavor)<br>
+						</td>
+					</tr>
+				</table>
+			</font>
+		</td>
+	</tr>
+</table>
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">40.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Atualizando.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -896,7 +884,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">42.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">41.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Aplicativos úteis.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -914,7 +902,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">43.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">42.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Controladores de som.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
@@ -936,7 +924,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">44.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">43.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Setando e adicionando ao boot.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
