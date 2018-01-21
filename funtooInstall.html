@@ -143,7 +143,7 @@ type="text/css">
 <table border="0" bgcolor="#002b36" width="80%">
 <tr>
 <td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff"><font color="red">Old School</font><br><br>
-<font face="Lucida Console, Dejavu Sans Mono" size="3" color="cc0099">
+<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffff00">
 # <font color="#00ff00"><strong>sgdisk --zap-all</strong></font> /dev/sda<br>
 # <font color="#00ff00"><strong>fdisk</strong></font> /dev/sda<br><br>
 </font>
@@ -341,7 +341,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
-# <font color="#00ff00"><strong>cp -L</strong></font> /etc/resolv.conf /mnt/funtoo/etc/
+		# <font color="#00ff00"><strong>cp <!-- -L --></strong></font> /etc/resolv.conf /mnt/funtoo/etc/
 </td>
 </tr>
 </table>
@@ -354,17 +354,17 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
     <font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
 
 # <font color="#00ff00"><strong>cd</strong></font> /mnt/funtoo<br><br>
-        <!--
+        
         # <font color="#00ff00"><strong>mount</strong></font> -t proc none proc<br><br>
         # <font color="#3399ff"><strong>mount</strong></font> --rbind /sys sys<br><br>
         # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev dev<br>
-        -->
+        <!--
         # <font color="#00ff00"><strong>mount</strong></font> --types proc /proc /mnt/funtoo/proc <br><br>
         # <font color="#00ff00"><strong>mount</strong></font> --rbind /sys /mnt/funtoo/sys<br><br>
         # <font color="#00ff00"><strong>mount</strong></font> --make-rslave /mnt/gentoo/sys <br><br>
         # <font color="#00ff00"><strong>mount</strong></font> --rbind /dev /mnt/funtoo/dev <br><br>
-        # <font color="#00ff00"><strong>mount</strong></font> --make-rslave /mnt/gentoo/dev <br><br>
-
+        # <font color="#00ff00"><strong>mount</strong></font> --make-rslave /mnt/gentoo/dev <br>
+	-->
     </td>
 </tr>
 </table>
@@ -375,9 +375,9 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
 
- <!-- # <font color="#00ff00">env</font> -i HOME=/root TERM=$TERM /bin/chroot . bash -l <br> -->	
- # <font color="#00ff00"><strong>chroot</strong></font> /mnt/funtoo /bin/bash<br>
- # <font color="red">livecd</font> # <font color="#00ff00">source</font> /etc/profile <br>
+ # <font color="#00ff00">env</font> -i HOME=/root TERM=$TERM /bin/chroot . bash -l <br>	
+	<!-- # <font color="#00ff00"><strong>chroot</strong></font> /mnt/funtoo /bin/bash<br> 
+	# <font color="red">livecd</font> # <font color="#00ff00">source</font> /etc/profile <br> -->
  # <font color="red">livecd</font> # <font color="#00ff00"><strong>export</strong></font> PS1="<font color="red">(chroot)</font> $PS1"<br>
   			
 		</td>
@@ -393,6 +393,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	<tr>
 		<td>
             <font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/fstab<br> 
+<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>ego</strong></font> sync<br>
  		</td>
 	</tr>
 </table>
