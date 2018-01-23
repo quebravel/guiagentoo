@@ -375,6 +375,7 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
 
+ # <font color="#00ff00"><strong>cd</strong></font> /mnt/funtoo <font color="gray">é importante esta destro da pasta /mnt/funtoo</font><br><br>
  # <font color="#00ff00">env</font> -i HOME=/root TERM=$TERM /bin/chroot . bash -l <br>	
 	<!-- # <font color="#00ff00"><strong>chroot</strong></font> /mnt/funtoo /bin/bash<br> 
 	# <font color="red">livecd</font> # <font color="#00ff00">source</font> /etc/profile <br> -->
@@ -481,15 +482,20 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">24.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configuração boot/keymaps.</strong></font><br><br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configuração <!--boot/-->keymaps.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
-</font><font size="3" face="Lucida Console, Dejavu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra
-/etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.</font><br></font>
+</font>
+	<!--
+	 <font size="3" face="Lucida Console, Dejavu Sans Mono">Gentoo (ao menos quando usa OpenRC) usa /etc/rc.conf para configurar os<br> serviços, início, desligamento do sistema.<br> Abra
+	/etc/rc.conf e aproveite todos os comentários no arquivo.<br> Reveja as configurações e mude onde for necessário.</font><br></font> 
+	-->
 	<tr>
         <td>
             <font face="Lucida Console, Dejavu Sans Mono" color="white" size="3">
-                <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hwclock <br>
+         <!--
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/hwclock <br>
                 <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/rc.conf <br>
+	 -->	
                 <font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/conf.d/keymaps
             </font><br><br>
                     <table bgcolor="white" width="100%">
