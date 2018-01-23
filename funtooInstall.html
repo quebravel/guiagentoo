@@ -475,7 +475,8 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
                 <font color="red">(chroot)</font> # <font color="#00ff00"><strong>eselect</strong></font> locale list<br>
 				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>eselect</strong></font> locale set X<br><br>
 				<p2 class="orangetext">Sendo X a coluna que contenha pt_BR.utf8 <p1 class="redtext">Muito 
-importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br>
+importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br><br>
+<font color="red">(chroot)</font> # <font color="#00ff00"><strong>env-update</strong></font> && source /etc/profile && export PS1="(chroot) $PS1"
 	</tr>
 </table>
 <br>
@@ -541,6 +542,55 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">27.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando Internet.</strong></font><br><br>
+
+<table border="0" bgcolor="black" width="80%">
+
+	<tr>
+		<td>
+		<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
+		<!--
+		<font color="red">(chroot)</font> # emerge -aq linux-firmware<br>
+		<font color="red">(chroot)</font> # emerge -aq net-misc/wicd<br>
+		<font color="red">(chroot)</font> # rc-update add wicd default<br>
+		<font color="red">(chroot)</font> # rc-update del net.eth0<br>
+		<font color="red">(chroot)</font> # service wicd start<br>
+		<font color="red">(chroot)</font> # nano -w /etc/rc.conf<br><br>
+		<font color="gray">Adicione a linha</font><br>
+		rc_hotplug="font color="red">!net.eth0</font>"<br>
+		<font color="gray">Alguns comandos:<br>
+		wicd-cli -S "Procurar por redes wifi"<br>
+		wicd-cli -y "Interface wifi"<br>
+		wicd-cli -z "Interface com cabo"<br>
+		wicd-cli -c "Conectar a rede selecionada (com rede/sem rede)"</font><br><br>
+		wicd-curces (gerenciador wifi com janela via terminal)
+		
+		<font color="red">(chroot)</font> # rc-update add dhcpcd default
+		-->
+		<font color="yellow">
+		<font color="red">(chroot)</font> # emerge -an net-misc/netifrc<br>
+		<font color="red">(chroot)</font> # emerge -aq app-laptop/laptop-mode-tools<br>
+		<font color="red">(chroot)</font> # emerge -aq sys-kernel/linux-firmware<br><br>
+		</font>
+		<font color="yellow">
+		<font color="red">(chroot)</font> # emerge -aq net-misc/networkmanager<br>
+		</font>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>dispatch-conf</strong></font><br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add NetworkManager default<br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-service</strong></font> NetworkManager start<br><br>
+		<font color="yellow">
+		<font color="red">(chroot)</font> # emerge -aqn net-misc/dhcpcd<br>
+		</font>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add dhcpcd default<br>
+		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>nmtui</strong></font>
+		
+		</h3>
+		</td>
+	</tr>
+</table>
+
+<br>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">28.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Sicronizando e atualizando.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
@@ -559,20 +609,6 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	</tr>
 </table>
 
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">28.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Atualizando mudanças.</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td>
-			<font face="Lucida Console, Dejavu Sans Mono" color="white">
-<font color="red">(chroot)</font> <font color="#ffffff">#</font> <font color="00ff00"><strong>emerge</strong></font> <font color="#ffffff">-auqDN</font><font color="#3399ff"> @world</font><br>
-			</font>
-		</td>
-	</tr>
-</table>
 
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">29.</font>
@@ -707,66 +743,17 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 				</td>
 	</tr>
 </table>
-<br>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">35.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando Internet.</strong></font><br><br>
-
-<table border="0" bgcolor="black" width="80%">
-
-	<tr>
-		<td>
-		<font face="Lucida Console, Dejavu Sans Mono" size="3" color="#ffffff">
-		<!--
-		<font color="red">(chroot)</font> # emerge -aq linux-firmware<br>
-		<font color="red">(chroot)</font> # emerge -aq net-misc/wicd<br>
-		<font color="red">(chroot)</font> # rc-update add wicd default<br>
-		<font color="red">(chroot)</font> # rc-update del net.eth0<br>
-		<font color="red">(chroot)</font> # service wicd start<br>
-		<font color="red">(chroot)</font> # nano -w /etc/rc.conf<br><br>
-		<font color="gray">Adicione a linha</font><br>
-		rc_hotplug="font color="red">!net.eth0</font>"<br>
-		<font color="gray">Alguns comandos:<br>
-		wicd-cli -S "Procurar por redes wifi"<br>
-		wicd-cli -y "Interface wifi"<br>
-		wicd-cli -z "Interface com cabo"<br>
-		wicd-cli -c "Conectar a rede selecionada (com rede/sem rede)"</font><br><br>
-		wicd-curces (gerenciador wifi com janela via terminal)
-		
-		<font color="red">(chroot)</font> # rc-update add dhcpcd default
-		-->
-		<font color="yellow">
-		<font color="red">(chroot)</font> # emerge -an net-misc/netifrc<br>
-		<font color="red">(chroot)</font> # emerge -aq app-laptop/laptop-mode-tools<br>
-		<font color="red">(chroot)</font> # emerge -aq sys-kernel/linux-firmware<br><br>
-		</font>
-		<font color="yellow">
-		<font color="red">(chroot)</font> # emerge -aq net-misc/networkmanager<br>
-		</font>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>dispatch-conf</strong></font><br>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add NetworkManager default<br>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>service</strong></font> NetworkManager start<br><br>
-		<font color="yellow">
-		<font color="red">(chroot)</font> # emerge -aqn net-misc/dhcpcd<br>
-		</font>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add dhcpcd default<br>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>nmtui</strong></font>
-		
-		</h3>
-		</td>
-	</tr>
-</table>
-<br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">36.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">35.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Instalar sudo<br>
 </strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
 		<td>
 			<font face="Lucida Console, Dejavu Sans Mono" color="white">
-                	<font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
-			<font color="yellow"><font color="00ff00"><strong>nano -w</strong></font> /etc/sudoers</font>
+                	# <font color="#00ff00"><strong>emerge</strong></font> -aq app-admin/sudo<br><br>
+			# <font color="yellow"><font color="00ff00"><strong>nano -w</strong></font> /etc/sudoers</font>
             		<font color="gray">Entre no arquivo sudoers e descomente a linha</font><br><br>
             		<table bgcolor="white" width="100%">
                 		<tr>
@@ -783,29 +770,29 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">37.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">36.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Entre no arquivo issue e apage os digitos <p2 class="redtext">.\0</p2></strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff"><font color="#00ff00"><strong>nano -w</strong></font> /etc/issue</td>
+		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff"># <font color="#00ff00"><strong>nano -w</strong></font> /etc/issue</td>
 	</tr>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff">38.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff">37.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff"><ins>Editar flag's no "make.conf"<ins>.</strong></font><br><br>
 <font face="Lucida Console, Dejavu Sans Mono" size="3" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
 		<td>
 			<font face="Lucida Console, Dejavu Sans Mono" size="3" color="white">
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
+				 # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
 		</td>
 	</tr>
 </table><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
-        <td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="black"><font color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.confi</font><br>
+        <td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="black"><font color="white"> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.confi</font><br>
                 <br>
                 <table bgcolor="white">
                     <tr>
@@ -826,7 +813,7 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">39.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#000000">38.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Configurando com epro.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
@@ -878,70 +865,73 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">40.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">39.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Atualizando.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
-		<td><font face="Lucida Console, Dejavu Sans Mono" color="yellow">emerge -auDN @world</font></td>
+		<td><font face="Lucida Console, Dejavu Sans Mono" color="yellow"># emerge -auDN @world</font></td>
 	</tr>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">41.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">40.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Aplicativos úteis.</strong></font><br><br>
 
 <table border="0" bgcolor="black" width="80%">
 
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff"><p1 class="yellowtext">
- emerge -aq
- x11-terms/{rxvt-unicode,xfce4-terminal}<br>
- app-editors/mousepad<br>
- www-client/google-chrome<br>
- dev-vcs/git<br>
- net-misc/wget<br>
+ # emerge -aq
+ # x11-terms/{rxvt-unicode,xfce4-terminal}<br>
+ # app-editors/mousepad<br>
+ # www-client/google-chrome<br>
+ # dev-vcs/git<br>
+ # net-misc/wget<br>
  <!--app-i18n/ibus-->
 		</td>
 	</tr>
 </table>
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">42.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">41.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Controladores de som.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
-  <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
+  # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.conf <font color="gray">adicionar em USE="<font color="blue">alsa pulseaudio"</font></font><br><br>
  
- <font color="yellow">emerge -aq media-sound/pulseaudio<br>
- media-sound/alsa-utils</font><br>
+ <font color="yellow"># emerge -aq media-sound/{pulseaudio,alsa-utils}<br>
+ </font>
  <!-- media-plugins/gst-plugins-alsa<br> 
  media-plugins/alsa-plugins<br>
  <!-- media-libs/alsa-lib<br> -->
- /etc/init.d/alsasound status<br>
- /etc/init.d/alsasound start<br>
- <font color="#00ff00"><strong>rc-update</strong></font> add alsasound boot<br><br>
+ # /etc/init.d/alsasound status<br>
+ # /etc/init.d/alsasound start<br>
+ # <font color="#00ff00"><strong>rc-update</strong></font> add alsasound boot<br><br>
+ # <font color="#00ff00"><strong>amixer</strong></font> sset Master unmute<br>
+ # <font color="#00ff00"><strong>amixer</strong></font> sset Master 100%
+ <!--
  <font color="#00ff00"><strong>alsamixe</strong></font> <font color="gray">Com o alsamixer aberto ative o som tirando-o do Mute com a tecla "M"</font><br> 
-
+ -->
  </td> 
 </tr>
 </table>
 
 <br>
-<font face="Lucida Console, Dejavu Sans Mono" size="5">43.</font>
+<font face="Lucida Console, Dejavu Sans Mono" size="5">42.</font>
 <font face="Lucida Console, Dejavu Sans Mono" size="5"><strong>Setando e adicionando ao boot.</strong></font><br><br>
 <table border="0" bgcolor="black" width="80%">
 <tr>
 <td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
- /etc/init.d/dbus status<br>
- /etc/init.d/dbus start<br>
- <font color="#00ff00"><strong>rc-update</strong></font> add dbus default<br><br>
+ # /etc/init.d/dbus status<br>
+ # /etc/init.d/dbus start<br>
+ # <font color="#00ff00"><strong>rc-update</strong></font> add dbus default<br><br>
  
- /etc/init.d/consolekit status<br>
- /etc/init.d/consolekit start<br>
- <font color="#00ff00"><strong>rc-update</strong></font> add consolekit default<br><br>
- <font color="#00ff00"><strong>shutdown</strong></font> -r now
+ # /etc/init.d/consolekit status<br>
+ # /etc/init.d/consolekit start<br>
+ # <font color="#00ff00"><strong>rc-update</strong></font> add consolekit default<br><br>
+ # <font color="#00ff00"><strong>shutdown</strong></font> -r now
 </td>
 </tr>
 </table>
