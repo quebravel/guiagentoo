@@ -61,7 +61,7 @@ type="text/css">
 <tr>
     <td>
 		<center><font size="13" face="Lucida Console, Dejavu Sans Mono" color="#ff0066">GUIA RAPIDO</font></center>
-		<center><font size="23" face="Lucida Console, Dejavu Sans Mono" color="#ff0066">INSTALAR FUNTOO!</font></center>
+		<center><font size="23" face="Lucida Console, Dejavu Sans Mono" color="#ff0066">INSTALAR&#9825;FUNTOO!</font></center>
 	</td>
 </tr>
 </table>
@@ -401,31 +401,26 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
 
 <br>
 <font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff">20.</font>
-<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff"><ins>Editar flag's no "make.conf"<ins>.</strong></font><br><br>
-<font face="Lucida Console, Dejavu Sans Mono" size="3" ><strong>Use o comando abaixo para obter o modelo da GPU:</strong></font><br><br>
-<table border="0" bgcolor="black" width="80%">
-	<tr>
-		<td>
-			<font face="Lucida Console, Dejavu Sans Mono" size="3" color="white">
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>lspci</strong></font> | grep -i VGA</font><br>
-		</td>
-	</tr>
+<font face="Lucida Console, Dejavu Sans Mono" size="5" color="#ffffff"><ins>Editar flag's no "make.conf"<ins>.</strong></font><br>
+
 </table><br>
 <table border="0" bgcolor="black" width="80%">
 	<tr>
         <td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="black"><font color="white"><font color="red">(chroot)</font> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.confi</font><br>
                 <br>
-                <table bgcolor="white">
+                <table bgcolor="white" width="100%">
                     <tr>
                         <td>
-		VIDEO_CARDS="<font color="gray">vesa</font>/<font color="blue">intel i915</font>/<font color="red">radeon</font>/<font color="green">nvidia</font>/<font color="orange">virtualbox</font>"<br>
-		USE="<font color="green">bindist X opengl acpi dbus ffmpeg git jpeg jpeg2k mp3 mp4 mpeg png sound ncurses bzip2 gtk"<br>
+		
+		<font color="red">#</font>USE="<font color="green">X opengl acpi dbus ffmpeg git jpeg jpeg2k mp3 mp4 mpeg png sound"<br>
             </font>
             LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="purple">pt_BR.ISO-8859-1</font> <font color="blue">pt_BR pt-BR</font>"<br>
 		L10N="<font color="orange">pt-BR</font>"<br>
-		EMERGE_DEFAULT_OPTS="<font color="orange">--autounmask-write=y --with-bdeps=y</font>"<br>
-        MAKEOPTS="<font color="red">-j4"</font> <br>
-        ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
+		<font color="red">#</font>EMERGE_DEFAULT_OPTS="<font color="orange">-j4 --ask --load-average=2 --autounmask-write=y --with-bdeps=y</font>"<br>
+		<font color="red">#</font>FEATURES="<font color="orange">preserve-libs collision-protect candy</font>" <br>
+        <font color="red">#</font>MAKEOPTS="<font color="red">-j4"</font> <br>
+		<font color="red">#</font>INPUT_DEVICES="<font color="orange">evdev keyboard mouse synaptics libinput</font>" <br>
+        <font color="red">#</font>ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
                             </td>
                         </tr>
               </table>
@@ -476,8 +471,8 @@ Do you want to proceed? (Y/N):<font color="orange"> Y ↵</font><br>
                 <font color="red">(chroot)</font> # <font color="#00ff00"><strong>eselect</strong></font> locale list<br>
 				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>eselect</strong></font> locale set X<br><br>
 				<p2 class="orangetext">Sendo X a coluna que contenha pt_BR.utf8 <p1 class="redtext">Muito 
-importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br><br>
-<font color="red">(chroot)</font> # <font color="#00ff00"><strong>env-update</strong></font> && source /etc/profile && export PS1="(chroot) $PS1"
+importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2><br>
+<!-- <font color="red">(chroot)</font> # <font color="#00ff00"><strong>env-update</strong></font> && source /etc/profile && export PS1="(chroot) $PS1" -->
 	</tr>
 </table>
 <br>
@@ -574,14 +569,14 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 		<font color="red">(chroot)</font> # rc-update add dhcpcd default
 		-->
 		<font color="yellow">
-		<font color="red">(chroot)</font> # emerge -an net-misc/netifrc<br>
+		<!-- <font color="red">(chroot)</font> # emerge -an net-misc/netifrc<br> -->
 		<font color="red">(chroot)</font> # emerge -aq app-laptop/laptop-mode-tools<br>
 		<font color="red">(chroot)</font> # emerge -aq sys-kernel/linux-firmware<br><br>
 		</font>
 		<font color="yellow">
 		<font color="red">(chroot)</font> # emerge -aq net-misc/networkmanager<br>
 		</font>
-		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>dispatch-conf</strong></font><br>
+		<!-- <font color="red">(chroot)</font> # <font color="#00ff00"><strong>dispatch-conf</strong></font><br> -->
 		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add NetworkManager default<br>
 		<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-service</strong></font> NetworkManager start<br><br>
 		<font color="yellow">
@@ -705,8 +700,8 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	<tr>
 		<td>
 			<font face="Lucida Console, Dejavu Sans Mono" color="#ffffff">
-				<font color="red">(chroot)</font> # <font color="yellow">emerge -a app-admin/sysklogd</font><br>
-				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add sysklogd default<br>
+				<font color="red">(chroot)</font> # <font color="yellow">emerge -a app-admin/metalog</font><br>
+				<font color="red">(chroot)</font> # <font color="#00ff00"><strong>rc-update</strong></font> add metalog default<br>
 			</font>		
 		</td>
 	</tr>
@@ -743,8 +738,8 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	<tr>
 		<td><font face="Lucida Console, Dejavu Sans Mono"size="3" color="#ffffff">
 <font color="red">(chroot)</font> # exit<br>
-# cd<br>
-# <font color="#00ff00"><strong>umount</strong></font> -R /mnt/funtoo<br>
+# cd /mnt<br>
+# <font color="#00ff00"><strong>umount</strong></font> -lR /funtoo<br>
 # reboot<br>
 				</td>
 	</tr>
@@ -800,17 +795,17 @@ importante escolher UTF-8 para evitar erros de caracteres no terminal.</p1></p2>
 	<tr>
         <td><font face="Lucida Console, Dejavu Sans Mono" size="3" color="black"><font color="white"> # <font color="#00ff00"><strong>nano -w</strong></font> /etc/portage/make.confi</font><br>
                 <br>
-                <table bgcolor="white">
+                <table bgcolor="white" width="100%">
                     <tr>
                         <td>
 		VIDEO_CARDS="<font color="gray">vesa</font>/<font color="blue">intel i915</font>/<font color="red">radeon</font>/<font color="green">nvidia</font>/<font color="orange">virtualbox</font>"<br>
-        USE="<font color="green"><mark>bindist X opengl acpi dbus ffmpeg git jpeg jpeg2k mp3 mp4 mpeg png sound ncurses bzip2 gtk</mark> nls infinality introspection lua clipboard imlib jemalloc luajit nvimpager tui alsa gif java mozilla mplayer networkmanager <font color="#ff0066">-modemmanager</font> pdf pulseaudio python ruby truetype udev udisks upower usb wifi xft haskell"<br>
+        <!-- USE="<font color="green"><mark>X opengl dbus ffmpeg git jpeg jpeg2k mp3 mp4 mpeg png sound ncurses gtk clipboard imlib alsa gif java mozilla <font color="#ff0066">-modemmanager</font> pdf pulseaudio python ruby truetype udev upower usb wifi xft haskell</mark>"<br>
             </font>
             LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="purple">pt_BR.ISO-8859-1</font> <font color="blue">pt_BR pt-BR</font>"<br>
 		L10N="<font color="orange">pt-BR</font>"<br>
 		EMERGE_DEFAULT_OPTS="<font color="orange">--autounmask-write=y --with-bdeps=y</font>"<br>
         MAKEOPTS="<font color="red">-j4"</font> <br>
-        ACCEPT_LICENSE="<font color="blue">*</font>" <br>    
+        ACCEPT_LICENSE="<font color="blue">*</font>" <br> -->    
                             </td>
                         </tr>
               </table>
