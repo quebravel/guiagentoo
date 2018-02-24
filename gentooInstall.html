@@ -1635,14 +1635,14 @@ Auto inicio do Desktop/WM
 <h2 style="font-family:'Monaco', DejaVu Sans Mono">
 Downgrade gentoo package
 </h2>
-<font color="#000000" size="4" face="Dejavu Sans mono"><stronge>Crie um arquivo com a versão escolhida em /etc/portae/package.mask,<br>
+<font color="#000000" size="4" face="Dejavu Sans mono"><stronge>Crie um arquivo com a versão escolhida em /etc/portage/package.mask(gentoo),<br>/etc/portage/package.use(funtoo),<br>
  o nome do arquivo terá o mesmo nome do pacote e o conteudo será o nome do pacote mais<br> 
 o número da versão escolhida.</stronge></font><br><br>
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
 			<font color="white" size="4" face="Monaco, DejaVu Sans Mono">
-				echo ">media-libs/mesa-7.10.3" >> /etc/portage/package.mask/mesa			
+				echo "=media-libs/mesa-7.10.3" >> /etc/portage/package.mask/mesa			
 			</font>
 		</td>
 	</tr>
