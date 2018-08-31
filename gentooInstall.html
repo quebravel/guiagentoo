@@ -543,7 +543,7 @@ type="text/css">
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
-			<font face="Dejavu Sans Mono" color=white size="4">
+			<font face="Dejavu Sans Mono" size="4">
 				vim /etc/fstab
 			</font>
 		</td>
@@ -552,8 +552,8 @@ type="text/css">
 <br>
 <table border="0" bgcolor="#262626" width="70%">
 
-   <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
-   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
+   <td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda2</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/boot</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext2/<font color="cyan">vfat</font></font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">defaults,noatime</font></td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 2</font></td> </tr>
+   <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda4</font></td> <td><font color="yellow">/</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">ext4</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noatime</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 1</td> </tr>
    <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/sda3</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">none</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">swap</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">sw</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
    <tr><td><font color="yellow" face="DejaVu Sans Mono" size="4">/dev/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">/mnt/cdrom</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">auto</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">noauto,ro</td> <td><font color="yellow" face="DejaVu Sans Mono" size="4">0 0</td> </tr>
 </table>    
@@ -604,15 +604,15 @@ type="text/css">
 		           <p1 class="yellowtext">CHOST="x86_64-pc-linux-gnu"</p1><br>
 	     		   <p1 class="yellowtext">CFLAGS="-march=native -O2 -pipe"</p1><br>
 		           <p1 class="yellowtext">CCXFLAGS="${CFLAGS}"</p1><br>
-			   <p1 class="lawngreen">USE="<p1 class="redtext">-modemmanager
-               </p1>
-                    gtk gtk2 bindist"
+			   <p1 class="lawngreen">USE="<p1 class="redtext"></p1>acpi bindist git gtk gtk2 dbus ffmpeg jpeg jpeg2k -modemmanager mp3 mp4 mpeg png sound opengl X"
                </p1><br>
+               			EMERGE_DEFAULT_OPTS="<font color ="cyan">--quiet-build=y --ask --load-average=2 --autounmask-write=y --with-bdeps=y</font>" <br>
+						FEATURES="<font color ="yellow">preserve-libs collision-protect candy"</font> <br>
 	                    INPUT_DEVICES="<font color="yellow">evdev keyboard synaptics mouse</font>"<br>
 	                    VIDEO_CARDS="vesa <font color="gray">intel amdgpu nvidia virtualbox</font>" <br>
 			    LINGUAS="<font color="orange">pt_BR.UTF-8</font> <font color="yellow">pt_BR.ISO-8859-1</font> <font color="orange">pt_BR</font> <font color="cyan">pt-BR</font>" <br>
 		            MAKEOPTS="-j4" <br>
-			    EMERGE_DEFAULT_OPTS="<font color="hotpink">--autounmask-write=y --with-bdeps=y</font>"<br>
+			    
 			    ACCEPT_LICENSE="*" <br>
 		            L10N="pt-BR"
             </font>
@@ -663,10 +663,11 @@ type="text/css">
 			<font face="Courier New" color="yellow" size="4">
 
 					emerge app-portage/cpuid2cpuflags</p1><br>
-					cpuinfo2cpuflags-x86<br>
-					cpuinfo2cpuflags-x86 >> /etc/portage/make.conf<br>
+					cpuid2cpuflags-x86<br>
+					cpuid2cpuflags-x86 >> /etc/portage/make.conf<br>
 					<font color="gray">Apague o primero CPU_FLAGS_X86 da linha do make.conf</font><br>
-					cat /etc/portage/make.conf<br><br>
+					<font color="green">modifique colocando entre aspas ""</font> <br>
+					vim /etc/portage/make.conf<br><br>
                     			<i>
                         			env-update && source /etc/profile
 					</i><br>
@@ -885,14 +886,14 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 <table border="0" bgcolor="black" width="70%">
 	<tr>
 		<td>
-            <font face="Courier New" color="white" size="4">
-				<p1 class="yellowtext">emerge --ask app-admin/syslog-ng<br>
+            <font face="Courier New" size="4">
+				<p><font>emerge --ask app-admin/syslog-ng<br>
 				emerge --ask virtual/ssh<br>
 				emerge --ask sys-process/cronie<br>
-				emerge --ask sys-apps/mlocate</p1><br>
-				rc-update add syslog-ng default<br>
+				emerge --ask sys-apps/mlocate</p><br></font>
+				<font color="cyan">rc-update add syslog-ng default<br>
 				rc-update add sshd default<br>
-				rc-update add cronie default
+				rc-update add cronie default</font>
             </font>
         </td>
 	</tr>
@@ -934,9 +935,10 @@ como eth0)<br> está errado, então execute os seguintes passos para corrigir is
 				grub-install /dev/sda<br>
 				grub-mkconfig -o /boot/grub/grub.cfg<br><br>
 				<p1 class="yellowtext">Modo UEFI</p1><br>
-				echo 'GRUB_PLATFORMS="efi-64"' >> /etc/portage/make.conf<br>
+				echo '<font color="cyan">GRUB_PLATFORMS="efi-64"</font>' >> /etc/portage/make.conf<br>
 				emerge --ask sys-boot/grub<br>
 				emerge --ask --update --newuse --verbose sys-boot/grub<br>
+				mount <font color="cyan">-o remount,rw /sys/firmware/efi/efivars</font> <br>
 				grub-install --target=x86_64-efi --efi-directory=/boot
             </font>
         </td>
