@@ -195,8 +195,8 @@ cp -L /etc/resolv.conf /mnt/gentoo/etc/
 chroot /mnt/gentoo /bin/bash  
 ```
 ```css
-source /etc/profile && export PS1="(chroot) $PS1"  
-livecd ~ # 
+source /etc/profile && export PS1="(chroot) $PS1"
+livecd ~ #
 ```
 ## Instalando um instantâneo do repositório ebuild da web
 
@@ -262,7 +262,7 @@ locale -a
 ```css
 eselect locale list  
 ```
-```
+```java
 eselect locale set [pt_br.utf8]  
 ```
 ```css
@@ -312,8 +312,6 @@ emerge -aq gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed
 
 ```css
 nano -w /etc/genkernel.conf
-```
-```css
    MENUCONFIG="yes"  
    CLEAN="no"  
    MRPROPER="no"  
@@ -450,20 +448,20 @@ nano -w /etc/rc.conf
 
 ## Se estiver instalando em um ssd
 
-```
+```java
 nano -w /etc/profile.d/xdg_cache_home
    export XDG_CACHE_HOME="/tmp/${USER}/.cache"
 ```
 
 ## Instalando firmware
 
-```
+```java
 emerge --ask sys-kernel/linux-firmware<
 ```
 
 ## Informação de host e domínio
 
-```
+```java
 nano -w /etc/conf.d/hostname
    hostname="gentoo"
 ```   
@@ -472,7 +470,7 @@ nano -w /etc/conf.d/hostname
 
 >Primeiro instale o pacote net-misc/netifrc
 
-```
+```css
 emerge --ask --noreplace net-misc/netifrc
 ```
 
@@ -630,7 +628,7 @@ passwd nomeUsuario
 ```css
 exit  
 ```
-```
+```css
 cd  
 ```
 ```css
