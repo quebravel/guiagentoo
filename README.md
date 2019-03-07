@@ -2,19 +2,18 @@
 
 
 
-
-## Mostrar a interface da rede
-```css
-ip -s -c -h a
-```
-
 ## Carregar teclado
 
 ```css
 loadkeys br-abnt2
 ```
 
-## Configurar rede
+## Mostrar a interface da rede
+```css
+ip -s -c -h a
+```
+
+## Configurar rede com wifi
 
 ```css
 net-setup nomePlacaRede
@@ -228,8 +227,7 @@ eselect profile list
 ## Escolha o perfil com o comando... "substitua o X pelo número de sua escolha.
 ```css
 eselect profile set "X"  
-
-     default/linux/amd64/17.0/desktop
+   default/linux/amd64/17.0/desktop
 ```
 
 ## Use eselect para verificar
@@ -249,11 +247,11 @@ echo "America/Belem" > /etc/timezone
 ```
 ```css
 emerge --config sys-libs/timezone-data  
+```
 
-vim /etc/locale.gen  
-
-     pt_BR.UTF-8 UTF-8  
-     #pt_BR ISO-8859-1
+```css
+nano -w /etc/locale.gen  
+   pt_BR.UTF-8 UTF-8
 ```
 ```css
 locale-gen  
@@ -268,10 +266,9 @@ eselect locale list
 eselect locale set [pt_br.utf8]  
 ```
 ```css
-vim /etc/env.d/02locale  
-
-     LANG="pt_BR.UTF-8"  
-     LC_COLLATE="C"
+nano -w /etc/env.d/02locale  
+   LANG="pt_BR.UTF-8"  
+   LC_COLLATE="C"
 ```
 
 ## Carregando o ambiente.
@@ -298,7 +295,7 @@ cpuid2cpuflags-x86 >> /etc/portage/make.conf
 > modifique colocando entre aspas =""
 
 ```css
-vim /etc/portage/make.conf  
+nano -w /etc/portage/make.conf  
 ```
 ```css
 env-update && source /etc/profile && export PS1="(chroot) $PS1"  
@@ -314,20 +311,20 @@ emerge -aq gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed
 ## Configurando o genkernel
 
 ```css
-vim /etc/genkernel.conf
+nano -w /etc/genkernel.conf
 ```
 ```css
-   MENUCONFIG="yes"  
-   CLEAN="no"  
-   MRPROPER="no"  
+   MENUCONFIG="yes"  
+   CLEAN="no"  
+   MRPROPER="no"  
 
 descomente:
-   MAKEOPTS="$(portageq envvar MAKEOPTS)"  
-   TMPDIR="/var/tmp/genkernel"
+   MAKEOPTS="$(portageq envvar MAKEOPTS)"  
+   TMPDIR="/var/tmp/genkernel"
 ```
 ## Configurando o fstab.
 ```css
-vim /etc/fstab
+nano -w /etc/fstab
 ```
 
 | fs | mountpoint | type | opts | dump/pass |
@@ -343,7 +340,7 @@ vim /etc/fstab
 ## Verifique/Edite o make.conf para o seu processador.
 
 ```css
-vim /etc/portage/make.conf
+nano -w /etc/portage/make.conf
 ```
 ## Instalando o kernel.
 
@@ -447,15 +444,15 @@ Firmware Drivers --->
 ## Configurando o OpenRC Logging
 
 ```css
+nano -w /etc/rc.conf
    rc_parallel="YES"
 ```
 
 ## Se estiver instalando em um ssd
 
 ```
-vim /etc/profile.d/xdg_cache_home
-
-   export XDG_CACHE_HOME="/tmp/${USER}/.cache"
+nano -w /etc/profile.d/xdg_cache_home
+   export XDG_CACHE_HOME="/tmp/${USER}/.cache"
 ```
 
 ## Instalando firmware
@@ -467,8 +464,8 @@ emerge --ask sys-kernel/linux-firmware<
 ## Informação de host e domínio
 
 ```
-vim /etc/conf.d/hostname
-   hostname="gentoo"
+nano -w /etc/conf.d/hostname
+   hostname="gentoo"
 ```   
 
 ## Configurando a rede  
@@ -500,18 +497,13 @@ rc-update add net.enp0s3 default
 cd /
 ```
 
-
-
-
-
-
 ## O arquivo hosts
 
 > Adicione um nome depois de localhost
 
 ```css
-vim /etc/hosts  
-   127.0.0.1 gentoo.homenetwork localhost
+nano -w /etc/hosts  
+   127.0.0.1 gentoo.homenetwork localhost
 ```
 
 ## Adicionando senha para o root
@@ -523,49 +515,28 @@ passwd
 ## Teclado
 
 ```css
-vim /etc/conf.d/keymaps  
-
-   keymap="br-abnt2"
+nano -w /etc/conf.d/keymaps  
+   keymap="br-abnt2"
 ```
-
-
-
-
-
-
 
 
 ## Hora local.
 
 
-
-
-
-
 ```css
-vim /etc/conf.d/hwclock  
+nano -w /etc/conf.d/hwclock  
 
-   clock="local"
+   clock="local"
 ```
-
-
-
-
-
-
 
 
 ## Sistema de log
 
 
-
-
-
-
 ```css
 emerge -aq sysklogd cronie mlocate logrotate dhcpcd  
 ```
-```
+```css
 rc-update add sysklogd default  
 ```
 ```css
@@ -579,17 +550,9 @@ rc-update add dhcpcd default
 ```
 
 
-
-
-
-
 ## Selecionando/Instalando um gerenciador de boot: GRUB2.
 
 > Obs: Cuidado no "grub.cfg" pois ao aperta tab ele altomaticamente coloca "grub.conf".
-
-
-
-
 
 
 > Modo BIOS  
@@ -605,16 +568,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 
-
-
-
-
 ## Verifique se a partição do EFI/boot esta criada/montada
-
-
-
-
-
 
 
 > Modo UEFI  
@@ -658,16 +612,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 
-
-
-
-
-
 ## Adicionando um usuário e senha
-
-
-
-
 
 
 ```css
@@ -678,14 +623,7 @@ passwd nomeUsuario
 ```
 
 
-
-
-
-
 ## Saindo do sistema
-
-
-
 
 
 
