@@ -262,7 +262,7 @@ locale -a
 ```css
 eselect locale list  
 ```
-```java
+```css
 eselect locale set [pt_br.utf8]  
 ```
 ```css
@@ -306,7 +306,7 @@ env-update && source /etc/profile && export PS1="(chroot) $PS1"
 > gentoo kernel
 
 ```css
-emerge -aq gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed eix axel xfsprogs<
+emerge -aq gentoo-sources genkernel usbutils dosfstools pciutils gentoolkit ufed eix axel xfsprogs
 ```
 ## Configurando o genkernel
 
@@ -448,20 +448,20 @@ nano -w /etc/rc.conf
 
 ## Se estiver instalando em um ssd
 
-```java
+```css
 nano -w /etc/profile.d/xdg_cache_home
    export XDG_CACHE_HOME="/tmp/${USER}/.cache"
 ```
 
 ## Instalando firmware
 
-```java
-emerge --ask sys-kernel/linux-firmware<
+```css
+emerge --ask sys-kernel/linux-firmware
 ```
 
 ## Informação de host e domínio
 
-```java
+```css
 nano -w /etc/conf.d/hostname
    hostname="gentoo"
 ```   
