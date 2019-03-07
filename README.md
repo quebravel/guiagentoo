@@ -614,7 +614,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 ```css
-useradd -m -G users,wheel,audio,video,root,sys,disk,adm,bin,daemon,portage,console,usb,games,cron,input,lp,uucp -s /bin/bash nomeUsuario 
+useradd -m -G users,wheel,audio,video,root,sys,disk,adm,bin,daemon,portage,console,usb,cron,input,lp,uucp -s /bin/bash nomeUsuario 
 ```
 ```css
 passwd nomeUsuario
@@ -640,9 +640,3 @@ umount -R /mnt/gentoo
 ```css
 shutdown -r now  
 ```
-
-
-
-
-
-
