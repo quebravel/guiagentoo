@@ -119,11 +119,10 @@ env-update && source /etc/profile
 
 ## Configurando teclado Xorg.
 
-
-
-# nano /etc/X11/xorg.conf.d/30-keyboard.conf
-
+`Teclado`
 ```
+nano /etc/X11/xorg.conf.d/30-keyboard.conf
+
 Section "InputClass"
         Identifier "keyboard-all"
         Driver "evdev"
@@ -135,8 +134,9 @@ EndSection
 
 ## Removendo Tearing da placa de video.
 
-> Intel
+`Intel`
 ```
+nano /etc/X11/xorg.conf.d/10-intel.conf
 Section "Device"
         Identifier "Intel Graphics"
         Driver "intel"
@@ -148,8 +148,9 @@ EndSection
 
 
 
-> Radeon
+`Radeon`
 ```
+nano /etc/X11/xorg.conf.d/20-device.conf
 Section "Device"
         Identifier "Default"
         Driver "amdgpu"
@@ -160,9 +161,9 @@ EndSection
 
 
 ## Configurando Touchpad.
-### # nano /etc/X11/xorg.conf.d/70-synaptics.conf
 
 ```
+nano -w /etc/X11/xorg.conf.d/70-synaptics.conf
 Section "InputClass"
          Identifier "touchpad"
          Driver "synaptics"
@@ -201,9 +202,9 @@ EndSection
 ### $ sudo emerge --ask pacote --autounmask-write
 >em seguida
 ```
-$ sudo dispatch-conf
+$ sudo etc-update --automode -5
 ```
->aperte "u" para aceitar as alterações
+
 ```
 $ sudo emerge --ask --quiet pacote
 ```
