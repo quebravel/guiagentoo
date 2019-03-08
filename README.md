@@ -332,8 +332,8 @@ nano -w /etc/fstab
 | /dev/sda3 |	none |	swap |	sw |	0 0
 | /dev/sda4 |	/ |	ext4 |	noatime |	0 1
 | /dev/cdrom |	/mnt/cdrom |	auto |	noauto,ro |	0 0
-| tmpfs |	/var/tmp |	tmpfs |	rw,nosuid,noatime,nodev,size=4G,mode=1777 |	0 0
-| tmpfs |	/var/tmp/portage |	tmpfs |	rw,nosuid,noatime,nodev,size=4G,mode=775,uid=portage,gid=portage,x-mount.mkdir=775 |	0 0
+| tmpfs |	/var/tmp |	tmpfs |	rw,nosuid,noatime,nodev,size=8G,mode=1777 |	0 0
+| tmpfs |	/var/tmp/portage |	tmpfs |	rw,nosuid,noatime,nodev,size=7G,mode=775,uid=portage,gid=portage,x-mount.mkdir=775 |	0 0
 
 ## Verifique/Edite o make.conf para o seu processador.
 
