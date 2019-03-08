@@ -7,13 +7,13 @@ emerge sudo
 ```
 vim /etc/sudoers
 ```
-##Entre no arquivo sudoers e descomente a linha ou...
+## Entre no arquivo sudoers e descomente a linha ou...
 
 ```
 %wheel ALL=(ALL) ALL
 nomeUsuário ALL=(ALL) ALL
 ```
->ou usar o comando su para instalar em modo root.
+> ou usar o comando su para instalar em modo root.
 
 ## Entre no arquivo issue e apage os digitos '.\0'
 ```
@@ -30,7 +30,7 @@ hwclock --systohc
 
 ## Colocando uma bandeira no processador.
 
->Veja o número de processadores que sua maquina tem com o comando cat, depois entre em make.conf e acrescente a lina MAKEOPTS=-jX com o número de processadores some com mais +1\. Sendo X o número de processadores.
+> Veja o número de processadores que sua maquina tem com o comando cat, depois entre em make.conf e acrescente a lina MAKEOPTS=-jX com o número de processadores some com mais +1\. Sendo X o número de processadores.
 ```
 vim /etc/portage/make.conf
 MAKEOPTS=-jX
@@ -91,14 +91,14 @@ alsamixe
 
 #### Abra o terminal, digite alsamixer, dê play em algum som e tente aumentar a amplitude do som com as setas direcionais.
 ## Instalando internet.
->Veja se contem no USE no make.conf a palavra networkmanager,
->se não conter adicione-a
+> Veja se contem no USE no make.conf a palavra networkmanager,
+> se não conter adicione-a
 ```
 emerge --ask --quiet net-misc/networkmanager
 ```
 ## Iniciando a rede no boot.
->Adicione o widger.
->levante e adicione o genrenciador com:
+> Adicione o widger.
+> levante e adicione o genrenciador com:
 
 ```
 rc-service NetworkManager status
@@ -133,7 +133,7 @@ EndSection
 
 ## Removendo Tearing da placa de video.
 
->Intel
+> Intel
 ```
 Section "Device"
         Identifier "Intel Graphics"
@@ -146,7 +146,7 @@ EndSection
 
 
 
->Radeon
+> Radeon
 ```
 Section "Device"
         Identifier "Default"
@@ -185,14 +185,14 @@ EndSection
 
 
 ## Quando instalar o google chrome e ele fica pedindo
->senha para entrar no navegador, instale coloque uma senha e
->depois remova usando o aplicativo
+> senha para entrar no navegador, instale coloque uma senha e
+> depois remova usando o aplicativo
 ### sudo emerge --ask app-crypt/seahorse
 ## Caso der erro de mask em uma instalação.
 
 ### Durante a instalação de um pacote, o portage reclama que o pacote só poder ser
->instalado ser for feita uma alteração de palavra-chave.
->the following keyword changes are necessary to proceed:
+> instalado ser for feita uma alteração de palavra-chave.
+> the following keyword changes are necessary to proceed:
 
 ### required by *** argument
 >use o comando:
