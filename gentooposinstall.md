@@ -1,3 +1,5 @@
+[Gentoo instalação base](README.md)
+
 ## Log como root, e instale o pacote essencial.
 ```
 emerge sudo
