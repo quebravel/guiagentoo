@@ -524,7 +524,7 @@ nano -w /etc/conf.d/keymaps
 ```css
 nano -w /etc/conf.d/hwclock  
 
-   clock="local"
+   clock="UTC"
 ```
 
 
