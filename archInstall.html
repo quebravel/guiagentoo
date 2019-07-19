@@ -24,552 +24,575 @@
 -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title="arch_instacao">
-    <style>
-    .redtext {
-            color: red;
-    }
+    <head>
+        <title="arch_instacao">
+            <style>
+.redtext {
+    color: red;
+}
     .bluetext {
-            color: blue;
+        color: blue;
     }
     .greentext {
-            color: green;
+        color: green;
     }
     .whitetext {
-    	    color: white;
+        color: white;
     }
     .lawngreen {
-    	    color: LawnGreen;
+        color: LawnGreen;
     }
     .yellowtext {
-    	    color: yellow;
+        color: yellow;
     }
     .orangetext {
-	color: orange;
+        color: orange;
     }
-type="text/css">
-        .myTableStyle
-        {
-          /* position:absolute;
-           top:50%;
-           left:50%;
-*/
-            /*Alternatively you could use: */
-              position: fixed;
-               bottom: 50%;
-               right: 50%;
-	}
-</style>
-  </head>
+    type="text/css">
+    .myTableStyle
+    {
+        /* position:absolute;
+top:50%;
+left:50%;
+         */
+        /*Alternatively you could use: */
+        position: fixed;
+        bottom: 50%;
+        right: 50%;
+    }
+            </style>
+    </head>
 
-<title>Arch Instalação</title>
+    <title>Arch Instalação</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <body  bgcolor="0066CC">
-  <body>
+    <body  bgcolor="0066CC">
+        <body>
 
-		<center><font size="13" style="font-family:Monaco, Courrier New" class="redtext">GUIA RAPIDO</font></center>
-		<center><font size="23" style="font-family:Dejavu sans mono, verdana" class="orangetext">INSTALAR ARCH!</font></center>
-<font size="2">
-<!-- 1 -->    
-    <center><h2 style="font-family:Dejavu sans mono, verdana">1. Carregando teclado.</h2></center>
+            <center><font size="13" style="font-family:Monaco, Courrier New" class="redtext">GUIA RAPIDO</font></center>
+            <center><font size="23" style="font-family:Dejavu sans mono, verdana" class="orangetext">INSTALAR ARCH!</font></center>
+            <font size="2">
+                <!-- 1 -->    
+                <center><h2 style="font-family:Dejavu sans mono, verdana">1. Carregando teclado.</h2></center>
 
-    <center><table border="0" bgcolor="black" width="70%"></center>
+                <center><table border="0" bgcolor="black" width="70%"></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># loadkeys br-abnt2</td>
-    	</tr>
-    </table>
+                <tr>
+                    <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># loadkeys br-abnt2</td>
+                </tr>
+                    </table>
 
-   <!-- <center><h2 style="font-family:Dejavu sans mono, verdana">2. Parcionando disco.</h2></center>
-    <center><table border="0" bgcolor="black" width="70%"></center>
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># cfdisk /dev/sda</ br><br>
-                                                                    # /dev/sda1 500M = boot<br>
-                                                                    # /dev/sda2 2G = swap<br>
-                                                                    # /dev/sda3 .G = /<br>
-                                                                    # fdisk -l</td>
-    	</tr>
-    </table>
-	-->
-<!-- 2 -->
-	<h2 style="font-family:Dejavu sans mono, verdana" class="redtext">2. Verificar o modo de inicialização com o comando.</h2>
-	<table border="0" bgcolor="black" width="70%">
+                    <!-- <center><h2 style="font-family:Dejavu sans mono, verdana">2. Parcionando disco.</h2></center>
+                        <center><table border="0" bgcolor="black" width="70%"></center>
+                        <tr>
+                        <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># cfdisk /dev/sda</ br><br>
+                        # /dev/sda1 500M = boot<br>
+                        # /dev/sda2 2G = swap<br>
+                        # /dev/sda3 .G = /<br>
+                        # fdisk -l</td>
+                        </tr>
+                        </table>
+                    -->
+                    <!-- 2 -->
+                    <h2 style="font-family:Dejavu sans mono, verdana" class="redtext">2. Verificar o modo de inicialização com o comando.</h2>
+                    <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># ls /sys/firmware/efi/efivars</td>
-    	</tr>
-    </table>
-	
-<br>
-	<font color="white" size="5">Se o diretório não existir, o sistema<br> 
-	pode ser inicializado no modo BIOS.</font>
+                        <tr>
+                            <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># ls /sys/firmware/efi/efivars</td>
+                        </tr>
+                    </table>
 
-<h2 style="font-family:'Monaco', DejaVu Sans Mono"><br>6. Formatar HD.<br></h2>
-	<h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a BIOS.</font></h3>
-<table border="0" bgcolor="black" width="70%">
+                    <br>
+                    <font color="white" size="5">Se o diretório não existir, o sistema<br> 
+                        pode ser inicializado no modo BIOS.</font>
 
-<tr>
-<td><h3 style="font-family:'Courier New'" class="whitetext"><font color="red">Old School</font><br><br>
+                    <!-- 3 -->
+                    <h2 style="font-family:Dejavu sans mono, verdana">3. Acertando data e hora.</h2>
+                    <table border="0" bgcolor="black" width="70%">
 
-# fdisk /dev/sda<br><br>
+                        <tr>
+                            <td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                    # timedatectl<br>
+                                    # timedatectl set-ntp true<br>
+                                    # timedatectl set-timezone America/Belem<br>
+                                    # timedatectl status
+                            </td>
+                        </tr>
+                    </table>
 
-<font color="yellow">Partição 1 (boot)</font><br>
-Command (m for help):<font color="orange"> o ↵</font><br> 
-Command (m for help):<font color="orange"> n ↵ </font><br>
-Partition type (default p):<font color="orange"> ↵ </font><br>
-Partition number (1-4, default 1):<font color="orange"> ↵ </font><br>
-First sector:<font color="orange"> ↵ </font><br>
-Last sector:<font color="orange"> +128M ↵ </font><br><br>
+                    <!--4 -->
+                    <h2 style="font-family:'Monaco', DejaVu Sans Mono"><br>6. Formatar HD.<br></h2>
+                    <h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a BIOS.</font></h3>
+                    <table border="0" bgcolor="black" width="70%">
 
-<font color="yellow">Partição 2 (swap)</font><br>
-Command (m for help):<font color="orange"> n ↵</font><br>
-Partition type (default p):<font color="orange"> ↵</font><br>
-Partition number (2-4, default 2):<font color="orange"> ↵</font><br>
-First sector:<font color="orange"> ↵</font><br>
-Last sector:<font color="orange"> +2G ↵</font><br>
-Command (m for help):<font color="orange"> t ↵ </font><br>
-Partition number (1,2, default 2):<font color="orange">  ↵</font><br>
-Hex code (type L to list all codes):<font color="orange"> 82 ↵</font><br><br>
+                        <tr>
+                            <td><h3 style="font-family:'Courier New'" class="whitetext"><font color="red">Old School</font><br><br>
 
-<font color="yellow">Root partition</font><br>
-Command (m for help):<font color="orange"> n ↵</font><br>
-Partition type (default p):<font color="orange"> ↵</font><br>
-Partition number (3,4, default 3):<font color="orange"> ↵</font><br>
-First sector:<font color="orange"> ↵</font><br>
-Last sector:<font color="orange"> ↵</font><br><br>
+                                    # fdisk /dev/sda<br><br>
 
-<font color="yellow">Verificando</font><br>
-Command (m for help):<font color="orange"> p</font><br><br>
+                                    <font color="yellow">Partição 1 (boot)</font><br>
+                                    Command (m for help):<font color="orange"> o ↵</font><br> 
+                                    Command (m for help):<font color="orange"> n ↵ </font><br>
+                                    Partition type (default p):<font color="orange"> ↵ </font><br>
+                                    Partition number (1-4, default 1):<font color="orange"> ↵ </font><br>
+                                    First sector:<font color="orange"> ↵ </font><br>
+                                    Last sector:<font color="orange"> +128M ↵ </font><br><br>
 
-Disk /dev/sda: 298.1 GiB, 320072933376 bytes, 625142448 sectors<br>
-Units: sectors of 1 * 512 = 512 bytes<br>
-Sector size (logical/physical): 512 bytes / 512 bytes<br>
-I/O size (minimum/optimal): 512 bytes / 512 bytes<br>
-Disklabel type: dos</font><br>
-Disk identifier: 0x82abc9a6<br><br>
+                                    <font color="yellow">Partição 2 (swap)</font><br>
+                                    Command (m for help):<font color="orange"> n ↵</font><br>
+                                    Partition type (default p):<font color="orange"> ↵</font><br>
+                                    Partition number (2-4, default 2):<font color="orange"> ↵</font><br>
+                                    First sector:<font color="orange"> ↵</font><br>
+                                    Last sector:<font color="orange"> +2G ↵</font><br>
+                                    Command (m for help):<font color="orange"> t ↵ </font><br>
+                                    Partition number (1,2, default 2):<font color="orange">  ↵</font><br>
+                                    Hex code (type L to list all codes):<font color="orange"> 82 ↵</font><br><br>
 
-Device    Boot     Start       End    Blocks  Id System<br>
-/dev/sda1           2048    264191    131072  83 Linux<br>
-/dev/sda2         264192   4458495   2097152  82 Linux swap / Solaris<br>
-/dev/sda3        4458496 625142447 310341976  83 Linux<br><br>
+                                    <font color="yellow">Root partition</font><br>
+                                    Command (m for help):<font color="orange"> n ↵</font><br>
+                                    Partition type (default p):<font color="orange"> ↵</font><br>
+                                    Partition number (3,4, default 3):<font color="orange"> ↵</font><br>
+                                    First sector:<font color="orange"> ↵</font><br>
+                                    Last sector:<font color="orange"> ↵</font><br><br>
 
-<font color="yellow">Gravando</font><br>
+                                    <font color="yellow">Verificando</font><br>
+                                    Command (m for help):<font color="orange"> p</font><br><br>
 
-Command (m for help):<font color="orange"> w ↵</font><br>
+                                    Disk /dev/sda: 298.1 GiB, 320072933376 bytes, 625142448 sectors<br>
+                                    Units: sectors of 1 * 512 = 512 bytes<br>
+                                    Sector size (logical/physical): 512 bytes / 512 bytes<br>
+                                    I/O size (minimum/optimal): 512 bytes / 512 bytes<br>
+                                    Disklabel type: dos</font><br>
+                                Disk identifier: 0x82abc9a6<br><br>
+
+                                Device    Boot     Start       End    Blocks  Id System<br>
+                                /dev/sda1           2048    264191    131072  83 Linux<br>
+                                /dev/sda2         264192   4458495   2097152  82 Linux swap / Solaris<br>
+                                /dev/sda3        4458496 625142447 310341976  83 Linux<br><br>
+
+                                <font color="yellow">Gravando</font><br>
+
+                                Command (m for help):<font color="orange"> w ↵</font><br>
 
 
-</td>
-</tr>
-</table>
+                            </td>
+                        </tr>
+                    </table>
 
-<!-- 3 -->	
-	<center><h2 style="font-family:Dejavu sans mono, verdana">Parcionando disco GPT e UEFI.</h2></center>
-	<h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a UEFI.</font></h3>
-	<center><table border="0" bgcolor="black" width="70%"></center>
+                    <!-- 3 -->	
+                    <center><h2 style="font-family:Dejavu sans mono, verdana">Parcionando disco GPT e UEFI.</h2></center>
+                    <h3><font size="3" face="DejaVu Sans Mono" color="orange">Usando a UEFI.</font></h3>
+                    <center><table border="0" bgcolor="black" width="70%"></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext">
-			# gdisk /dev/sda<br>
-<p1 class="yellowtext">Criar uma nova tabela de partição vazia </p1><br>			
-Command: o ↵<br>
-This option deletes all partitions and creates a new protective MBR.<br>
-Proceed? (Y/N): y ↵<br><br>
-<p1 class="yellowtext">Criar Partição 1 (boot):</p1>
-Command: n ↵<br>
-Partition Number: 1 ↵<br>
-First sector: ↵<br>
-Last sector: +500M ↵<br>
-Hex Code: ef00 ↵ <font color="yellow">(para UEFI)</font><br><br>
-<p1 class="yellowtext">Criar Partição 2 (swap):</p1><br>
-Command: n ↵<br>
-Partition Number: 2 ↵<br>
-First sector: ↵<br>
-Last sector: +4G ↵<br>
-Hex Code: 8200 ↵<br><br>
-<p1 class="yellowtext">Criar Partição 3 (root):</p1><br>
-Command: n ↵<br>
-Partition Number: 3 ↵<br>
-First sector: ↵<br>
-Last sector: ↵ (for rest of disk)<br>
-Hex Code: ↵<br><br>
-<p1 class="yellowtext">Gravar a Tabela de Partição no Disco:</p1><br>
-Command: p ↵<br>
-Command: w ↵<br>
-Do you want to proceed? (Y/N): Y ↵<br>
+                    <tr>
+                        <td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                # gdisk /dev/sda<br>
+                                <p1 class="yellowtext">Criar uma nova tabela de partição vazia </p1><br>			
+                                Command: o ↵<br>
+                                This option deletes all partitions and creates a new protective MBR.<br>
+                                Proceed? (Y/N): y ↵<br><br>
+                                <p1 class="yellowtext">Criar Partição 1 (boot):</p1>
+                                Command: n ↵<br>
+                                Partition Number: 1 ↵<br>
+                                First sector: ↵<br>
+                                Last sector: +500M ↵<br>
+                                Hex Code: ef00 ↵ <font color="yellow">(para UEFI)</font><br><br>
+                                <p1 class="yellowtext">Criar Partição 2 (swap):</p1><br>
+                                Command: n ↵<br>
+                                Partition Number: 2 ↵<br>
+                                First sector: ↵<br>
+                                Last sector: +4G ↵<br>
+                                Hex Code: 8200 ↵<br><br>
+                                <p1 class="yellowtext">Criar Partição 3 (root):</p1><br>
+                                Command: n ↵<br>
+                                Partition Number: 3 ↵<br>
+                                First sector: ↵<br>
+                                Last sector: ↵ (for rest of disk)<br>
+                                Hex Code: ↵<br><br>
+                                <p1 class="yellowtext">Gravar a Tabela de Partição no Disco:</p1><br>
+                                Command: p ↵<br>
+                                Command: w ↵<br>
+                                Do you want to proceed? (Y/N): Y ↵<br>
 
-</p1><br>
+                                </p1><br>
 
-</td>
+                        </td>
 
-    	</tr>
-    </table>
+                    </tr>
+                        </table>
 
-	<!-- 4 -->	
-    <center><h2 style="font-family:Dejavu sans mono, verdana">4. formatando disco.</h2></center>
+                        <!-- 4 -->	
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">4. formatando disco.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"><p1 class="yellowtext">Se for BIOS use </p1># mkfs.ext2 /dev/sda1<br>
-																	<p1 class="yellowtext">Se for UEFI use </p1># mkfs.fat -F32 -n BOOT /dev/sda1<br>
-                                                                    # mkfs.ext4 /dev/sda3<br>
-                                                                    # mkswap /dev/sda2<br>
-                                                                    # swapon /dev/sda2<br>
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 5 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">5. Verificando internet.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"><p1 class="yellowtext">Se for BIOS use </p1># mkfs.ext2 /dev/sda1<br>
+                                        <p1 class="yellowtext">Se for UEFI use </p1># mkfs.fat -F32 -n BOOT /dev/sda1<br>
+                                        # mkfs.ext4 /dev/sda3<br>
+                                        # mkswap /dev/sda2<br>
+                                        # swapon /dev/sda2<br>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 5 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">5. Verificando internet.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># ip -s -c -h a<br>
-                                                                    # wifi-menu <p1 class="yellowtext">+(nome do dispositivo encontrado pelo comando
-                                                                    acima)<br>
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 6 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">6. Montando.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># ip -s -c -h a<br>
+                                        # wifi-menu <p1 class="yellowtext">+(nome do dispositivo encontrado pelo comando
+                                        acima)<br>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 6 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">6. Montando.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkdir /mnt/boot<br>
-                                                                    # mount /dev/sda1 /mnt/boot<br>
-                                                                    # mount /dev/sda3 /mnt
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 7 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">7. Acertando horário.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkdir /mnt/boot<br>
+                                        # mount /dev/sda1 /mnt/boot<br>
+                                        # mount /dev/sda3 /mnt
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 7 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">7. Acertando horário.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># rm /etc/localtime<br>
-                                                                    # ln -s /usr/share/zoneinfo/America/Belem /etc/localtime<br>
-                                                                    # hwclock --systohc<br>
-                                                                    # date</td>
-    	</tr>
-    </table>
-<!-- 8 -->
-	<center><h2 style="font-family:Dejavu sans mono, verdana">8. Baixando base Arch Linux.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># rm /etc/localtime<br>
+                                        # ln -s /usr/share/zoneinfo/America/Belem /etc/localtime<br>
+                                        # hwclock --systohc<br>
+                                        # date</td>
+                            </tr>
+                        </table>
+                        <!-- 8 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">8. Baixando base Arch Linux.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacstrap -i /mnt base base-devel</td>
-    	</tr>
-    </table>
-<!-- 9 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">9. Gerando fstab.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacstrap -i /mnt base base-devel</td>
+                            </tr>
+                        </table>
+                        <!-- 9 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">9. Gerando fstab.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># genfstab -U -p /mnt >> /mnt/etc/fstab<br>
-                                                                    # cat /mnt/etc/fstab
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 9.1 -->        
-    <center><h2 style="font-family:Dejavu sans mono, verdana">9.1. Edite o fstab.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># genfstab -U -p /mnt >> /mnt/etc/fstab<br>
+                                        # cat /mnt/etc/fstab
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 9.1 -->        
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">9.1. Edite o fstab.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano -w /mnt/etc/fstab
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 10 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">10. Entrando no chroot.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /mnt/etc/fstab
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 10 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">10. Entrando no chroot.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># arch-chroot /mnt /bin/bash</td>
-    	</tr>
-    </table>
-<!-- 11 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">11. Alterando idioma.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># arch-chroot /mnt /bin/bash</td>
+                            </tr>
+                        </table>
+                        <!-- 11 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">11. Alterando idioma.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/locale.gen<br>
-                                                                    <p1 class="yellowtext">Descomente a linha pt_BR.UTF-8 UTF-8</p1><br>
-                                                                    # locale-gen<br>
-                                                                    # echo LANG=pt_BR.UTF-8 > /etc/locale.conf<br>
-                                                                    # export LANG=pt_BR.UTF-8
-                                                                    </td>
-    	</tr>
-    </table>
-<!-- 12 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">12. Nomeando a maquina.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /etc/locale.gen<br>
+                                        <p1 class="yellowtext">Descomente a linha pt_BR.UTF-8 UTF-8</p1><br>
+                                        # locale-gen<br>
+                                        # echo LANG=pt_BR.UTF-8 > /etc/locale.conf<br>
+                                        # export LANG=pt_BR.UTF-8
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 12 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">12. Nomeando a maquina.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># echo <font color="ffcc00">nomeEscolhido</font> > /etc/hostname<br>
-                                                                    # cat /etc/hostname</td>
-    	</tr>
-    </table>
-<!-- 13 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">13. Instalando pacotes necessário para o<br> funionamento do wifi.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># echo <font color="ffcc00">nomeEscolhido</font> > /etc/hostname<br>
+                                        # cat /etc/hostname<br>
+                                        # vi /etc/hosts <font color="yellow">// [configure aqui também]</font>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 13 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">13. Instalando pacotes necessário para o<br> funionamento do wifi.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S wireless_tools wpa_supplicant wpa_actiond dialog</td>
-    	</tr>
-    </table>
-<!-- 14 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">14. mk init cp io configurando rede.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S wireless_tools iwd wpa_supplicant dialog</td>
+                            </tr>
+                        </table>
+                        <!-- 14 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">14. mk init cp io configurando rede.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkinitcpio -p linux</td>
-    	</tr>
-    </table>
-<!-- 15 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">15. Adicionando senha do root.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkinitcpio -p linux</td>
+                            </tr>
+                        </table>
+                        <!-- 15 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">15. Adicionando senha do root.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># passwd</td>
-    	</tr>
-    </table>
-<!-- 16 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">16. Adicionando multilib/yaourt.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># passwd</td>
+                            </tr>
+                        </table>
+                        <!-- 16 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">16. Adicionando multilib/yaourt.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/pacman.conf<br>
-                                   <p1 class="yellowtext">descomente as linhas<br>
-                                   <p1 class="greentext">[multilib]<br>
-        	                       inclue = /etc/pacman.d/mirrorlist</p1></p1><br>
-		<p1 class="yellowtext">acrescente as linhas abaixo para a instalação do yaourt<br> 
-		<p1 class="greentext">[archlinuxfr]<br>
-		SigLevel = Never<br>
-Server = http://repo.archlinux.fr/$arch</p1>
-		</td>
-    							
-	</tr>
-    </table>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /etc/pacman.conf<br>
+                                        <p1 class="yellowtext">descomente as linhas<br>
+                                        <p1 class="greentext">[multilib]<br>
+                                        inclue = /etc/pacman.d/mirrorlist</p1></p1><br>
+                                        <p1 class="yellowtext">acrescente as linhas abaixo para a instalação do yaourt<br> 
+                                        <p1 class="greentext">[archlinuxfr]<br>
+                                        SigLevel = Never<br>
+                                        Server = http://repo.archlinux.fr/$arch</p1>
+                                </td>
 
-<center><h2 style="font-family:Dejavu sans mono, verdana">17. Configurando teclado terminal.</h2></center>
+                            </tr>
+                        </table>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">17. Configurando teclado terminal.</h2></center>
 
-        <tr>
-            <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/vconsole.conf<br>
+                        <table border="0" bgcolor="black" width="70%">
+
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /etc/vconsole.conf<br>
                                         <font color="ffff00">KEYMAP=br-abnt2</font></td>
-        </tr>
-    </table>
+                            </tr>
+                        </table>
 
-<!-- 18 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">18. Atualizando o sistema.</h2></center>
+                        <!-- 18 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">18. Atualizando o sistema.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -Sy</td>
-    	</tr>
-    </table>
-<!-- 19 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">19. Instalando o grub <p1 class="redtext">(modo BIOS)</p1>.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -Sy</td>
+                            </tr>
+                        </table>
+                        <!-- 19 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">19. Instalando o grub <p1 class="redtext">(modo BIOS)</p1>.</h2></center>
 
-<table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td>
-                <h3 style="font-family:Dejavu sans mono" class="whitetext">
-                                                                    # pacman -S grub<br>
-                                                                    
-                    # grub-install <font color="gray">--target=i386-pc --boot-directory=/boot</font> /dev/sda<br>
-                                                                    # grub-mkconfig -o /boot/grub/grub.cfg
-                  </h3>
-                </td>
-    	</tr>
-    </table>        
-        <br>
-        <font color="pink" face="Dejavu sans mono" size="4">Caso o grub apresente erro faça esta segunda opção:</font><br><br>
-        
-    <table border="0" bgcolor="#1c1c1c" width="70%">
+                            <tr>
+                                <td>
+                                    <h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                        # pacman -S grub<br>
 
-    	<tr>
-    		<td><font color="#767676" face="Dejavu sans mono" size="3">
-                                                                    # mkdir /mnt/boot<br>
-                                                                    # mount /dev/sda1 /mnt/boot<br>
-                                                                    # pacman -S grub<br>
-                                                                    
-                                                                    # grub-install --target=i386-pc --boot-directory=/mnt/boot /dev/sda<br>
-                                                                    # grub-mkconfig -o /boot/grub/grub.cfg
-                </font>
-                </td>
-    	</tr>
-    </table>
-<!-- 20 -->
-	<center><h2 style="font-family:Dejavu sans mono, verdana">20. Instalando o grub <p1 class="redtext">(modo UEFI)</p1>.</h2></center>
+                                        # grub-install <font color="gray">--target=i386-pc --boot-directory=/boot</font> /dev/sda<br>
+                                        # grub-mkconfig -o /boot/grub/grub.cfg
+                                    </h3>
+                                </td>
+                            </tr>
+                        </table>        
+                        <br>
+                        <font color="pink" face="Dejavu sans mono" size="4">Caso o grub apresente erro faça esta segunda opção:</font><br><br>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="#1c1c1c" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S grub-efi-x86_64 efibootmgr<br>
-        	<font color="#767676"># mkdir /mnt/boot<br>
-                # mount /dev/sda1 /mnt/boot</font><br>
-                # grub-install --target=x86_64-efi --efi-directory=<font color="#767676">/mnt</font>/boot --bootloader-id=BOOT --recheck<br>
-		# grub-mkconfig -o /boot/grub/grub.cfg</td>
-    	</tr>
-    </table>
-<!-- 21 -->	
-    <h2 style="font-family:Dejavu sans mono, verdana">21. Criando usuário.</h2></center>
+                            <tr>
+                                <td><font color="#767676" face="Dejavu sans mono" size="3">
+                                        # mkdir /mnt/boot<br>
+                                        # mount /dev/sda1 /mnt/boot<br>
+                                        # pacman -S grub<br>
 
-    <center><table border="0" bgcolor="black" width="100%">
+                                        # grub-install --target=i386-pc --boot-directory=/mnt/boot /dev/sda<br>
+                                        # grub-mkconfig -o /boot/grub/grub.cfg
+                                    </font>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 20 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">20. Instalando o grub <p1 class="redtext">(modo UEFI)</p1>.</h2></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># useradd -m -G users,wheel,audio,daemon,dbus,disk,games,network,rfkill,optical,power,storage,scanner,lp,video -s /bin/bash <font color="ffcc00">nomeUsuario</font><br>
-                                                                    <br># passwd <font color="ffcc00">nomeUsuario</font></td>
-    	</tr>
-    </table>
-<!-- 22 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">22. Instalando pacotes essenciais.</h2></center>
+                        <table border="0" bgcolor="black" width="70%">
 
-    <table border="0" bgcolor="black" width="70%">
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S grub-efi-x86_64 efibootmgr<br>
+                                        # lsblk<br>
+                                        # mkdir /boot/efi<br>
+                                        # mount /dev/sda1 /boot/efi<br>
+                                        # grub-mkconfig -o /boot/grub/grub.cfg<br>
+                                        # grub-install --target=x86_64-efi <font color="yellow">--efi-directory=/boot/efi</font> --bootloader-id=BOOT --recheck<br>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 21 -->	
+                        <h2 style="font-family:Dejavu sans mono, verdana">21. Criando usuário.</h2></center>
 
-    	<tr>
-		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S acpi acpid <p1 class="yellowtext">(para notebook bateria)</p1><br>
-          networkmanager network-manager-applet-gtk2<br>
-          alsa-plugins alsa-utils pulseaudio-alsa<br>
-	  gst-plugins-{base,good,bad,ugly} gst-libav<br>
-	  xterm xfce4-terminal<br>
-          firefox firefox-i18n-pt-br<br>
-          git wget<br>
-          <p1 class="yellowtext">OBS 1: Se não tem wifi use o comando dhcpcd + nome do dispisitivo (Ex: wlp3s0).</p1><br>
-          <p1 class="redtext">OBS 2: acpi e acpid são para a batéria do notebook.</p1>
-                                                                  </td>
-    	</tr>
-    </table>
-<!-- 23 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">23. Dando permissão ao usuário</h2></center>
+                    <center><table border="0" bgcolor="black" width="100%">
 
-    <table border="0" bgcolor="black" width="70%">
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># useradd -m -G users,wheel,audio,daemon,dbus,disk,games,network,rfkill,optical,power,storage,scanner,lp,video -s /bin/bash <font color="ffcc00">nomeUsuario</font><br>
+                                        <br># passwd <font color="ffcc00">nomeUsuario</font></td>
+                            </tr>
+                        </table>
+                        <!-- 22 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">22. Instalando pacotes essenciais.</h2></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/sudoers<br>
-                                                                  <p1 class="yellowtext">abaixo da linha root ALL=(ALL) ALL adicione</p1><br>
-                                                                  <p1 class="greentext"><font color="ffcc00">nomeUsuario</font> ALL=(ALL) ALL</p1></td>
-    	</tr>
-    </table>
-<!-- 24 -->
-    <center><h2 style="font-family:Dejavu sans mono, verdana">24. Saindo </h2></center>
+                        <table border="0" bgcolor="black" width="70%">
 
-    <table border="0" bgcolor="black" width="70%">
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S acpi acpid <p1 class="yellowtext"> // (para notebook bateria)</p1><br>
+                                        alsa-plugins alsa-utils pulseaudio-alsa<p1 class="yellowtext"> // [Caso o alsa não fucione]</p1><br>
+                                        gst-plugins-{base,good,bad,ugly} gst-libav<br>
+                                        rxvt-unicode urxvt-perls<br>
+                                        firefox firefox-i18n-pt-br<br>
+                                        git wget<br>
+                                        <p1 class="yellowtext">OBS 1: Se você não utiliza wifi use o comando dhcpcd + nome do dispisitivo (Ex: wlp3s0).</p1><br>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- 23 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">23. Dando permissão ao usuário</h2></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># exit<br>
-                                                                  # umount -R /mnt<br> # reboot</td>
-    	</tr>
-    </table>
+                        <table border="0" bgcolor="black" width="70%">
 
-<!-- 25 -->   
-    <center><h2 style="font-family:Dejavu sans mono, verdana">25. Iniciando a internet no boot.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /etc/sudoers<br>
+                                        <p1 class="yellowtext">abaixo da linha root ALL=(ALL) ALL adicione</p1><br>
+                                        <p1 class="greentext"><font color="ffcc00">nomeUsuario</font> ALL=(ALL) ALL</p1></td>
+                            </tr>
+                        </table>
+                        <!-- 24 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">24. Saindo </h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext">$ sudo systemctl start dhcpcd@eth0.service<br>
-                                                                    $ sudo systemctl enable dhcpcd@eth0.service<br>
-                                                                    $ sudo systemctl start NetworkManager<br>
-                                                                    $ sudo systemctl enable NetworkManager<br>
-                                                                    <p1 class="yellowtext">troque <p1 class="orangetext">eth0</p1> pelo seu dispositivo.</p1></td>
-    	</tr>
-    </table>
-<!-- 26 -->
- <center><h2 style="font-family:Dejavu sans mono, verdana">26. Atualizando mirror list.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># exit<br>
+                                        # umount -R /mnt<br> # reboot</td>
+                            </tr>
+                        </table>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <!-- 25 -->   
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">25. Iniciando a internet no boot.</h2></center>
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext">
-         $ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup<br><br>
-         $ sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup<br><br>
-         $ sudo rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
-        </td>
-    	</tr>
-    </table>
+                        <table border="0" bgcolor="black" width="70%">
 
-<!-- 27 -->
-	 <center><h2 style="font-family:Dejavu sans mono, verdana">27. Instalando Xorg.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                        # ip link<br><br>
+                                        nomeDispositivo: &lt;BROADCAST..<br><br>
+                                        # vi /etc/systemd/network/<font color="yellow">nomeDispositivo</font>.network<br><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[Match]<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;name=<font color="yellow">nomeDispositivo</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[Network]<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;DHCP=yes<br><br>
+                                        # systemctl restart systemd-networkd<br>
+                                        # systemctl enable systemd-networkd<br>
+                                        # vi /etc/resolv.conf<br><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; nameserver 8.8.8.8<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; nameserver 8.8.4.4
+                            </tr>
+                        </table>
+                        <!-- 26 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">26. Criando arquivo init.</h2></center>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-    	<tr>
-    		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S xorg-xinit xorg-server xorg-drivers ttf-dejavu<br>
-                <p1 class="redtext">Radeon </p1>extra/xf86-video-amdgpu<br>
-                <font color="00ffff">Intel </font> extra/xf86-video-intel<br>
-                <p1 class="lawngreen">Nvidia </p1>extra/nvidia<br><br>
-                <p1 class="yellowtext">Teclado </p1>extra/xf86-input-keyboard<br>
-                <p1 class="yellowtext">Mouse </p1>extra/xf86-input-mouse<br>
-                <p1 class="yellowtext">touchpads (Notebooks) </p1>extra/xf86-input-synaptics</td>
-    	</tr>
-    </table>
-<!-- 28 -->
-<center><h2 style="font-family:Dejavu sans mono, verdana">28. Configurando teclado Xorg.</h2></center>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext">
+                                        echo 'exec [wm/de]' > /home/USUARIO/.xinitrc
+                                </td>
+                            </tr>
+                        </table>
 
-    <table border="0" bgcolor="black" width="70%">
+                        <!-- 27 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">27. Instalando Xorg.</h2></center>
 
-        <tr>
-            <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># nano /etc/X11/xorg.conf.d/00-keyboard.conf<br><br>
-<font color="ffff00">Section "InputClass"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "system-keyboard"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;MatchIsKeyboard "on"<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbLayout" "br"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbVariant" ",abnt2"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbOptions" "grp:shift_toggle,grp_led:scroll"</font><br>
-<font color="ffff00">EndSection</font></td>
-        </tr>
-    </table>
-<!-- 29 -->
- <center><h2 style="font-family:Dejavu sans mono, verdana">29. Removendo Tearing da placa de video.</h2></center>
+                        <table border="0" bgcolor="black" width="70%">
 
-    <table border="0" bgcolor="black" width="70%">
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S xorg-xinit xorg-server ttf-dejavu<br>
+                                        <p1 class="redtext">Radeon </p1>extra/xf86-video-amdgpu<br>
+                                        <font color="00ffff">Intel </font> extra/xf86-video-intel<br>
+                                        <p1 class="lawngreen">Nvidia </p1>extra/nvidia<br><br>
+                                        <p1 class="yellowtext">Teclado </p1>extra/xf86-input-keyboard<br>
+                                        <p1 class="yellowtext">Mouse </p1>extra/xf86-input-mouse<br>
+                                        <p1 class="yellowtext">touchpads (Notebooks) </p1>extra/xf86-input-synaptics</td>
+                            </tr>
+                        </table>
+                        <!-- 28 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">28. Configurando teclado Xorg.</h2></center>
 
-        <tr>
-		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="#00ffff">Intel</font><br># nano /usr/share/X11/xorg.conf.d/20-intel.conf<br><br>
-<font color="ffff00">Section "Device"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Intel Graphics"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "intel"<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "AccelMethod" "sna"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "on"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
-<font color="ffff00">EndSection</font></td>
-        </tr>
-    </table>
-    <br>
-  <table border="0" bgcolor="black" width="70%">
+                        <table border="0" bgcolor="black" width="70%">
 
-        <tr>
-		<td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="red">Radeon</font><br># nano  /usr/share/X11/xorg.conf.d/50-device.conf<br><br>
-<font color="ffff00">Section "Device"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Default"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "amdgpu"<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "True"</font><br>
-<font color="ffff00">EndSection</font></td>
-        </tr>
-    </table>
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># vi /etc/X11/xorg.conf.d/00-keyboard.conf<br><br>
+                                        <font color="ffff00">Section "InputClass"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "system-keyboard"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;MatchIsKeyboard "on"<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbLayout" "br"</font><br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbVariant" ",abnt2"</font><br>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "XkbOptions" "grp:shift_toggle,grp_led:scroll"</font><br>
+                            <font color="ffff00">EndSection</font></td>
+                            </tr>
+                        </table>
+                        <!-- 29 -->
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">29. Removendo Tearing da placa de video.</h2></center>
+
+                        <table border="0" bgcolor="black" width="70%">
+
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="#00ffff">Intel</font><br># vi /usr/share/X11/xorg.conf.d/20-intel.conf<br><br>
+                                        <font color="ffff00">Section "Device"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Intel Graphics"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "intel"<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "AccelMethod" "sna"</font><br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "on"</font><br>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
+                            <font color="ffff00">EndSection</font></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table border="0" bgcolor="black" width="70%">
+
+                            <tr>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"> <font color="red">Radeon</font><br># vi  /usr/share/X11/xorg.conf.d/50-device.conf<br><br>
+                                        <font color="ffff00">Section "Device"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="66ffcc">Identifier</font><font color="cc66ff"> "Default"</font><br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Driver "amdgpu"<br>
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "DRI" "3"</font><br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font><font color="66ffcc">Option</font><font color="cc66ff"> "TearFree" "True"</font><br>
+                                <font color="ffff00">EndSection</font></td>
+                            </tr>
+                        </table>
 
 
-  </body>
+        </body>
 
 </html>
