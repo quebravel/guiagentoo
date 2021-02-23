@@ -445,8 +445,8 @@ left:50%;
                                         # lsblk<br>
                                         # mkdir /boot/efi<br>
                                         # mount /dev/sda1 /boot/efi<br>
-                                        # grub-mkconfig -o /boot/grub/grub.cfg<br>
                                         # grub-install --target=x86_64-efi <font color="yellow">--efi-directory=/boot/efi</font> --bootloader-id=BOOT --recheck<br>
+                                        # grub-mkconfig -o /boot/grub/grub.cfg<br>
                                 </td>
                             </tr>
                         </table>
@@ -506,14 +506,11 @@ left:50%;
                             <tr>
                                 <td><h3 style="font-family:Dejavu sans mono" class="whitetext">
                                         # ip link<br><br>
-                                        nomeDispositivo: &lt;BROADCAST..<br><br>
-                                        # vi /etc/systemd/network/<font color="yellow">nomeDispositivo</font>.network<br><br>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[Match]<br>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;name=<font color="yellow">nomeDispositivo</font><br>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[Network]<br>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;DHCP=yes<br><br>
-                                        # systemctl restart systemd-networkd<br>
-                                        # systemctl enable systemd-networkd<br>
+                                        $ sudo systemctl start dhcpcd@eth0.service<br>
+                                        $ sudo systemctl enable dhcpcd@eth0.service<br>
+                                        <font color="#767676">#$ sudo systemctl start NetworkManager<br>
+                                        #$ sudo systemctl enable NetworkManager</font></p><br>
+                                        <p1 class="yellowtext">troque <p1 class="orangetext">eth0</p1> pelo seu dispositivo.</p1>
                                         # vi /etc/resolv.conf<br><br>
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; nameserver 8.8.8.8<br>
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; nameserver 8.8.4.4
