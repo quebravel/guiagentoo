@@ -278,7 +278,7 @@ left:50%;
                         <table border="0" bgcolor="black" width="70%">
 
                             <tr>
-                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacstrap -i /mnt base base-devel</td>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacstrap -i /mnt base base-devel linux linux-firmware </td>
                             </tr>
                         </table>
                         <!-- 9 -->
@@ -287,13 +287,13 @@ left:50%;
                         <table border="0" bgcolor="black" width="70%">
 
                             <tr>
-                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># genfstab -U -p /mnt >> /mnt/etc/fstab<br>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># genfstab -U /mnt >> /mnt/etc/fstab<br>
                                         # cat /mnt/etc/fstab
                                 </td>
                             </tr>
                         </table>
                         <!-- 9.1 -->        
-                        <center><h2 style="font-family:Dejavu sans mono, verdana">9.1. Edite o fstab.</h2></center>
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">9.1. Edite o fstab apagando o uuid.</h2></center>
 
                         <table border="0" bgcolor="black" width="70%">
 
@@ -308,7 +308,7 @@ left:50%;
                         <table border="0" bgcolor="black" width="70%">
 
                             <tr>
-                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># arch-chroot /mnt /bin/bash</td>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># arch-chroot /mnt</td>
                             </tr>
                         </table>
                         <!-- 11 -->
@@ -338,7 +338,7 @@ left:50%;
                             </tr>
                         </table>
                         <!-- 13 -->
-                        <center><h2 style="font-family:Dejavu sans mono, verdana">13. Instalando pacotes necessário para o<br> funionamento do wifi.</h2></center>
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">13. Instalando pacotes necessário para o<br> funionamento do wifi. (para notebooks)</h2></center>
 
                         <table border="0" bgcolor="black" width="70%">
 
@@ -347,12 +347,12 @@ left:50%;
                             </tr>
                         </table>
                         <!-- 14 -->
-                        <center><h2 style="font-family:Dejavu sans mono, verdana">14. mk init cp io configurando rede.</h2></center>
+                        <center><h2 style="font-family:Dejavu sans mono, verdana">14. mk init cp io configurando ambiente.</h2></center>
 
                         <table border="0" bgcolor="black" width="70%">
 
                             <tr>
-                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkinitcpio -p linux</td>
+                                <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># mkinitcpio -P</td>
                             </tr>
                         </table>
                         <!-- 15 -->
@@ -469,7 +469,7 @@ left:50%;
                                 <td><h3 style="font-family:Dejavu sans mono" class="whitetext"># pacman -S acpi acpid <p1 class="yellowtext"> // (para notebook bateria)</p1><br>
                                         alsa-plugins alsa-utils pulseaudio-alsa<p1 class="yellowtext"> // [Caso o alsa não fucione]</p1><br>
                                         gst-plugins-{base,good,bad,ugly} gst-libav<br>
-                                        rxvt-unicode urxvt-perls<br>
+                                        rxvt-unicode urxvt-perls dhcpcd<br>
                                         firefox firefox-i18n-pt-br<br>
                                         git wget<br>
                                         <p1 class="yellowtext">OBS 1: Se você não utiliza wifi use o comando dhcpcd + nome do dispisitivo (Ex: wlp3s0).</p1><br>
