@@ -1,4 +1,4 @@
- --- [Gentoo pós instalação base](gentooposinstall.md) --- [Arch Linux BREVE](archinstall.html) ---
+ --- [Gentoo pós instalação base](gentooposinstall.md) --- [Arch Linux BREVE](archInstall.html) ---
 
 
 
